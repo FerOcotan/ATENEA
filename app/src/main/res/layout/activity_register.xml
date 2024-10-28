@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#FCF5FD"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:paddingRight="7dp"
+    tools:context=".register">
+
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="Logo"
+        android:src="@drawable/ateneablack" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="14dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Get Started"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="by creating a free account."
+        android:textColor="#D37A7575"
+        android:textSize="14sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="28dp" />
+
+
+    <EditText
+        android:id="@+id/fullname"
+        android:layout_width="286dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="8dp"
+        android:background="#1DB3ADAD"
+        android:backgroundTint="@android:color/darker_gray"
+        android:drawableEnd="@drawable/baseline_person_24"
+        android:hint="Full name"
+        android:inputType="textEmailAddress"
+        android:paddingStart="7dp"
+        android:paddingRight="7dp" />
+
+    <EditText
+        android:id="@+id/emailvalid"
+        android:layout_width="286dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="8dp"
+        android:background="#1DB3ADAD"
+        android:backgroundTint="@android:color/darker_gray"
+        android:drawableEnd="@drawable/baseline_attach_email_24"
+        android:hint="Valid email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="7dp"
+        android:paddingRight="7dp" />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="286dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="8dp"
+        android:background="#1DB3ADAD"
+        android:backgroundTint="@android:color/darker_gray"
+        android:drawableEnd="@drawable/baseline_phone_android_24"
+        android:hint="Phone number"
+        android:inputType="number"
+        android:paddingStart="7dp" />
+
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="286dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="8dp"
+        android:background="#1DB3ADAD"
+        android:backgroundTint="@android:color/darker_gray"
+        android:drawableEnd="@drawable/baseline_password_24"
+
+        android:hint="Strong Password"
+        android:inputType="textPassword"
+        android:paddingStart="7dp"
+        android:paddingRight="7dp" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="28dp" />
+
+
+    <LinearLayout
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_vertical"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/rememberMeCheck"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#BEBEBE"
+            android:text="By checking the box you agree to our Terms and Conditions."
+            android:textColor="#000000"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="36dp" />
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="313dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#4A8758"
+        android:text="Next"
+        android:textColor="@color/white"
+        app:strokeColor="#000000" />
+
+
+    <TextView
+        android:id="@+id/registerLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="Already a member? Log In"
+        android:textColor="@color/black" />
+
+
+</LinearLayout>
