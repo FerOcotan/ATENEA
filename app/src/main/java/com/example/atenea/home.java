@@ -1,5 +1,6 @@
 package com.example.atenea;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -59,23 +60,29 @@ public class home extends AppCompatActivity {
         });
     }
 
+//ABRA QUE VALIDAR LA SALIDA CON EL FINISH MAYBE
     private void ventanaexit() {
         finish();
     }
 
     private void ventanasettings() {
-        // Código para abrir la configuración
+        Intent intent = new Intent(this, menu_settings.class);
+        startActivity(intent);
     }
 
     private void ventanahelp() {
-        // Código para abrir la ayuda
+        Intent intent = new Intent(this, menu_help.class);
+        startActivity(intent);
     }
 
     private void ventanaabout() {
-        // Código para mostrar información sobre la aplicación
+        Intent intent = new Intent(this, menu_about_us.class);
+        startActivity(intent);
     }
 
     private void ventanaprofile() {
-        // Código para abrir el perfil
+        Intent intent = new Intent(this, menu_profile.class);
+        startActivity(intent);
     }
+
 }
