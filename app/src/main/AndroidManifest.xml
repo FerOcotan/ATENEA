@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Atenea"
         tools:targetApi="31">
+
         <activity
             android:name=".menu_settings"
             android:exported="false" />
