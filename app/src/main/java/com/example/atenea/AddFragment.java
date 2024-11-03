@@ -9,6 +9,11 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 
 public class AddFragment extends Fragment {
@@ -41,6 +46,8 @@ public class AddFragment extends Fragment {
                         ventanasettings();
                         return true;
                     } else if (item.getItemId() == R.id.op5) {
+
+
                         ventanaexit();
                         return true;
                     }
@@ -73,6 +80,9 @@ public class AddFragment extends Fragment {
         startActivity(intent);
     }
     public void ventanaexit() {
-        requireActivity().finish();
+
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(requireActivity(), welcome.class);
+        startActivity(intent);
     }
 }

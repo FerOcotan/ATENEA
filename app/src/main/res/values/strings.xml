@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Atenea</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="client_id" translatable="false">243010325269-r6bcaulkam1ae6bjhau8l4tmv4g3g4tr.apps.googleusercontent.com</string>
 </resources>
