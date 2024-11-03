@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "243010325269",
+    "project_id": "atenea-5f946",
+    "storage_bucket": "atenea-5f946.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243010325269:android:1e7d056c96ea625f5af71c",
+        "android_client_info": {
+          "package_name": "com.example.atenea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243010325269-oj6mjui3rkl1ped190544v1matmc75r9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.atenea",
+            "certificate_hash": "10fdb776001cf4f29be2a90e9c249eaeaa8c8894"
+          }
+        },
+        {
+          "client_id": "243010325269-r6bcaulkam1ae6bjhau8l4tmv4g3g4tr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJCFzEL-4ERZxKkYLB4YV-Dq79OP6fiIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243010325269-r6bcaulkam1ae6bjhau8l4tmv4g3g4tr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

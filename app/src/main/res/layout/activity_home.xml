@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- LinearLayout centrado -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="95dp"
@@ -72,7 +72,7 @@
             app:shapeAppearanceOverlay="@style/round_button" />
     </LinearLayout>
 
-    <!-- BottomAppBar con configuración para el FAB en el centro -->
+
 
     <FrameLayout
         android:id="@+id/frame_layout"
@@ -91,8 +91,7 @@
         app:hideOnScroll="true">
     </com.google.android.material.bottomappbar.BottomAppBar>
 
-    <!-- FloatingActionButton -->
-    <!-- FloatingActionButton en el centro del BottomAppBar -->
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,7 +103,6 @@
         app:maxImageSize="40dp"
         app:tint="@color/lavender" />
 
-    <!-- BottomNavigationView, situado fuera del BottomAppBar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="wrap_content"
