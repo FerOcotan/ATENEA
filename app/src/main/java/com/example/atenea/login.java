@@ -157,7 +157,7 @@ public class login extends AppCompatActivity {
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ventana2 = new Intent(login.this, login.class);
+                Intent ventana2 = new Intent(login.this, register.class);
                 startActivity(ventana2);
             }
         });
@@ -181,7 +181,7 @@ public class login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
 
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(), home.class);
                                     startActivity(intent);
 
                                 }else {

@@ -23,16 +23,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Configurar GoogleSignInOptions
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id)) // Asegúrate de que este ID es correcto
+                .requestIdToken(getString(R.string.default_web_client_id)) //
                 .requestEmail()
                 .build();
 
-        // Inicializar GoogleSignInClient
+
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        // Configurar botón de logout
+
         logout = findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
