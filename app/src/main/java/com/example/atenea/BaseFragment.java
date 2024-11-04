@@ -8,18 +8,25 @@ import android.widget.PopupMenu;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public abstract class BaseFragment extends Fragment {
 
     protected GoogleSignInClient mGoogleSignInClient;
+    private ShapeableImageView buttonProfile;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //PARA CARGAR LA IMAGEN
+        buttonProfile = view.findViewById(R.id.buttonprofile);
 
         // Configuración de GoogleSignInClient
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -27,7 +34,24 @@ public abstract class BaseFragment extends Fragment {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), gso);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        // Carga la imagen de perfil en el ShapeableImageView
+        String photoUrl = user.getPhotoUrl() != null ? user.getPhotoUrl().toString() : null;
+        if (photoUrl != null) {
+            Glide.with(this)
+                    .load(photoUrl)
+                    .placeholder(R.drawable.profileimage) // Imagen de placeholder
+                    .error(R.drawable.profileimage) // Imagen de error
+                    .into(buttonProfile);
+        } else {
+            // Si no hay URL de imagen, usa la imagen por defecto
+            buttonProfile.setImageResource(R.drawable.profileimage);
+        }
+
     }
+
 
     protected void setupProfileMenu(ImageView menuIcon) {
         if (menuIcon != null) {

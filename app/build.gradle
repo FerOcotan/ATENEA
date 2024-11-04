@@ -61,6 +61,10 @@ dependencies {
     implementation(libs.play.services.auth)
     implementation libs.play.services.auth.v2070
 
+    implementation libs.glide
+    annotationProcessor libs.compiler
+
+
 }
 
 apply plugin: 'com.google.gms.google-services'
