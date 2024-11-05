@@ -56,7 +56,7 @@
 
             <TextView
                 android:id="@+id/textView11"
-                android:layout_width="118dp"
+                android:layout_width="317dp"
                 android:layout_height="39dp"
                 android:text="¡Welcome back, have a pleasure day!"
                 android:textColor="#A0252525" />
@@ -73,23 +73,21 @@
     </LinearLayout>
 
 
-
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="877dp" />
+        android:layout_height="match_parent" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/lavender"
         app:fabAlignmentMode="center"
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="30dp"
-        app:hideOnScroll="true">
-    </com.google.android.material.bottomappbar.BottomAppBar>
+        app:hideOnScroll="true"></com.google.android.material.bottomappbar.BottomAppBar>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -104,11 +102,12 @@
         app:tint="@color/lavender" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+
         android:id="@+id/bottomNavigationView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginEnd="20dp"
+
         android:background="@android:color/transparent"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu" />

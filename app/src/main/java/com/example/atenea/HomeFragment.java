@@ -31,7 +31,7 @@ public class HomeFragment extends BaseFragment {
             String displayName = user.getDisplayName();
             if (displayName != null && !displayName.isEmpty()) {
                 // Divide el nombre completo y toma solo el primer nombre
-                String firstName = displayName.split(" ")[0];
+                String firstName = displayName.split(" ")[0].toUpperCase();
                 // Asigna el primer nombre al TextView
                 TextViewUserName.setText(firstName);
             } else {
