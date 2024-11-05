@@ -7,11 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".menu_about_us">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Estas en about us"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="382dp" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This app was created to make life easier."
+            android:textSize="16sp"
+            android:paddingBottom="8dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/team_photo"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center" />
+
+        <!-- Puedes añadir secciones para misión, valores, etc. -->
+
+    </LinearLayout>
 </LinearLayout>
