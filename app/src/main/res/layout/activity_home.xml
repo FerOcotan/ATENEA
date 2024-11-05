@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lavender"
+    android:background="#E9E9E9"
     tools:context=".home">
 
     <Space
@@ -76,40 +76,53 @@
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#E9E9E9"  />
 
     <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/bottomAppBar"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/lavender"
+        android:backgroundTint="@color/white"
+
         app:fabAlignmentMode="center"
+        app:fabAnchorMode="cradle"
         app:fabCradleMargin="10dp"
-        app:fabCradleRoundedCornerRadius="30dp"
-        app:hideOnScroll="true"></com.google.android.material.bottomappbar.BottomAppBar>
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="10dp"
+
+        >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNavigationView"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="bottom"
+            app:labelVisibilityMode="labeled"
+            android:background="@android:color/transparent"
+            app:menu="@menu/bottom_menu"
+
+            />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/verde"
-        android:backgroundTint="@color/verde"
+        android:backgroundTint="@color/lavender"
         android:src="@drawable/baseline_qr_code_scanner_24"
         app:layout_anchor="@id/bottomAppBar"
-        app:layout_anchorGravity="center"
         app:maxImageSize="40dp"
-        app:tint="@color/lavender" />
+        app:tint="@color/verde"
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+        />
 
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
 
-        android:background="@android:color/transparent"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
