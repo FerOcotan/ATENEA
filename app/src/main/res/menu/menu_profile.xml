@@ -21,7 +21,7 @@
         app:showAsAction="never"
         android:orderInCategory="4"/>
     <item android:id="@+id/op5"
-        android:title="Exit"
+        android:title="Log out"
         app:showAsAction="never"
         android:orderInCategory="100"/>
 
