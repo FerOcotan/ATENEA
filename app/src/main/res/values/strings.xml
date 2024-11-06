@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     
     <string name="client_id" translatable="false">243010325269-r6bcaulkam1ae6bjhau8l4tmv4g3g4tr.apps.googleusercontent.com</string>
+    <string-array name="class_options">class_options
+
+        <item>Dev App Moviles "A"</item>
+        <item>Dev App Moviles "B"</item>
+        <item>Dev App Moviles "C"</item>
+
+    </string-array>
 </resources>

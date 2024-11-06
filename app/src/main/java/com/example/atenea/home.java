@@ -1,10 +1,17 @@
 package com.example.atenea;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 
 
@@ -55,69 +62,24 @@ public class home extends AppCompatActivity {
 
         });
 
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomDialog();
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        ImageView menuprofile2 = findViewById(R.id.buttonprofile);
 
 
-        menuprofile2.setOnClickListener(v -> {PopupMenu popup = new PopupMenu(this, v);
 
-            popup.getMenuInflater().inflate(R.menu.menu_profile, popup.getMenu());
-
-
-            popup.setOnMenuItemClickListener(item -> {
-                if (item.getItemId() == R.id.op1) {
-                    ventanaprofile();
-                    return true;
-                } else if (item.getItemId() == R.id.op2) {
-                    ventanaabout();
-                    return true;
-                } else if (item.getItemId() == R.id.op3) {
-                    ventanahelp();
-                    return true;
-                } else if (item.getItemId() == R.id.op4) {
-                    ventanasettings();
-                    return true;
-                } else if (item.getItemId() == R.id.op5) {
-                    ventanaexit();
-                    return true;
-                }
-      return false;
-            });
-
-            popup.show();
-        });
     }
 
-//ABRA QUE VALIDAR LA SALIDA CON EL FINISH MAYBE
-    private void ventanaexit() {
-
-        finish();
-    }
-
-    private void ventanasettings() {
-        Intent intent = new Intent(this, menu_settings.class);
-        startActivity(intent);
-    }
-
-    private void ventanahelp() {
-        Intent intent = new Intent(this, menu_help.class);
-        startActivity(intent);
-    }
-
-    private void ventanaabout() {
-        Intent intent = new Intent(this, menu_about_us.class);
-        startActivity(intent);
-    }
-
-    private void ventanaprofile() {
-        Intent intent = new Intent(this, menu_profile.class);
-        startActivity(intent);
-    }
 
     private  void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -125,6 +87,30 @@ public class home extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame_layout,fragment);
         fragmentTransaction.commit();
     }
+
+    private void showBottomDialog(){
+
+    final Dialog dialog = new Dialog(this);
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+    dialog.setContentView(R.layout.fragment_scanfragment);
+
+    ImageView cancelbutton = dialog.findViewById(R.id.cancel_button);
+    cancelbutton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            dialog.dismiss();
+        }
+    });
+
+    dialog.show();
+    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+    dialog.getWindow().setGravity(Gravity.BOTTOM);
+
+
+    }
+
 
 
 }

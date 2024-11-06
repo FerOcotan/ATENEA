@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".menu_help">
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estas en ayuda"
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="378dp" />
+        android:text="Help"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Here you can find information to help you use the app."
+        android:textSize="16sp" />
+
 </LinearLayout>
