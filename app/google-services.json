@@ -14,11 +14,27 @@
       },
       "oauth_client": [
         {
-          "client_id": "243010325269-oj6mjui3rkl1ped190544v1matmc75r9.apps.googleusercontent.com",
+          "client_id": "243010325269-2bv91g4c3imamt3n02l8ofi0d86ve5j2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.atenea",
+            "certificate_hash": "d001c55dfaf3f8db47f074a4e613efcc6e3068b6"
+          }
+        },
+        {
+          "client_id": "243010325269-cout175a2bv5vqjaj29gaie9k9hnl87d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.atenea",
             "certificate_hash": "10fdb776001cf4f29be2a90e9c249eaeaa8c8894"
+          }
+        },
+        {
+          "client_id": "243010325269-oj6mjui3rkl1ped190544v1matmc75r9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.atenea",
+            "certificate_hash": "69d3e074fa229969e1a9049bf63da24b21eb3ff7"
           }
         },
         {
