@@ -3,15 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menu_profile">
+    android:padding="16dp"
+    tools:context=".HomeFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/buttonprofile"
+        android:layout_width="66dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profileimage"
+        app:shapeAppearanceOverlay="@style/round_button"  />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView10"
+        android:layout_width="118dp"
+        android:layout_height="50dp"
+        android:text="POUL"
+        android:textSize="34sp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estas en profile"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="413dp" />
+        android:text="user.email@example.com"
+        android:textSize="16sp" />
+
+    <!-- Botón para editar perfil -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:layout_marginTop="24dp" />
+
+
+
+    <!-- Añadir más detalles de usuario si es necesario -->
+
+
 </LinearLayout>
