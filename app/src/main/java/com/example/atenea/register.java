@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -70,7 +70,7 @@ public class register extends AppCompatActivity {
                 }else {
                     auth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                        public void onComplete(Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(register.this, "Registro Existoso", Toast.LENGTH_SHORT).show();
                             }else {

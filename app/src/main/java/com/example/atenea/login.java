@@ -10,8 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -81,7 +80,7 @@ public class login extends AppCompatActivity {
         //LOGEON CON FIREBASE GOOGLE
         GoogleSignInButton = findViewById(R.id.googleSignInButton);
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.client_id))
                 .requestEmail()
                 .build();
 
@@ -132,7 +131,7 @@ public class login extends AppCompatActivity {
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
-                                        public void onFailure(@NonNull Exception e) {
+                                        public void onFailure( Exception e) {
                                             Toast.makeText(login.this, "Fallo en el inicio de sesión", Toast.LENGTH_SHORT).show();
                                         }
                                     });
@@ -167,7 +166,7 @@ public class login extends AppCompatActivity {
 
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1234){
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
@@ -178,7 +177,7 @@ public class login extends AppCompatActivity {
                 FirebaseAuth.getInstance().signInWithCredential(credential)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
+                            public void onComplete( Task<AuthResult> task) {
                                 if (task.isSuccessful()){
 
                                     Intent intent = new Intent(getApplicationContext(), home.class);
