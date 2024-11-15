@@ -21,8 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends BaseFragment {
+
+
     //XML donde se declara el nombre a cambiarse
     private TextView TextViewUserName;
+
     private RecyclerView recyclerView;
     private CardAdapter adapter;
 

@@ -47,6 +47,7 @@
             >
 
             <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/buttonprofile"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -56,6 +57,7 @@
                 app:shapeAppearanceOverlay="@style/round_button" />
 
             <TextView
+                android:id="@+id/TextViewUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -67,6 +69,7 @@
                 />
 
             <TextView
+                android:id="@+id/TextViewUserEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="poulmodb@gmail.com"

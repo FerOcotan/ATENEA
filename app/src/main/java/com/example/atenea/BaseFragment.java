@@ -23,10 +23,12 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         //PARA CARGAR LA IMAGEN
         buttonProfile = view.findViewById(R.id.buttonprofile);
 
         // Configuración de GoogleSignInClient
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.client_id))
                 .requestEmail()
