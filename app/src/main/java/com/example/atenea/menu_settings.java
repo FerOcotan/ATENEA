@@ -1,6 +1,10 @@
 package com.example.atenea;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -24,7 +28,10 @@ public class menu_settings extends AppCompatActivity {
     private ShapeableImageView buttonProfile;
     private TextView TextViewUserName;
     private TextView TextViewUserEmail;
-
+    private ImageView backButton;
+    private RelativeLayout AboutLayout;
+    private RelativeLayout Helplayaout;
+    private RelativeLayout Exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,43 @@ public class menu_settings extends AppCompatActivity {
         buttonProfile = findViewById(R.id.buttonprofile);
         TextViewUserName = findViewById(R.id.TextViewUserName);
         TextViewUserEmail = findViewById(R.id.TextViewUserEmail);
+        backButton = findViewById(R.id.backButton);
+        AboutLayout = findViewById(R.id.aboutLayout);
+        Helplayaout = findViewById(R.id.helplayaout);
+        Exit = findViewById(R.id.exitlayaout);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Regresa a la actividad anterior
+                onBackPressed();
+            }
+        });
+
+
+        Exit.setOnClickListener(v -> {
+            ventanaexit();
+        });
+
+
+
+        // lclic para redirigir a la actividad
+        AboutLayout.setOnClickListener(v -> {
+            // a la actividad AboutActivity
+            Intent intent = new Intent(menu_settings.this, menu_about_us.class);
+            startActivity(intent);
+        });
+
+        //   clic para redirigir a la actividad
+        Helplayaout.setOnClickListener(v -> {
+            //a la actividad menu_help
+            Intent intent = new Intent(menu_settings.this, menu_help.class);
+            startActivity(intent);
+        });
+
+
+
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.client_id))
@@ -64,7 +108,7 @@ public class menu_settings extends AppCompatActivity {
         if (user != null) {
             // Si el usuario está logueado, obtiene el nombre
 
-         
+
             String displayName = user.getDisplayName();
             if (displayName != null && !displayName.isEmpty()) {
                 // Divide el nombre completo y toma solo el primer nombre
@@ -101,6 +145,20 @@ public class menu_settings extends AppCompatActivity {
 
 
 
+
+        });
+
+
+
+
+    }
+
+    private void ventanaexit() {
+        FirebaseAuth.getInstance().signOut();
+        mGoogleSignInClient.signOut().addOnCompleteListener(this, task -> {
+            Intent intent = new Intent(this, welcome.class);
+            startActivity(intent);
+            this.finish();
         });
     }
 }

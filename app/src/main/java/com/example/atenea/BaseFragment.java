@@ -53,6 +53,8 @@ public abstract class BaseFragment extends Fragment {
     }
 
 
+
+
     protected void setupProfileMenu(ImageView menuIcon) {
         if (menuIcon != null) {
             menuIcon.setOnClickListener(v -> {
@@ -60,20 +62,8 @@ public abstract class BaseFragment extends Fragment {
                 popup.getMenuInflater().inflate(R.menu.menu_profile, popup.getMenu());
 
                 popup.setOnMenuItemClickListener(item -> {
-                    if (item.getItemId() == R.id.op1) {
-                        startActivity(new Intent(requireActivity(), menu_profile.class));
-                        return true;
-                    } else if (item.getItemId() == R.id.op2) {
-                        startActivity(new Intent(requireActivity(), menu_about_us.class));
-                        return true;
-                    } else if (item.getItemId() == R.id.op3) {
-                        startActivity(new Intent(requireActivity(), menu_help.class));
-                        return true;
-                    } else if (item.getItemId() == R.id.op4) {
+                    if (item.getItemId() == R.id.op4) {
                         startActivity(new Intent(requireActivity(), menu_settings.class));
-                        return true;
-                    } else if (item.getItemId() == R.id.op5) {
-                        ventanaexit();
                         return true;
                     }
                     return false;
@@ -83,12 +73,5 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    private void ventanaexit() {
-        FirebaseAuth.getInstance().signOut();
-        mGoogleSignInClient.signOut().addOnCompleteListener(requireActivity(), task -> {
-            Intent intent = new Intent(requireActivity(), welcome.class);
-            startActivity(intent);
-            requireActivity().finish();
-        });
-    }
+
 }
