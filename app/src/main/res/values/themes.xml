@@ -14,7 +14,9 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
 
+
     </style>
+
 
     <style name="DialogAnimation">
 
@@ -23,4 +25,12 @@
     </style>
 
     <style name="Theme.Atenea" parent="Base.Theme.Atenea" />
+
+
+    <style name="nightModeSwitch" parent="Theme.AppCompat.Light">
+        <item name= "colorControlActivated"  > @color/night_mode</item>
+        <item name= "colorSwitchThumbNormal">#FFFFFF</item>
+        <item name= "android:colorForeground">#000000</item>
+    </style>
+
 </resources>

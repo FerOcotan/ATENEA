@@ -76,6 +76,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/profileimage"
             app:shapeAppearanceOverlay="@style/round_button" />
+
     </LinearLayout>
 
     <!-- Nueva sección de contenido adicional -->
