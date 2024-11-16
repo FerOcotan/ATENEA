@@ -30,6 +30,7 @@ public class menu_settings extends AppCompatActivity {
     private TextView TextViewUserEmail;
     private ImageView backButton;
     private RelativeLayout AboutLayout;
+    private RelativeLayout Fqs;
     private RelativeLayout Helplayaout;
     private RelativeLayout Exit;
 
@@ -50,7 +51,7 @@ public class menu_settings extends AppCompatActivity {
         AboutLayout = findViewById(R.id.aboutLayout);
         Helplayaout = findViewById(R.id.helplayaout);
         Exit = findViewById(R.id.exitlayaout);
-
+        Fqs = findViewById(R.id.faqss);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +66,12 @@ public class menu_settings extends AppCompatActivity {
             ventanaexit();
         });
 
-
+// lclic para redirigir a la actividad
+        Fqs.setOnClickListener(v -> {
+            // a la actividad AboutActivity
+            Intent intent = new Intent(menu_settings.this, faqs.class);
+            startActivity(intent);
+        });
 
         // lclic para redirigir a la actividad
         AboutLayout.setOnClickListener(v -> {
