@@ -51,6 +51,7 @@ public class menu_settings extends AppCompatActivity {
         Helplayaout = findViewById(R.id.helplayaout);
         Exit = findViewById(R.id.exitlayaout);
 
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,17 +108,24 @@ public class menu_settings extends AppCompatActivity {
 
         if (user != null) {
             // Si el usuario está logueado, obtiene el nombre
-
-
             String displayName = user.getDisplayName();
+
             if (displayName != null && !displayName.isEmpty()) {
                 // Divide el nombre completo y toma solo el primer nombre
                 String firstName = displayName.split(" ")[0];
                 // Asigna el primer nombre al TextView
                 TextViewUserName.setText(firstName);
             } else {
-                // Si el nombre está vacío, un texto por defecto
-                TextViewUserName.setText("FRIEND");
+                // Si no hay un displayName, utiliza el email
+                String email = user.getEmail();
+                if (email != null && email.contains("@")) {
+                    // Obtiene la parte antes del @
+                    String firstName = email.split("@")[0];
+                    TextViewUserName.setText(firstName);
+                } else {
+                    // Si no hay correo, establece un texto por defecto
+                    TextViewUserName.setText("Usuario");
+                }
             }
         } else {
             // Si no hay usuario logueado, un texto por defecto
