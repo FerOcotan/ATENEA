@@ -10,26 +10,112 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class AddFragment extends BaseFragment {
 
+
+    RecyclerView recyclerView;
+    List<DataClass> dataList;
+    DatabaseReference databaseReference;
+    ValueEventListener eventListener;
+    MyAdapter adapter;
+    SearchView searchView;
+
+
+
+
+
     private View viewCreateSubject, viewListSubject;
     private EditText codigomateria,nombremateria,participantes,seccion,horainicio,horasalida,creador;
     Button btnagregarmateria;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add, container, false);
 
+
+
+        //vista de recycler //
+        recyclerView = view.findViewById(R.id.recyclerView);
+        searchView = view.findViewById(R.id.search);
+        searchView.clearFocus();
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(requireContext(),1);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setCancelable(false);
+        builder.setView(R.layout.progress_layout);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        dataList = new ArrayList<>();
+
+        adapter = new MyAdapter(requireContext(), dataList);
+        recyclerView.setAdapter(adapter);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("materia");
+        dialog.show();
+
+        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                dataList.clear();
+                for (DataSnapshot itemSnapshot: snapshot.getChildren()){
+                    DataClass dataClass = itemSnapshot.getValue(DataClass.class);
+                    dataClass.setKey(itemSnapshot.getKey());
+                    dataList.add(dataClass);
+                }
+                adapter.notifyDataSetChanged();
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                dialog.dismiss();
+
+            }
+        });
+
+        //vista de recycler //
+
+
+        //vista de buscador //
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchList(newText);
+                return true;
+            }
+        });
+        //vista de buscador //
 
 
         codigomateria = (EditText) view.findViewById(R.id.codigomateria);
@@ -116,6 +202,23 @@ public class AddFragment extends BaseFragment {
 
 
     }
+
+    //vista de buscador //
+
+    public void searchList(String text){
+        ArrayList<DataClass> searchList = new ArrayList<>();
+        for (DataClass dataClass: dataList){
+            if (dataClass.getNombre_materia().toLowerCase().contains(text.toLowerCase())){
+                searchList.add(dataClass);
+            }
+        }
+        adapter.searchDataList(searchList);
+    }
+
+
+    //vista de buscador //
+
+
     private void showCreateSubjectView() {
         viewCreateSubject.setVisibility(View.VISIBLE);
         viewListSubject.setVisibility(View.GONE);

@@ -15,23 +15,7 @@
         android:layout_height="95dp"
         android:padding="10dp">
 
-        <!-- Buscador a la izquierda -->
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="264dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/lavender_border"
-            android:queryHint="Buscar..."
-            app:iconifiedByDefault="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/buttonprofile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:searchHintIcon="@null" />
+
 
         <!-- Imagen de perfil a la derecha -->
         <com.google.android.material.imageview.ShapeableImageView
@@ -88,11 +72,11 @@
 
         <!-- FrameLayout para alternar entre las vistas -->
         <FrameLayout
-            android:background="@drawable/lavender_border"
             android:id="@+id/container_views"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+
             android:padding="16dp">
 
             <!-- Vista de Crear Materia -->
@@ -107,122 +91,128 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Crear Materia"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
                     android:layout_gravity="center"
-                    android:textColor="@color/Verdemenuprimary" />
+                    android:text="Crear Materia"
+                    android:textColor="@color/Verdemenuprimary"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <!-- Código de materia -->
                 <EditText
+                    android:id="@+id/creador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/creador"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
                     android:hint="Docente"
                     android:inputType="text"
-                    android:layout_marginTop="10dp"
                     android:padding="12dp"
-                    android:background="@drawable/lavender_border"
-                    android:textColor="@color/lavender"
-                    android:gravity="start|center_vertical" />
+                    android:textColor="@color/black" />
+
                 <EditText
 
+                    android:id="@+id/codigomateria"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/codigomateria"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
                     android:hint="Ingrese el código de materia"
                     android:inputType="text"
-                    android:layout_marginTop="10dp"
                     android:padding="12dp"
-                    android:background="@drawable/lavender_border"
-                    android:textColor="@color/lavender" />
+                    android:textColor="@color/black" />
 
                 <!-- Nombre de materia -->
                 <EditText
+                    android:id="@+id/nombremateria"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nombremateria"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
                     android:hint="Ingrese el nombre de materia"
                     android:inputType="text"
-                    android:layout_marginTop="10dp"
                     android:padding="12dp"
-                    android:background="@drawable/lavender_border"
-                    android:textColor="@color/lavender" />
+                    android:textColor="@color/black" />
 
                 <!-- Número de participantes -->
                 <EditText
+                    android:id="@+id/participantes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/participantes"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
                     android:hint="Número de participantes"
                     android:inputType="number"
-                    android:layout_marginTop="10dp"
                     android:padding="12dp"
-                    android:background="@drawable/lavender_border"
-                    android:textColor="@color/lavender" />
+                    android:textColor="@color/black" />
 
                 <!-- Sección -->
                 <EditText
+                    android:id="@+id/seccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/seccion"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
                     android:hint="Sección"
                     android:inputType="text"
-                    android:layout_marginTop="10dp"
                     android:padding="12dp"
-                    android:background="@drawable/lavender_border"
-                    android:textColor="@color/lavender" />
+                    android:textColor="@color/black" />
 
                 <!-- Horarios -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
                     android:weightSum="2">
 
                     <EditText
+                        android:id="@+id/horainicio"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:id="@+id/horainicio"
+                        android:background="@drawable/lavender_border"
                         android:hint="Hora inicio"
                         android:inputType="datetime"
                         android:padding="12dp"
-                        android:background="@drawable/lavender_border"
-                        android:textColor="@color/lavender" />
+                        android:textColor="@color/black" />
 
                     <EditText
+                        android:id="@+id/horasalida"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:id="@+id/horasalida"
+                        android:background="@drawable/lavender_border"
                         android:hint="Hora salida"
                         android:inputType="datetime"
                         android:padding="12dp"
-                        android:layout_marginStart="10dp"
-                        android:background="@drawable/lavender_border"
-                        android:textColor="@color/lavender" />
+                        android:textColor="@color/black" />
 
 
                 </LinearLayout>
 
                 <!-- Botón Guardar -->
                 <Button
+                    android:id="@+id/btnagregarmateria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/btnagregarmateria"
-                    android:text="CREAR MATERIA"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:padding="12dp"
                     android:backgroundTint="@color/BlancoHueso"
+                    android:padding="12dp"
+                    android:text="CREAR MATERIA"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
             </LinearLayout>
 
 
             <!-- Vista de Lista de Materias -->
+
+
+            <!-- Buscador a la izquierda -->
+
+
             <LinearLayout
                 android:id="@+id/view_list_subject"
                 android:layout_width="match_parent"
@@ -233,17 +223,37 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:text="List of Subjects"
                     android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center" />
+                    android:textStyle="bold" />
+
+
+                <SearchView
+                    android:id="@+id/search"
+                    android:layout_width="264dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/lavender_border"
+                    android:queryHint="Buscar..."
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/buttonprofile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:searchHintIcon="@null" />
 
                 <!--  agregar una RecyclerView o una lista de prueba -->
-                <TextView
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Subject 1: Mathematics\nSubject 2: Science\n..."
-                    android:padding="10dp" />
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/search"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="vertical" />
 
             </LinearLayout>
         </FrameLayout>
