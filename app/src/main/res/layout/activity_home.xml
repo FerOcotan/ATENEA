@@ -48,14 +48,16 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
+        style="@style/CustomBottomNavStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="66dp"
         android:layout_gravity="bottom"
         android:background="@android:color/white"
+
         android:paddingBottom="0dp"
-
-
         app:itemIconSize="30dp"
+        app:itemIconTint="@color/Verdemenuprimary"
+        app:itemTextColor="@color/Verdemenuprimary"
         app:menu="@menu/bottom_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
