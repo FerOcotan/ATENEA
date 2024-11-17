@@ -14,7 +14,7 @@
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="580dp"
+        android:layout_height="match_parent"
         android:background="#FFFFFF" />
 
 
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="#E9E9E9"
+
         app:fabAlignmentMode="center"
         app:fabAnchorMode="cradle"
         app:fabCradleMargin="10dp"

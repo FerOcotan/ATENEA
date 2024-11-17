@@ -8,27 +8,44 @@
     android:paddingTop="15dp"
     tools:context=".HomeFragment">
 
-    <!-- Contenedor para la imagen de perfil en la parte superior derecha -->
+    <!-- Sección superior con el perfil a la derecha y el buscador a la izquierda -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="95dp">
+        android:layout_height="95dp"
+        android:padding="10dp">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="30dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            app:layout_constraintEnd_toEndOf="parent">
+        <!-- Buscador a la izquierda -->
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="264dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/lavender_border"
+            android:queryHint="Buscar..."
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonprofile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:searchHintIcon="@null" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/buttonprofile"
-                android:layout_width="66dp"
-                android:layout_height="64dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/profileimage"
-                app:shapeAppearanceOverlay="@style/round_button" />
-        </LinearLayout>
+        <!-- Imagen de perfil a la derecha -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/buttonprofile"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_marginEnd="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profileimage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444"
+            app:shapeAppearanceOverlay="@style/round_button" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Contenedor para los elementos del formulario -->
