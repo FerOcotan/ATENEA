@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailcodigo"
+            android:text="codigo"
+            android:layout_marginTop="14dp"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/lavender"/>
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:id="@+id/detailImage"
+            android:padding="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ateneablack"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="Nombre materia"
+            android:layout_gravity="center"
+            android:id="@+id/detailnombre"
+            android:textSize="18sp"
+            android:textColor="@color/lavender"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="Seccion"
+            android:layout_gravity="center"
+            android:id="@+id/detailseccion"
+            android:textSize="18sp"
+            android:textColor="@color/lavender"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="participantes"
+            android:layout_gravity="center"
+            android:id="@+id/detailparticipantes"
+            android:textSize="18sp"
+            android:textColor="@color/lavender"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="hora inicio"
+            android:layout_gravity="center"
+            android:id="@+id/detailinicio"
+            android:textSize="18sp"
+            android:textColor="@color/lavender"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="hora salida"
+            android:layout_gravity="center"
+            android:id="@+id/detailsalida"
+            android:textSize="18sp"
+            android:textColor="@color/lavender"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="Docente"
+            android:layout_gravity="center"
+            android:id="@+id/detaildocente"
+            android:textSize="18sp"
+            android:textColor="@color/lavender"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Eliminar"
+            android:backgroundTint="@color/Verdeoscuromenu"
+            android:id="@+id/deletebutton"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_margin="10dp"
+            app:cornerRadius = "20dp"/>
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

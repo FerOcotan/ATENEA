@@ -47,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder>{
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, menu_settings.class);
+                Intent intent = new Intent(context, DetailActivity.class);
                 intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getDataImage());
                 intent.putExtra("codigo", dataList.get(holder.getAdapterPosition()).getCodigo());
                 intent.putExtra("nombre_materia", dataList.get(holder.getAdapterPosition()).getNombre_materia());
