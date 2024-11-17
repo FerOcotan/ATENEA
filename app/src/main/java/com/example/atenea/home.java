@@ -45,7 +45,8 @@ public class home extends AppCompatActivity {
 
         replaceFragment(new HomeFragment());
         binding.bottomNavigationView.setBackground(null);
-
+        binding.bottomNavigationView.setOnApplyWindowInsetsListener(null);
+        binding.bottomNavigationView.setPadding(0, 0, 0, 0);
 
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
