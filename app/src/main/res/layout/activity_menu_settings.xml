@@ -79,21 +79,7 @@
                 android:textColor="#ccffffff"
                 />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:paddingStart="30dp"
-                android:layout_gravity="center"
-                android:background="@drawable/round2"
-                android:text="Edit Profile"
-                android:textAllCaps="false"
-                android:textColor="@color/BlancoHueso"
-                android:paddingEnd="30dp"
-
-                />
-
-        <LinearLayout
+            <LinearLayout
             android:background="@drawable/roundbuttonmenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,46 +93,10 @@
             <!-- Dark  Night -->
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:id="@+id/nightModeIcon"
-                    android:layout_width="40dp"
-                    android:background="@drawable/circulomenu"
-                    android:layout_height="40dp"
-                    android:src="@drawable/baseline_nightlight_24"
-                    android:padding="12dp"
-                    />
-
-                <TextView
-                    android:layout_marginStart="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Night Mode"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_toEndOf="@+id/nightModeIcon"
-
-                    />
-
-                <androidx.appcompat.widget.SwitchCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:switchMinWidth="50dp"
-                    android:theme="@style/nightModeSwitch" />
-
-            </RelativeLayout>
-
             <!-- Camera   -->
 
             <RelativeLayout
-                android:layout_marginTop="10dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
