@@ -17,6 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,14 +41,15 @@ public class AddFragment extends BaseFragment {
     MyAdapter adapter;
     SearchView searchView;
 
-
-
-
-
     private View viewCreateSubject, viewListSubject;
     private EditText codigomateria,nombremateria,participantes,seccion,horainicio,horasalida,creador;
     Button btnagregarmateria;
 
+
+    //obtener datos de user para escribir//
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    String userId = auth.getCurrentUser().getUid(); // Obtener UID del usuario actual
+    //obtener datos de user para escribir//
 
 
     @Override
@@ -75,10 +77,13 @@ public class AddFragment extends BaseFragment {
         adapter = new MyAdapter(requireContext(), dataList);
         recyclerView.setAdapter(adapter);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("materia");
+        //se modifica para que segun el usuario pueda escribir//
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference materiasRef = database.getReference("users").child(userId).child("materias");
+        //se modifica para que segun el usuario pueda escribir// = FirebaseDatabase.getInstance().getReference("materia");
         dialog.show();
 
-        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+        eventListener = materiasRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 dataList.clear();
@@ -243,8 +248,11 @@ public class AddFragment extends BaseFragment {
         quoteHashmap.put("hora_salida",horasali);
         quoteHashmap.put("carnet_creador",creator);
 
+
+        //se modifica para que segun el usuario pueda escribir//
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference materiasRef = database.getReference("materia");
+        DatabaseReference materiasRef = database.getReference("users").child(userId).child("materias");
+        //se modifica para que segun el usuario pueda escribir//
 
         String key = materiasRef.push().getKey();
         quoteHashmap.put("key",key);

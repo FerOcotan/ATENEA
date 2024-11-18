@@ -51,6 +51,9 @@
             android:name=".faqs"
             android:exported="false" />
         <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".splashscreen"
             android:exported="true">
             <intent-filter>
