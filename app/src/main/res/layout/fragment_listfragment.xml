@@ -14,23 +14,7 @@
         android:layout_height="95dp"
         android:padding="10dp">
 
-        <!-- Buscador a la izquierda -->
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="264dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/lavender_border"
-            android:queryHint="Buscar..."
-            app:iconifiedByDefault="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/buttonprofile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:searchHintIcon="@null" />
+
 
         <!-- Imagen de perfil a la derecha -->
         <com.google.android.material.imageview.ShapeableImageView
@@ -48,107 +32,180 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Contenedor para los elementos del formulario -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- Contenedor principal para los botones y vistas de contenido -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/buttonprofile"
-        android:layout_marginTop="16dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingTop="90dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:paddingTop="120dp"
         >
 
-        <!-- Título -->
-        <TextView
-            android:id="@+id/tv_create_list"
-            android:layout_width="wrap_content"
+        <!-- Botones para alternar entre las vistas -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            android:text="Create List"
-            android:textSize="24sp"
-            android:textColor="#000"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            <Button
+                android:id="@+id/button_create_subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CREATE LIST"
+                android:backgroundTint="@color/Verdemenuprimary"
+                android:textColor="@android:color/black" />
 
-        <!-- Etiqueta de Universidad -->
+            <Button
+                android:id="@+id/button_list_subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="VIEW LISTS"
+                android:backgroundTint="@color/Verdesemiclaromenu"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
 
-        <!-- Spinner de Universidad -->
-        <TextView
-            android:id="@+id/tv_university_label"
-            android:layout_width="wrap_content"
+        <!-- FrameLayout para alternar entre las vistas -->
+        <FrameLayout
+            android:id="@+id/container_views"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="UNIVERSITY"
-            android:textColor="#000"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_create_list" />
+            android:layout_marginTop="10dp"
 
-        <Spinner
-            android:id="@+id/spinner_university"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_university_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginHorizontal="16dp"/>
+            android:padding="16dp">
 
-        <!-- Nombre de cuenta en un TextView no editable -->
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-     
-            android:textSize="16sp"
-            android:textColor="#888888"
-            android:padding="8dp"
-            android:background="@android:drawable/edit_text"
-            android:editable="false"
-            app:layout_constraintTop_toBottomOf="@id/spinner_university"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"
-            android:layout_marginHorizontal="16dp"/>
+            <!-- Vista de Crear Lista -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_create_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="20dp">
 
-        <!-- Etiqueta de Materia -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="20dp"
+                    android:background="@drawable/lavender_border">
 
-        <!-- Spinner de Materia -->
-        <TextView
-            android:id="@+id/tv_subject_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="144dp"
-            android:layout_marginTop="16dp"
-            android:text="SUBJECT"
-            android:textColor="#000"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+                    <!-- Título -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Generar Lista"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/lavender"/>
 
-        <Spinner
-            android:id="@+id/spinner_subject"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_subject_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginHorizontal="16dp"/>
+                    <!-- Imagen -->
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ateneablack"
+                        android:id="@+id/uploadImage"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="fitXY"/>
 
-        <!-- Botón de Crear -->
-        <Button
-            android:id="@+id/btn_create"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="CREATE"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinner_subject" />
+                    <!-- EditText para universidad -->
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/uni"
+                        android:background="@drawable/lavender_border"
+                        android:layout_marginTop="20dp"
+                        android:padding="16dp"
+                        android:inputType="text"
+                        android:hint="Seleccione la Universidad"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/lavender"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!-- EditText para materia -->
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/materia"
+                        android:background="@drawable/lavender_border"
+                        android:layout_marginTop="20dp"
+                        android:padding="16dp"
+                        android:inputType="text"
+                        android:hint="Seleccione la Materia"
+                        android:gravity="start|center_vertical"
+                        android:textColor="@color/lavender"/>
+
+                    <!-- Botón para guardar -->
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Guardar"
+                        android:backgroundTint="@color/lavender"
+                        android:id="@+id/btnagregarmateria"
+                        android:textSize="18sp"
+                        android:layout_marginTop="20dp"
+                        app:cornerRadius="20dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Vista de Lista de Materias -->
+
+
+            <!-- Buscador a la izquierda -->
+
+
+            <LinearLayout
+                android:id="@+id/view_list_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="List of Subjects"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+                <SearchView
+                    android:id="@+id/search"
+                    android:layout_width="264dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/lavender_border"
+                    android:queryHint="Buscar..."
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/buttonprofile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:searchHintIcon="@null" />
+
+                <!--  agregar una RecyclerView o una lista de prueba -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/search"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="vertical" />
+
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
 
 </FrameLayout>
