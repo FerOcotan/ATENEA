@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -50,8 +51,8 @@ public class listfragment extends BaseFragment {
 
     MyAdapter2 adapter;
 
-    private EditText materia;
-    private Spinner uni;
+
+    private Spinner uni,materia;
 
 
 
@@ -69,8 +70,48 @@ public class listfragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_listfragment, container, false);
 
         uni = (Spinner) view.findViewById(R.id.uni);
-        materia = (EditText) view.findViewById(R.id.materia);
+        materia = (Spinner) view.findViewById(R.id.materia);
         btnagregarmateria = (Button) view.findViewById(R.id.btnagregarmateria);
+
+        // Inicializar Firebase Database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference materiasRef = database.getReference("users").child(userId).child("materias");
+
+        // Lista para almacenar las materias
+        List<String> materiasList = new ArrayList<>();
+        materiasList.add("Selecciona una materia"); // Opción por defecto
+
+        // Configurar adaptador del Spinner
+        ArrayAdapter<String> materiasAdapter = new ArrayAdapter<>(
+                requireContext(), android.R.layout.simple_spinner_item, materiasList);
+        materiasAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        materia.setAdapter(materiasAdapter);
+
+        // Escuchar cambios en la tabla materias de Firebase
+        materiasRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                materiasList.clear();
+                materiasList.add("Selecciona una materia"); // Mantener opción por defecto
+
+                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+                    String nombreMateria = itemSnapshot.child("nombre_materia").getValue(String.class);
+                    if (nombreMateria != null) {
+                        materiasList.add(nombreMateria);
+                    }
+                }
+
+                // Notificar cambios al adaptador
+                materiasAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled( DatabaseError error) {
+                Toast.makeText(requireContext(), "Error al cargar materias", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
 
         btnagregarmateria.setOnClickListener(new View.OnClickListener() {
@@ -78,17 +119,18 @@ public class listfragment extends BaseFragment {
             public void onClick(View v) {
                 String unii = uni.getSelectedItem().toString();
 
-                String materiaa = materia.getText().toString();
+                String materiaa = materia.getSelectedItem().toString();
 
 
-                // Validar que los campos no estén vacíos
-                if (unii == null || unii.isEmpty()) {
+
+                // Validar que ambos Spinners tengan valores seleccionados
+                if ("Selecciona una universidad".equals(unii)) {
                     Toast.makeText(requireContext(), "Por favor selecciona una universidad", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (materiaa.isEmpty()) {
-                    materia.setError("Por favor ingrese el nombre de la materia");
+                if ("Selecciona una materia".equals(materiaa)) {
+                    Toast.makeText(requireContext(), "Por favor selecciona una materia", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -124,9 +166,10 @@ public class listfragment extends BaseFragment {
 
 
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         DatabaseReference listasref = database.getReference("users").child(userId).child("lista");
         dialog.show();
+
 
 
 
@@ -215,8 +258,6 @@ public class listfragment extends BaseFragment {
             @Override
             public void onComplete(Task<Void> task) {
                 Toast.makeText(requireContext(), "Lista agregada", Toast.LENGTH_SHORT).show();
-
-                materia.getText().clear();
 
 
             }
