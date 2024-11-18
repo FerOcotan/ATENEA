@@ -95,7 +95,9 @@ public class listfragment extends BaseFragment {
                 materiasList.add("Selecciona una materia"); // Mantener opción por defecto
 
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                    String nombreMateria = itemSnapshot.child("nombre_materia").getValue(String.class);
+                    String mater = itemSnapshot.child("nombre_materia").getValue(String.class);
+                    String seccion = itemSnapshot.child("seccion").getValue(String.class);
+                    String nombreMateria = mater + " - " + seccion;
                     if (nombreMateria != null) {
                         materiasList.add(nombreMateria);
                     }
