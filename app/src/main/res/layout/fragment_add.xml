@@ -39,8 +39,8 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_height="696dp"
+
         android:orientation="vertical"
 
         android:paddingLeft="30dp"
@@ -48,15 +48,6 @@
         android:paddingRight="30dp">
 
         <!-- Botones para alternar entre las vistas -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="14dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="50dp">
-
-
-        </LinearLayout>
 
         <!-- FrameLayout para alternar entre las vistas -->
         <FrameLayout
@@ -85,13 +76,14 @@
                     android:text="Create Subject"
                     android:textColor="@color/Verdemenuprimary"
                     android:textSize="24sp"
+
                     android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:paddingTop="10dp"
                     android:layout_height="wrap_content"
                     android:hint="Professor"
+                    android:paddingTop="10dp"
                     app:boxBackgroundMode="outline"
                     app:boxCornerRadiusBottomEnd="15dp"
                     app:boxCornerRadiusTopStart="15dp"
@@ -120,9 +112,9 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:paddingTop="10dp"
                     android:layout_height="wrap_content"
                     android:hint="Subject Code"
+                    android:paddingTop="10dp"
                     app:boxBackgroundMode="outline"
                     app:boxCornerRadiusBottomEnd="15dp"
                     app:boxCornerRadiusTopStart="15dp"
@@ -152,8 +144,8 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
                     android:hint="Subject Name"
+                    android:paddingTop="10dp"
                     app:boxBackgroundMode="outline"
                     app:boxCornerRadiusBottomEnd="15dp"
                     app:boxCornerRadiusTopStart="15dp"
@@ -182,9 +174,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
                     android:gravity="center"
                     android:orientation="horizontal"
+                    android:paddingTop="10dp"
                     android:weightSum="1">
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -245,9 +237,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
                     android:gravity="center"
                     android:orientation="horizontal"
+                    android:paddingTop="10dp"
                     android:weightSum="1">
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -329,12 +321,12 @@
                     android:id="@+id/button_list_subject"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:backgroundTint="@color/Verdeoscuromenu"
-                    android:layout_gravity="center"
                     android:text="View Subjects"
-                    app:icon="@drawable/baseline_edit_document_24"
-                    android:textColor="@color/BlancoHueso" />
+                    android:textColor="@color/BlancoHueso"
+                    app:icon="@drawable/baseline_edit_document_24" />
             </LinearLayout>
 
 
@@ -342,7 +334,6 @@
 
 
             <!-- Buscador a la izquierda -->
-
 
 
             <LinearLayout
@@ -353,6 +344,7 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:textColor="@color/Verdeoscuromenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -363,11 +355,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp">
-
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal">
 
 
                     <!-- SearchView -->
@@ -375,11 +366,11 @@
                         android:id="@+id/search"
                         android:layout_width="0dp"
                         android:layout_height="51dp"
-                        android:layout_weight="1"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="16dp"
+                        android:layout_weight="1"
                         android:background="@drawable/lavender_border"
                         android:queryHint="Buscar..."
                         app:iconifiedByDefault="false"
@@ -388,9 +379,9 @@
                     <!-- Botón para crear materia -->
                     <Button
                         android:id="@+id/button_create_subject"
-                        android:layout_gravity="center_vertical"
                         android:layout_width="61dp"
                         android:layout_height="61dp"
+                        android:layout_gravity="center_vertical"
                         android:backgroundTint="@color/Verdeoscuromenu"
                         app:icon="@drawable/baseline_add_24" />
 
