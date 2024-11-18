@@ -2,6 +2,7 @@
   "project_info": {
     "project_number": "243010325269",
     "project_id": "atenea-5f946",
+    "firebase_url": "https://atenea-5f946-default-rtdb.firebaseio.com/",
     "storage_bucket": "atenea-5f946.firebasestorage.app"
   },
   "client": [
