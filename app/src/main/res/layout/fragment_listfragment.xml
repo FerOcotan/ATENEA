@@ -117,17 +117,18 @@
                         android:scaleType="fitXY"/>
 
                     <!-- EditText para universidad -->
-                    <EditText
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/uni"
                         android:background="@drawable/lavender_border"
                         android:layout_marginTop="20dp"
                         android:padding="16dp"
-                        android:inputType="text"
-                        android:hint="Seleccione la Universidad"
+                        android:entries="@array/universities_array"
                         android:gravity="start|center_vertical"
-                        android:textColor="@color/lavender"/>
+                        android:spinnerMode="dropdown"
+                        />
+
 
                     <!-- EditText para materia -->
                     <EditText

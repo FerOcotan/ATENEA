@@ -50,8 +50,8 @@ public class listfragment extends BaseFragment {
 
     MyAdapter2 adapter;
 
-    private EditText uni,materia;
-
+    private EditText materia;
+    private Spinner uni;
 
 
 
@@ -68,7 +68,7 @@ public class listfragment extends BaseFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_listfragment, container, false);
 
-        uni = (EditText) view.findViewById(R.id.uni);
+        uni = (Spinner) view.findViewById(R.id.uni);
         materia = (EditText) view.findViewById(R.id.materia);
         btnagregarmateria = (Button) view.findViewById(R.id.btnagregarmateria);
 
@@ -76,14 +76,17 @@ public class listfragment extends BaseFragment {
         btnagregarmateria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String unii = uni.getText().toString();
+                String unii = uni.getSelectedItem().toString();
+
                 String materiaa = materia.getText().toString();
 
 
-                if (unii.isEmpty()) {
-                    uni.setError("Por favor ingrese la universidad");
+                // Validar que los campos no estén vacíos
+                if (unii == null || unii.isEmpty()) {
+                    Toast.makeText(requireContext(), "Por favor selecciona una universidad", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 if (materiaa.isEmpty()) {
                     materia.setError("Por favor ingrese el nombre de la materia");
                     return;
@@ -212,7 +215,7 @@ public class listfragment extends BaseFragment {
             @Override
             public void onComplete(Task<Void> task) {
                 Toast.makeText(requireContext(), "Lista agregada", Toast.LENGTH_SHORT).show();
-                uni.getText().clear();
+
                 materia.getText().clear();
 
 

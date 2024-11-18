@@ -11,4 +11,10 @@
         <item>Dev App Moviles "C"</item>
 
     </string-array>
+
+    <string-array name="universities_array">
+        <item>UNICAES</item>
+        <item>UNASA</item>
+        <item>UES C</item>
+    </string-array>
 </resources>
