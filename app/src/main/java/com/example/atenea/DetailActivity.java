@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,6 +25,12 @@ public class DetailActivity extends AppCompatActivity {
     ImageView detailImage;
     String key = "";
     Button deleteButton;
+
+    //obtener datos de user para escribir//
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    String userId = auth.getCurrentUser().getUid(); // Obtener UID del usuario actual
+    //obtener datos de user para escribir//
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +71,11 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Referencia a la base de datos
-                final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("materia");
+
+                
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference reference = database.getReference("users").child(userId).child("materias");
+
 
                 // Eliminar el objeto de la base de datos directamente
                 reference.child(key).removeValue();
