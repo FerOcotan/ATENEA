@@ -39,7 +39,7 @@ public class DataClass2 {
 
 
     public int getDataImage() {
-        return R.drawable.ateneablack;
+        return R.drawable.baseline_file_open_24;
     }
 
     public DataClass2(){

@@ -34,8 +34,8 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyViewHolder2> {
     @Override
     public void onBindViewHolder(MyViewHolder2 holder, int position) {
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
-        holder.uni.setText("Universidad: " + dataList.get(position).getUni());
-        holder.materia.setText("Asignatura: " + dataList.get(position).getMateria());
+        holder.uni.setText(dataList.get(position).getUni());
+        holder.materia.setText(dataList.get(position).getMateria());
 
         holder.recCard.setOnClickListener(view -> {
             Intent intent = new Intent(context, DetailActivity2.class);
