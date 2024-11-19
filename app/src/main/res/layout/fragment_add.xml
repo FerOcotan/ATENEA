@@ -399,11 +399,12 @@
                     <Button
                         android:id="@+id/button_create_subject"
                         android:text="Create subject"
+                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_gravity="center_vertical"
-                        android:backgroundTint="@color/Verdeoscuromenu"
+                        android:background="@color/Verdesemiclaromenu"
                         app:icon="@drawable/baseline_add_24" />
 
                 </LinearLayout>

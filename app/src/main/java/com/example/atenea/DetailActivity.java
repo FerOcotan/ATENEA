@@ -70,19 +70,26 @@ public class DetailActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Referencia a la base de datos
+                // Crear un diálogo de confirmación
+                new androidx.appcompat.app.AlertDialog.Builder(DetailActivity.this)
+                        .setTitle("Confirmación")
+                        .setMessage("¿Estás seguro de que deseas eliminar esta materia?")
+                        .setPositiveButton("Sí", (dialog, which) -> {
+                            // Referencia a la base de datos
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference reference = database.getReference("users").child(userId).child("materias");
 
-                
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference reference = database.getReference("users").child(userId).child("materias");
-
-
-                // Eliminar el objeto de la base de datos directamente
-                reference.child(key).removeValue();
-                Toast.makeText(DetailActivity.this, "Materia eliminada", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), home.class));
-                finish();
-
+                            // Eliminar el objeto de la base de datos directamente
+                            reference.child(key).removeValue();
+                            Toast.makeText(DetailActivity.this, "Materia eliminada", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), home.class));
+                            finish();
+                        })
+                        .setNegativeButton("No", (dialog, which) -> {
+                            // Cerrar el diálogo sin hacer nada
+                            dialog.dismiss();
+                        })
+                        .show();
             }
         });
 

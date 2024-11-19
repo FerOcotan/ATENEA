@@ -127,7 +127,7 @@ public class HomeFragment extends BaseFragment {
                     if (lista != null) {
                         cardItems.add(new CardItem(
                                 lista.getMateria(),
-                                "N/A", // Hora no está en DataClass2, reemplaza según corresponda
+                                "N/A", // Hora no está en DataClass2
                                 lista.getUni()
                         ));
                     }
