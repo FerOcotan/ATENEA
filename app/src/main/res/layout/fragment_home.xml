@@ -10,7 +10,7 @@
     <!-- Layout superior con saludos y foto de perfil -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="129dp"
+        android:layout_height="159dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
@@ -19,7 +19,7 @@
         <!-- Sección de texto -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -34,26 +34,32 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="HI,"
-                    android:textSize="34sp" />
+                    android:textSize="38sp" />
 
                 <TextView
                     android:id="@+id/textView10"
-                    android:layout_width="169dp"
+                    android:layout_width="233dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="POUL"
-                    android:textSize="34sp" />
+                    android:textSize="38sp" />
+
 
             </LinearLayout>
 
             <TextView
+
                 android:id="@+id/textView11"
-                android:layout_width="317dp"
-                android:layout_height="39dp"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:paddingTop="20dp"
                 android:text="¡Welcome back, have a pleasure day!"
-                android:textColor="#A0252525"
-                android:textSize="14sp" />
+                android:textColor="#AD000000"
+                android:textSize="16sp" />
+
+
         </LinearLayout>
+
 
         <!-- Imagen de perfil -->
         <com.google.android.material.imageview.ShapeableImageView
@@ -77,22 +83,28 @@
         android:layout_marginTop="160dp">
 
         <!--  TextView como título de sección -->
-        <TextView
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="8dp"
             android:paddingLeft="12dp"
-            android:text="Recent Activity"
+            android:paddingBottom="8dp"
+            android:text="Activity"
             android:textColor="#90000000"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/baseline_more_horiz_24"
-            />
+            <TextView
+                android:id="@+id/order"
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/baseline_more_horiz_24" />
 
+        </LinearLayout>
         <LinearLayout
 
             android:layout_width="match_parent"
