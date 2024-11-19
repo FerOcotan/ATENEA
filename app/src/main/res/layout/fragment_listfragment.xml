@@ -49,8 +49,7 @@
         <FrameLayout
             android:id="@+id/container_views"
             android:layout_width="match_parent"
-            android:layout_height="583dp"
-            >
+            android:layout_height="630dp">
 
             <!-- Vista de Crear Lista -->
             <androidx.cardview.widget.CardView
@@ -61,7 +60,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="20dp">
+                >
 
                 <LinearLayout
                     android:layout_width="323dp"
@@ -99,6 +98,7 @@
                         android:entries="@array/universities_array"
                         android:gravity="start|center_vertical"
                         android:padding="16dp"
+
                         android:spinnerMode="dropdown" />
 
 
@@ -119,24 +119,25 @@
                     <Button
                         android:id="@+id/btnagregarmateria"
                         android:layout_width="213dp"
-                        android:layout_height="52dp"
+                        android:layout_height="61dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
                         android:backgroundTint="@color/Verdemenuprimary"
                         android:text="Save"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         app:cornerRadius="20dp"
                         app:icon="@drawable/baseline_save_24" />
 
                     <Button
                         android:id="@+id/button_list_subject"
-                        android:layout_width="136dp"
-                        android:layout_height="30dp"
+                        android:layout_width="213dp"
+                        android:layout_height="52dp"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/Verdesemiclaromenu"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="@color/Verdeoscuromenu"
                         android:text="View Lists"
-                        android:textColor="@color/BlancoHueso" />
+                        android:textColor="@color/BlancoHueso"
+                        app:icon="@drawable/baseline_edit_document_24" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -167,9 +168,11 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:gravity="center_vertical">
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <!-- Buscador a la izquierda -->
                     <SearchView
@@ -189,8 +192,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:backgroundTint="@color/Verdemenuprimary"
-                        android:text="CREATE LIST"
-                        android:textColor="@android:color/black" />
+                        android:text="Create List"
+                        app:icon="@drawable/baseline_add_24"
+                        android:textColor="@color/BlancoHueso" />
                 </LinearLayout>
 
                 <!--  agregar una RecyclerView o una lista de prueba -->

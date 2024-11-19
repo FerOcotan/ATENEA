@@ -21,7 +21,7 @@
             android:textSize="24sp"
             android:layout_gravity="center"
             android:layout_marginBottom="12dp"
-            android:textColor="@color/lavender"/>
+            android:textColor="@color/black"/>
         <ImageView
             android:layout_width="400dp"
             android:layout_height="200dp"
@@ -39,7 +39,7 @@
             android:layout_gravity="center"
             android:id="@+id/detailnombre"
             android:textSize="18sp"
-            android:textColor="@color/lavender"/>
+            android:textColor="@color/black"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
             android:layout_gravity="center"
             android:id="@+id/detailseccion"
             android:textSize="18sp"
-            android:textColor="@color/lavender"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             android:layout_gravity="center"
             android:id="@+id/detailparticipantes"
             android:textSize="18sp"
-            android:textColor="@color/lavender"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -71,7 +71,7 @@
             android:layout_gravity="center"
             android:id="@+id/detailinicio"
             android:textSize="18sp"
-            android:textColor="@color/lavender"/>
+            android:textColor="@color/night_mode"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -82,7 +82,7 @@
             android:layout_gravity="center"
             android:id="@+id/detailsalida"
             android:textSize="18sp"
-            android:textColor="@color/lavender"/>
+            android:textColor="@color/night_mode"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -93,7 +93,7 @@
             android:layout_gravity="center"
             android:id="@+id/detaildocente"
             android:textSize="18sp"
-            android:textColor="@color/lavender"/>
+            android:textColor="@color/black"/>
 
         <Button
             android:layout_width="match_parent"
