@@ -53,7 +53,7 @@ public class DetailActivity2 extends AppCompatActivity {
 
             key = bundle.getString("Key");
 
-            Glide.with(this).load(R.drawable.ateneablack).into(detailImage);
+            Glide.with(this).load(R.drawable.baseline_auto_delete_24).into(detailImage);
         }
 
         deleteButton.setOnClickListener(new View.OnClickListener() {

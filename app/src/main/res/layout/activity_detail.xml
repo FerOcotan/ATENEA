@@ -3,112 +3,146 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/white"
+    android:id="@+id/main"
     tools:context=".DetailActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/detailcodigo"
-            android:text="codigo"
-            android:layout_marginTop="14dp"
-            android:textSize="24sp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="12dp"
-            android:textColor="@color/black"/>
-        <ImageView
-            android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header con Imagen -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/detailImage"
-            android:padding="8dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ateneablack"
-            android:scaleType="fitXY"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="20dp"
-            android:text="Nombre materia"
-            android:layout_gravity="center"
-            android:id="@+id/detailnombre"
-            android:textSize="18sp"
-            android:textColor="@color/black"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="20dp"
-            android:text="Seccion"
-            android:layout_gravity="center"
-            android:id="@+id/detailseccion"
-            android:textSize="18sp"
-            android:textColor="@color/black"/>
 
-        <TextView
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <ImageView
+                android:id="@+id/detailImage"
+                android:layout_width="222dp"
+                android:layout_gravity="center"
+                android:layout_height="117dp"
+                android:src="@drawable/baseline_auto_delete_24" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Información en Cards -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="20dp"
-            android:text="participantes"
-            android:layout_gravity="center"
-            android:id="@+id/detailparticipantes"
-            android:textSize="18sp"
-            android:textColor="@color/black"/>
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
 
-        <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+
+                <TextView
+                    android:id="@+id/detailcodigo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Código: 12345"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/detaildocente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Docente: Erazo"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif" />
+
+                <TextView
+                    android:id="@+id/detailnombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Materia: Programación Avanzada"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif" />
+
+                <TextView
+                    android:id="@+id/detailseccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sección: A1"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Más Información -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="20dp"
-            android:text="hora inicio"
-            android:layout_gravity="center"
-            android:id="@+id/detailinicio"
-            android:textSize="18sp"
-            android:textColor="@color/night_mode"/>
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="20dp"
-            android:text="hora salida"
-            android:layout_gravity="center"
-            android:id="@+id/detailsalida"
-            android:textSize="18sp"
-            android:textColor="@color/night_mode"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="20dp"
-            android:text="Docente"
-            android:layout_gravity="center"
-            android:id="@+id/detaildocente"
-            android:textSize="18sp"
-            android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/detailparticipantes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Participantes: 30"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif" />
 
+                <TextView
+                    android:id="@+id/detailinicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hora Inicio: 8:00 AM"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif" />
+
+                <TextView
+                    android:id="@+id/detailsalida"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hora Salida: 10:00 AM"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botón de Acción -->
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Eliminar"
-            android:backgroundTint="@color/Verdeoscuromenu"
             android:id="@+id/deletebutton"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"
-            android:layout_margin="10dp"
-            app:cornerRadius = "20dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Eliminar"
+            android:backgroundTint="#90133D"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="16dp"
+            app:cornerRadius="24dp" />
     </LinearLayout>
-
-
-
-
-
 </ScrollView>
