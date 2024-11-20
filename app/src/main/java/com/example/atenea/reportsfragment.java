@@ -2,8 +2,10 @@ package com.example.atenea;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
+
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Environment;
 import android.view.LayoutInflater;
@@ -25,6 +27,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 
@@ -51,6 +55,36 @@ public class reportsfragment extends BaseFragment {
             // Asignar funcionalidad al botón
             btnDescargarCSV.setOnClickListener(v -> descargarYGuardarCSVEnDescargas());
 
+
+            RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+            List<Document> documentList = new ArrayList<>();
+            DocumentAdapter adapter = new DocumentAdapter(getContext(), documentList, (filePath, fileName) -> {
+                // Reutilizar la lógica para descargar
+                descargarYGuardarCSVEnDescargas();
+            });
+            recyclerView.setAdapter(adapter);
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference documentsRef = database.getReference("users").child(userId).child("asistencias");
+
+            documentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+                    for (DataSnapshot docSnapshot : snapshot.getChildren()) {
+                        String name = docSnapshot.child("name").getValue(String.class);
+                        String filePath = docSnapshot.child("filePath").getValue(String.class);
+                        documentList.add(new Document(name, filePath));
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    Toast.makeText(getContext(), "Error al cargar documentos: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
             return view;
 
         }
@@ -63,7 +97,7 @@ public class reportsfragment extends BaseFragment {
             // Escuchar los datos
             asistenciasRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
                         // Crear el archivo CSV en almacenamiento interno privado
                         File archivoTemporal = new File(requireContext().getExternalFilesDir(null), "asistencias_descargadas.csv");
@@ -104,7 +138,7 @@ public class reportsfragment extends BaseFragment {
                 }
 
                 @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+                public void onCancelled( DatabaseError databaseError) {
                     Toast.makeText(requireContext(), "Error al descargar datos: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
