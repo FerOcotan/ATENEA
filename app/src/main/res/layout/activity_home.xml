@@ -5,25 +5,25 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E9E9E9"
+    android:background="#FFFFFF"
     tools:context=".home">
 
 
 
     <!-- FrameLayout para el contenido principal -->
+
+
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="908dp"
-        android:background="#E9E9E9" />
-
+        android:layout_height="742dp" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="#E9E9E9"
+        android:background="@color/zxing_transparent"
         app:fabAlignmentMode="center"
         app:fabAnchorMode="cradle"
         app:fabCradleMargin="10dp"
@@ -39,23 +39,26 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#E9E9E9"
-        android:src="@drawable/baseline_qr_code_scanner_24"
+        android:backgroundTint="@color/Verdemenuprimary"
+        android:src="@drawable/baseline_qr_code_scanner_24_white"
         app:layout_anchor="@id/bottomAppBar"
         app:maxImageSize="40dp"
-        app:tint="@color/verde" />
+        app:tint="@color/BlancoHueso" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
+        style="@style/CustomBottomNavStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="66dp"
         android:layout_gravity="bottom"
-        android:background="@android:color/transparent"
+
+
         android:paddingBottom="0dp"
-
-
         app:itemIconSize="30dp"
+        app:itemTextColor="@color/Verdemenuprimary"
+        app:itemIconTint="@color/Verdemenuprimary"
+
         app:menu="@menu/bottom_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

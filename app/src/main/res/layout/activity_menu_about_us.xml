@@ -5,36 +5,220 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Verdemenuprimary"
     tools:context=".menu_about_us">
 
-    <LinearLayout
+    <!-- Contenedor ScrollView para permitir desplazamiento -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="About Us"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:paddingBottom="16dp" />
-
-        <TextView
+        <!-- LinearLayout para organizar los contenidos dentro del ScrollView -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This app was created to make life easier."
-            android:textSize="16sp"
-            android:paddingBottom="8dp" />
+            android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/team_photo"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <!-- Puedes añadir secciones para misión, valores, etc. -->
+                <ImageView
+                    android:id="@+id/backButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/back_btn"
+                    android:padding="14dp"
+                    />
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About Us"
+                    android:layout_centerInParent="true"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <!-- Sección de imagen con el logo o gráfico -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="198dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ateneawhite"
+                    android:contentDescription="Atenea Logo"/>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Atendance"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="For Edu Activities"
+                    android:textColor="#ccffffff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- Sección de texto con misión, visión y descripción -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="30dp"
+                >
+
+
+                <!-- Justified TextView en lugar de EditText para justificar texto -->
+                <TextView
+                    android:id="@+id/textViewMission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="start|top"
+                    android:justificationMode="inter_word"
+                    android:padding="20dp"
+                    android:text="En Atenea, nuestra misión es revolucionar la gestión de la asistencia en las instituciones educativas mediante el uso de tecnología innovadora."
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="start|top"
+                    android:justificationMode="inter_word"
+                    android:padding="20dp"
+                    android:paddingTop="50dp"
+                    android:text="Estamos comprometidos con ofrecer una solución eficiente y segura para las instituciones educativas, con la visión de expandirnos y adaptar nuestra tecnología a más centros en el futuro."
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/shapeableImageView"
+                    android:layout_width="369dp"
+                    android:layout_height="350dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/roundbuttonmenu"
+                    android:padding="30dp"
+                    android:src="@drawable/teamwork" />
+
+                <TextView
+                    android:id="@+id/textViewDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="start|top"
+                    android:justificationMode="inter_word"
+                    android:padding="20dp"
+                    android:text="Atenea fue creada por un grupo de tres estudiantes apasionados por la tecnología y la innovación en el ámbito educativo. "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:padding="16dp">
+
+                <!-- Imagen 1 (izquierda) -->
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Imagen 1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/asp" />
+
+                <!-- Imagen 2 (centro) -->
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/image1"
+                    android:contentDescription="Imagen 2"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/lara" />
+
+                <!-- Imagen 3 (derecha) -->
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/image2"
+                    android:contentDescription="Imagen 3"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/harmo" />
+
+            </RelativeLayout>
+
+            <!-- Sección de texto con misión, visión y descripción -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="30dp"
+                >
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="start|top"
+                    android:justificationMode="inter_word"
+                    android:padding="20dp"
+                    android:text="Como grupo de desarrolladores, hemos tenido la oportunidad de trabajar en varios proyectos emocionantes y desafiantes, tanto en el ámbito académico como en el profesional. "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/copyrightText"
+                    android:layout_width="351dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:padding="16dp"
+                    android:text="© 2024 Atenea. Todos los derechos reservados."
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

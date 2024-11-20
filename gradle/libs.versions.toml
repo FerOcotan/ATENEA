@@ -15,6 +15,9 @@ firebaseAuth = "23.1.0"
 playServicesAuth = "21.2.0"
 playServicesAuthVersion = "20.7.0"
 zxingAndroidEmbedded = "4.3.0"
+firebaseDatabase = "21.0.0"
+firebaseStorage = "21.0.1"
+
 
 [libraries]
 
@@ -37,6 +40,8 @@ firebase-auth = { group = 'com.google.firebase', name = "firebase-auth", version
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-auth-v2070 = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }
 zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
 
 [plugins]
 

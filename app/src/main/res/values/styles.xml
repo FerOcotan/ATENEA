@@ -10,5 +10,18 @@
         <item name="cornerSize">
             50%
         </item>
+
+    </style>
+
+    <style name="CustomAlertDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="colorPrimary">#FF6200EE</item> <!-- Color del botón positivo -->
+        <item name="colorPrimaryVariant">#FF3700B3</item> <!-- Opcional -->
+        <item name="colorOnPrimary">#FFFFFF</item> <!-- Color del texto en botones -->
+    </style>
+
+
+    <style name="CustomBottomNavStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        
+        <item name="android:background">@color/Verdeoscuromenu</item>  <!-- Fondo transparente si lo deseas -->
     </style>
 </resources>
