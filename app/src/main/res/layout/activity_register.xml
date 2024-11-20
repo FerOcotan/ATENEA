@@ -46,19 +46,6 @@
 
 
     <EditText
-        android:id="@+id/fullname"
-        android:layout_width="286dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="8dp"
-        android:background="#1DB3ADAD"
-        android:backgroundTint="@android:color/darker_gray"
-        android:drawableEnd="@drawable/baseline_person_24"
-        android:hint="Full name"
-        android:inputType="textEmailAddress"
-        android:paddingStart="7dp"
-        android:paddingRight="7dp" />
-
-    <EditText
         android:id="@+id/emailvalid"
         android:layout_width="286dp"
         android:layout_height="57dp"
@@ -70,18 +57,6 @@
         android:inputType="textEmailAddress"
         android:paddingStart="7dp"
         android:paddingRight="7dp" />
-
-    <EditText
-        android:id="@+id/number"
-        android:layout_width="286dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="8dp"
-        android:background="#1DB3ADAD"
-        android:backgroundTint="@android:color/darker_gray"
-        android:drawableEnd="@drawable/baseline_phone_android_24"
-        android:hint="Phone number"
-        android:inputType="number"
-        android:paddingStart="7dp" />
 
 
     <EditText

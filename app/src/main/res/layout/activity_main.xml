@@ -5,15 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9E3333"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:backgroundTint="#B38080"
+        android:text="logout"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="401dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

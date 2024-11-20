@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Verdemenuprimary"
+    tools:context=".faqs">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/back_btn"
+            android:padding="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FAQs"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/imageView2"
+        android:layout_width="327dp"
+        android:layout_height="132dp"
+        android:background="@drawable/roundbuttonmenu"
+       android:src="@drawable/atesplash" />
+
+    <!-- Envolvemos el contenido en un ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Pregunta 1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Qué es Atenea y para qué sirve?"
+                android:textStyle="bold"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atenea es una aplicación diseñada para gestionar la asistencia en instituciones educativas de manera eficiente y segura, utilizando tecnología QR."
+                android:textColor="@color/BlancoHueso"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Pregunta 2 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Qué hago si mi dispositivo no puede escanear el código QR?"
+                android:textStyle="bold"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Revisa los permisos de tu cámara en la configuración del dispositivo. Si el problema persiste, consulta con tu profesor o administrador para registrar la asistencia de forma manual."
+                android:textColor="@color/BlancoHueso"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Pregunta 3 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Cómo registro mi asistencia en clase?"
+                android:textStyle="bold"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escanea el código QR generado por tu profesor al inicio de la clase. Asegúrate de tener la cámara de tu dispositivo habilitada y autorizada para acceder desde la aplicación."
+                android:textColor="@color/BlancoHueso"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Pregunta 4 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Puedo ver mis registros de asistencia anteriores?"
+                android:textStyle="bold"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sí, puedes consultar tus registros en la sección -Historial de Asistencias- dentro de la aplicación."
+                android:textColor="@color/BlancoHueso"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Pregunta 5 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Qué pasa si olvido escanear el código QR?"
+                android:textStyle="bold"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deberás comunicarte con tu profesor o el administrador de la institución para registrar tu asistencia manualmente."
+                android:textColor="@color/BlancoHueso"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Pregunta 6 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Atenea envía recordatorios automáticos para registrar asistencia?"
+                android:textStyle="bold"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actualmente, Atenea no incluye recordatorios automáticos. La responsabilidad de escanear el código recae en los estudiantes al inicio de cada clase."
+                android:textColor="@color/BlancoHueso"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Pregunta 6 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Puedo usar Atenea en varios dispositivos?"
+                android:textStyle="bold"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sí, siempre y cuando inicies sesión con tu cuenta  en cada dispositivo."
+                android:textColor="@color/BlancoHueso"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
