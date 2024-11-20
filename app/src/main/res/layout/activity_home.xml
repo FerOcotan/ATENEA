@@ -11,19 +11,19 @@
 
 
     <!-- FrameLayout para el contenido principal -->
+
+
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF" />
-
+        android:layout_height="742dp" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-
+        android:background="@color/zxing_transparent"
         app:fabAlignmentMode="center"
         app:fabAnchorMode="cradle"
         app:fabCradleMargin="10dp"
@@ -52,12 +52,13 @@
         android:layout_width="wrap_content"
         android:layout_height="66dp"
         android:layout_gravity="bottom"
-        android:background="@android:color/white"
+
 
         android:paddingBottom="0dp"
         app:itemIconSize="30dp"
-        app:itemIconTint="@color/Verdemenuprimary"
         app:itemTextColor="@color/Verdemenuprimary"
+        app:itemIconTint="@color/Verdemenuprimary"
+
         app:menu="@menu/bottom_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

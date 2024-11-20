@@ -1,6 +1,7 @@
 package com.example.atenea;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,12 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +29,10 @@ import java.util.List;
 
 public class HomeFragment extends BaseFragment {
 
+    //obtener datos de user para escribir//
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    String userId = auth.getCurrentUser().getUid(); // Obtener UID del usuario actual
+    //obtener datos de user para escribir//
 
     //XML donde se declara el nombre a cambiarse
     private TextView TextViewUserName;
@@ -61,25 +72,74 @@ public class HomeFragment extends BaseFragment {
         ImageView menuprofile2 = view.findViewById(R.id.buttonprofile);
         setupProfileMenu(menuprofile2);
 
+        //se modifica para que segun el usuario pueda escribir//
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference materiasRef = database.getReference("users").child(userId).child("materias");
+        //se modifica para que segun el usuario pueda escribir//
+
+        DatabaseReference listasRef = database.getReference("users").child(userId).child("lista");
+
+
 
         // Configuramos el RecyclerView
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Agregamos los datos a la lista
+        // Creamos una lista para almacenar los datos
         List<CardItem> cardItems = new ArrayList<>();
-        cardItems.add(new CardItem("Today Class", "09:20AM", "04 Jan"));
-        cardItems.add(new CardItem("Dev App Moviles 'A'", "4:45PM", "09 OCT"));
-        cardItems.add(new CardItem("Math IV", "10:20AM", "11 Sep"));
-        cardItems.add(new CardItem("Etica 'A'", "4:45PM", "11 Nov"));
-        cardItems.add(new CardItem("Dev App Moviles 2 'A'", "4:45PM", "14 OCT"));
-        cardItems.add(new CardItem("Math I", "10:20AM", "11 Sep"));
 
-
-
-        // Creamos y configuramos el adaptador
+        // Configuramos el adaptador
         adapter = new CardAdapter(cardItems);
         recyclerView.setAdapter(adapter);
+
+        // Leer datos desde Firebase
+        materiasRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange( DataSnapshot dataSnapshot) {
+                cardItems.clear(); // Limpiamos la lista para evitar duplicados
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    DataClass materia = snapshot.getValue(DataClass.class); // Mapear el objeto
+                    if (materia != null) {
+                        // Convertir a CardItem y agregar a la lista
+                        cardItems.add(new CardItem(
+                                materia.getNombre_materia(),
+                                materia.getHora_inicio(),
+                                materia.getCodigo()
+                        ));
+                    }
+                }
+                adapter.notifyDataSetChanged(); // Actualizamos el adaptador
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Manejo de errores
+                Log.e("FirebaseError", databaseError.getMessage());
+            }
+        });
+
+        // Listener para "lista"
+        listasRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    DataClass2 lista = snapshot.getValue(DataClass2.class);
+                    if (lista != null) {
+                        cardItems.add(new CardItem(
+                                lista.getMateria(),
+                                "N/A", // Hora no está en DataClass2
+                                lista.getUni()
+                        ));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled( DatabaseError databaseError) {
+                Log.e("FirebaseError", "Error leyendo lista: " + databaseError.getMessage());
+
+            }
+        });
 
         return view;
     }

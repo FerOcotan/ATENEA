@@ -19,49 +19,38 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity2 extends AppCompatActivity {
 
-    TextView codigomateria, nombremateria,participantes,seccion,horainicio,horasalida,creador;
+    TextView uni, materia;
     ImageView detailImage;
     String key = "";
     Button deleteButton;
-
     //obtener datos de user para escribir//
     FirebaseAuth auth = FirebaseAuth.getInstance();
     String userId = auth.getCurrentUser().getUid(); // Obtener UID del usuario actual
     //obtener datos de user para escribir//
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail2);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        codigomateria = findViewById(R.id.detailcodigo);
-        nombremateria = findViewById(R.id.detailnombre);
-        participantes = findViewById(R.id.detailparticipantes);
-        seccion = findViewById(R.id.detailseccion);
-        horainicio = findViewById(R.id.detailinicio);
-        horasalida = findViewById(R.id.detailsalida);
-        creador = findViewById(R.id.detaildocente);
+
+        uni = findViewById(R.id.detailuni);
+        materia = findViewById(R.id.detailmateria);
         detailImage = findViewById(R.id.detailImage);
         deleteButton = findViewById(R.id.deletebutton);
 
-
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
-            codigomateria.setText(bundle.getString("codigo"));
-            nombremateria.setText(bundle.getString("nombre_materia"));
-            participantes.setText(bundle.getString("participantes"));
-            seccion.setText(bundle.getString("seccion"));
-            horainicio.setText(bundle.getString("hora_inicio"));
-            horasalida.setText(bundle.getString("hora_salida"));
-            creador.setText(bundle.getString("carnet_creador"));
+            uni.setText(bundle.getString("uni"));
+            materia.setText(bundle.getString("materia"));
+
             key = bundle.getString("Key");
 
             Glide.with(this).load(R.drawable.baseline_auto_delete_24).into(detailImage);
@@ -71,27 +60,26 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Crear un diálogo de confirmación
-                new androidx.appcompat.app.AlertDialog.Builder(DetailActivity.this)
+                new androidx.appcompat.app.AlertDialog.Builder(DetailActivity2.this)
                         .setTitle("Confirmación")
-                        .setMessage("¿Estás seguro de que deseas eliminar esta materia?")
+                        .setMessage("¿Estás seguro de que deseas eliminar esta lista?")
                         .setPositiveButton("Sí", (dialog, which) -> {
                             // Referencia a la base de datos
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            DatabaseReference reference = database.getReference("users").child(userId).child("materias");
+                            DatabaseReference reference = database.getReference("users").child(userId).child("lista");
 
                             // Eliminar el objeto de la base de datos directamente
                             reference.child(key).removeValue();
-                            Toast.makeText(DetailActivity.this, "Materia eliminada", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DetailActivity2.this, "Lista eliminada", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), home.class));
                             finish();
                         })
                         .setNegativeButton("No", (dialog, which) -> {
-                            // Cerrar el diálogo sin hacer nada
+                            // Cerrar el diálogo sin realizar ninguna acción
                             dialog.dismiss();
                         })
                         .show();
             }
         });
-
     }
 }

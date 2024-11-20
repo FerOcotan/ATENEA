@@ -1,6 +1,7 @@
 package com.example.atenea;
 
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 
 import android.widget.Button;
 import android.widget.SearchView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -29,6 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Calendar;
 
 
 public class AddFragment extends BaseFragment {
@@ -132,6 +135,51 @@ public class AddFragment extends BaseFragment {
         creador = (EditText)  view.findViewById(R.id.creador);
         btnagregarmateria = (Button)  view.findViewById(R.id.btnagregarmateria);
 
+
+        horainicio.setOnClickListener(v -> {
+            // Obtener la hora actual para mostrar por defecto
+            Calendar calendar = Calendar.getInstance();
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            int minute = calendar.get(Calendar.MINUTE);
+
+            // Crear el TimePickerDialog
+            TimePickerDialog timePickerDialog = new TimePickerDialog(
+                    requireContext(),
+                    (TimePicker view2, int selectedHour, int selectedMinute) -> {
+                        // Formatear la hora seleccionada y mostrarla en el campo
+                        String formattedTime = String.format("%02d:%02d", selectedHour, selectedMinute);
+                        horainicio.setText(formattedTime);
+                    },
+                    hour,
+                    minute,
+                    true // 'true' para formato de 24 horas, 'false' para formato de 12 horas
+            );
+
+            timePickerDialog.show();
+        });
+
+
+        horasalida.setOnClickListener(v -> {
+            // Obtener la hora actual para mostrar por defecto
+            Calendar calendar = Calendar.getInstance();
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            int minute = calendar.get(Calendar.MINUTE);
+
+            // Crear el TimePickerDialog
+            TimePickerDialog timePickerDialog = new TimePickerDialog(
+                    requireContext(),
+                    (TimePicker view2, int selectedHour, int selectedMinute) -> {
+                        // Formatear la hora seleccionada y mostrarla en el campo
+                        String formattedTime = String.format("%02d:%02d", selectedHour, selectedMinute);
+                        horasalida.setText(formattedTime);
+                    },
+                    hour,
+                    minute,
+                    true // 'true' para formato de 24 horas, 'false' para formato de 12 horas
+            );
+
+            timePickerDialog.show();
+        });
 
         btnagregarmateria.setOnClickListener(new View.OnClickListener() {
             @Override

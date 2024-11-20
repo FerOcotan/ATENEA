@@ -7,12 +7,12 @@
     android:background="@android:color/white"
     android:padding="16dp"
     android:layout_marginBottom="8dp"
-    android:elevation="4dp">
+    android:elevation="2dp">
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_edit_document_24" />
+        android:layout_height="43dp"
+        android:src="@drawable/baseline_pending_actions_24" />
 
     <LinearLayout
         android:layout_width="0dp"
