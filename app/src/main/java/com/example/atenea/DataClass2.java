@@ -11,6 +11,8 @@ public class DataClass2 {
         this.dataImage = dataImage;
 
     }
+
+
     public String getKey() {
         return key;
     }

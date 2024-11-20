@@ -67,14 +67,14 @@ public class reportsfragment extends BaseFragment {
             recyclerView.setAdapter(adapter);
 
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference documentsRef = database.getReference("users").child(userId).child("asistencias");
+            DatabaseReference documentsRef = database.getReference("users").child(userId).child("lista");
 
             documentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
                     for (DataSnapshot docSnapshot : snapshot.getChildren()) {
-                        String name = docSnapshot.child("name").getValue(String.class);
-                        String filePath = docSnapshot.child("filePath").getValue(String.class);
+                        String name = docSnapshot.child("materia").getValue(String.class);
+                        String filePath = docSnapshot.child("uni").getValue(String.class);
                         documentList.add(new Document(name, filePath));
                     }
                     adapter.notifyDataSetChanged();

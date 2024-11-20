@@ -1,19 +1,21 @@
 package com.example.atenea;
 
 public class Document {
-    private String name;
-    private String filePath;
+    private String  uni, materia;
 
-    public Document(String name, String filePath) {
-        this.name = name;
-        this.filePath = filePath;
+
+
+    public Document(String uni, String materia) {
+
+        this.uni = uni;
+        this.materia = materia;
     }
 
-    public String getName() {
-        return name;
+    public String getUni() {
+        return uni;
     }
 
-    public String getFilePath() {
-        return filePath;
+    public String getMateria() {
+        return materia;
     }
 }

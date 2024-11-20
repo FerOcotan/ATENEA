@@ -36,11 +36,12 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docume
     @Override
     public void onBindViewHolder( DocumentViewHolder holder, int position) {
         Document document = documentList.get(position);
-        holder.documentName.setText(document.getName());
+        holder.documentName.setText(document.getUni());
+        holder.documentuniver.setText(document.getMateria());
 
         holder.downloadButton.setOnClickListener(v -> {
             // Llamar al listener definido en el fragmento
-            listener.onDownloadClick(document.getFilePath(), document.getName());
+            listener.onDownloadClick(document.getMateria(), document.getUni());
         });
     }
 
@@ -51,11 +52,13 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docume
 
     public static class DocumentViewHolder extends RecyclerView.ViewHolder {
         TextView documentName;
+        TextView documentuniver;
         Button downloadButton;
 
         public DocumentViewHolder( View itemView) {
             super(itemView);
             documentName = itemView.findViewById(R.id.documentName);
+            documentuniver = itemView.findViewById(R.id.documentuniver);
             downloadButton = itemView.findViewById(R.id.downloadButton);
         }
     }
