@@ -1,5 +1,6 @@
 package com.example.atenea;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -31,14 +32,22 @@ import androidx.fragment.app.ListFragment;
 
 import com.example.atenea.databinding.ActivityHomeBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -83,6 +92,7 @@ public class home extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 showBottomDialog();
             }
         });
@@ -153,8 +163,7 @@ public class home extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
@@ -176,8 +185,8 @@ public class home extends AppCompatActivity {
                         String fechaActual = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                         String horaActual = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
-                        // Llama al método para guardar en Firebase
-                        saveDataToFirebase(email, nombre, apellido, fechaActual, horaActual);
+                        // Llama al método para guardar en Firebase, pasando los datos escaneados
+                        mostrarSelectorDeMateria(email, nombre, apellido, fechaActual, horaActual);
 
                     } catch (Exception e) {
                         Toast.makeText(this, "Formato de QR inválido", Toast.LENGTH_SHORT).show();
@@ -192,46 +201,77 @@ public class home extends AppCompatActivity {
     //obtener datos de user para escribir//
     FirebaseAuth auth = FirebaseAuth.getInstance();
     String userId = auth.getCurrentUser().getUid(); // Obtener UID del usuario actual
+    String lista = auth.getCurrentUser().getUid(); // Obtener UID del usuario actual
     //obtener datos de user para escribir//
 
-    private void saveDataToFirebase(String email, String nombre,
-                                    String apellido, String fechaActual, String horaActual)
-    {
-        //se modifica para que segun el usuario pueda escribir//
+
+
+
+    private void mostrarSelectorDeMateria(final String email, final String nombre, final String apellido, final String fechaActual, final String horaActual) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference asistenciasRef = database.getReference("users").child(userId).child("asistencias");
-        //se modifica para que segun el usuario pueda escribir//
+        DatabaseReference materiasRef = database.getReference("users").child(userId).child("lista");
 
-        // Crear un objeto con los datos escaneados
-        Map<String, String> asistenciaData = new HashMap<>();
-        asistenciaData.put("email", email);
-        asistenciaData.put("nombre", nombre);
-        asistenciaData.put("apellido", apellido);
-        asistenciaData.put("fecha", fechaActual);
-        asistenciaData.put("hora", horaActual);
+        materiasRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Crear listas para nombres y keys
+                List<String> nombresMaterias = new ArrayList<>();
+                List<String> keysMaterias = new ArrayList<>();
 
-        // Guardar los datos en un nodo único generado por push()
-        asistenciasRef.push().setValue(asistenciaData)
-                .addOnSuccessListener(aVoid -> Toast.makeText(this,
-                        "Datos subidos a Firebase Realtime Database",
-                        Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(e ->
-                {
-                    e.printStackTrace();
-                    Toast.makeText(this, "Error al subir datos a Firebase",
-                            Toast.LENGTH_SHORT).show();
-                });
+                for (DataSnapshot materiaSnapshot : dataSnapshot.getChildren()) {
+                    String nombreMateria = materiaSnapshot.child("materia").getValue(String.class);
+                    String key = materiaSnapshot.getKey(); // Clave de la materia
+                    nombresMaterias.add(nombreMateria);
+                    keysMaterias.add(key);
+                }
+
+                // Convertir la lista a un array para usarlo en el diálogo
+                String[] opciones = nombresMaterias.toArray(new String[0]);
+
+                // Mostrar el cuadro de diálogo
+                AlertDialog.Builder builder = new AlertDialog.Builder(home.this);
+                builder.setTitle("Selecciona una Materia")
+                        .setItems(opciones, (dialog, which) -> {
+                            // Obtener la clave de la materia seleccionada
+                            String selectedKey = keysMaterias.get(which);
+
+                            // Llamar al método para guardar los datos en la materia seleccionada, pasando los datos escaneados
+                            guardarDatosEnMateria(selectedKey, email, nombre, apellido, fechaActual, horaActual);
+                        })
+                        .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss())
+                        .show();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(home.this, "Error al cargar materias: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
 
+    private void guardarDatosEnMateria(String selectedKey, String email, String nombre, String apellido, String fecha, String hora) {
+        // Guardar los datos de asistencia en el nodo correspondiente de Firebase
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference asistenciaRef = database.getReference("users").child(userId).child("lista").child(selectedKey).child("asistencias");
 
+        // Crear el objeto con los datos de la asistencia
+        Map<String, String> asistenciaData = new HashMap<>();
+        asistenciaData.put("email", email);
+        asistenciaData.put("nombre", nombre);
+        asistenciaData.put("apellido", apellido);
+        asistenciaData.put("fecha", fecha);
+        asistenciaData.put("hora", hora);
 
-
-
-
-
-
+        // Usamos push() para crear un nuevo nodo único para cada entrada de asistencia
+        asistenciaRef.push().setValue(asistenciaData)
+                .addOnSuccessListener(aVoid -> Toast.makeText(home.this, "Asistencia registrada exitosamente", Toast.LENGTH_SHORT).show())
+                .addOnFailureListener(e -> {
+                    e.printStackTrace();
+                    Toast.makeText(home.this, "Error al registrar asistencia", Toast.LENGTH_SHORT).show();
+                });
+    }
 
 
 }
