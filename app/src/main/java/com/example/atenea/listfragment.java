@@ -77,39 +77,42 @@ public class listfragment extends BaseFragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference materiasRef = database.getReference("users").child(userId).child("materias");
 
-        // Lista para almacenar las materias
+
+// Inicializar la lista y adaptador
         List<String> materiasList = new ArrayList<>();
         materiasList.add("Selecciona una materia"); // Opción por defecto
 
-        // Configurar adaptador del Spinner
         ArrayAdapter<String> materiasAdapter = new ArrayAdapter<>(
                 requireContext(), android.R.layout.simple_spinner_item, materiasList);
         materiasAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         materia.setAdapter(materiasAdapter);
 
-        // Escuchar cambios en la tabla materias de Firebase
-        materiasRef.addValueEventListener(new ValueEventListener() {
+// Escuchar cambios en la tabla materias de Firebase
+        materiasRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                materiasList.clear();
-                materiasList.add("Selecciona una materia"); // Mantener opción por defecto
+                // Utiliza una lista temporal para evitar conflictos
+                List<String> tempList = new ArrayList<>();
+                tempList.add("Selecciona una materia"); // Mantener opción por defecto
 
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
                     String mater = itemSnapshot.child("nombre_materia").getValue(String.class);
                     String seccion = itemSnapshot.child("seccion").getValue(String.class);
-                    String nombreMateria = mater + " - " + seccion;
-                    if (nombreMateria != null) {
-                        materiasList.add(nombreMateria);
+
+                    if (mater != null && seccion != null) {
+                        tempList.add(mater + " - " + seccion);
                     }
                 }
 
-                // Notificar cambios al adaptador
+                // Actualiza la lista principal y notifica al adaptador
+                materiasList.clear();
+                materiasList.addAll(tempList);
                 materiasAdapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onCancelled( DatabaseError error) {
-                Toast.makeText(requireContext(), "Error al cargar materias", Toast.LENGTH_SHORT).show();
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(requireContext(), "Error al cargar materias: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
