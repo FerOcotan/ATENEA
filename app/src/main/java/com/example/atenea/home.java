@@ -13,10 +13,13 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.activity.EdgeToEdge;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -27,7 +30,17 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.ListFragment;
 
 import com.example.atenea.databinding.ActivityHomeBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 
 public class home extends AppCompatActivity {
@@ -137,6 +150,77 @@ public class home extends AppCompatActivity {
         integrator.setCaptureActivity(CaptureActivityPortrait.class); //Solo se llama la clase la cual esta vacia
         integrator.setBarcodeImageEnabled(false); // Guardar imagen OPCIONAL
         integrator.initiateScan();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                Toast.makeText(this, "Escaneo cancelado", Toast.LENGTH_SHORT).show();
+            } else {
+                // Procesa el contenido del QR escaneado
+                String qrContent = result.getContents(); // Contenido escaneado del QR
+                String[] dataArray = qrContent.split(";"); // Divide los datos por ";"
+
+                if (dataArray.length >= 3) {
+                    try {
+                        // Extrae los valores individuales
+                        String email = dataArray[0].split(":")[1];
+                        String nombre = dataArray[1].split(":")[1];
+                        String apellido = dataArray[2].split(":")[1];
+
+                        // Genera la fecha y hora actuales
+                        String fechaActual = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                        String horaActual = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+
+                        // Llama al método para guardar en Firebase
+                        saveDataToFirebase(email, nombre, apellido, fechaActual, horaActual);
+
+                    } catch (Exception e) {
+                        Toast.makeText(this, "Formato de QR inválido", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, "Datos insuficientes en el QR", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+
+    //obtener datos de user para escribir//
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    String userId = auth.getCurrentUser().getUid(); // Obtener UID del usuario actual
+    //obtener datos de user para escribir//
+
+    private void saveDataToFirebase(String email, String nombre,
+                                    String apellido, String fechaActual, String horaActual)
+    {
+        //se modifica para que segun el usuario pueda escribir//
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference asistenciasRef = database.getReference("users").child(userId).child("asistencias");
+        //se modifica para que segun el usuario pueda escribir//
+
+        // Crear un objeto con los datos escaneados
+        Map<String, String> asistenciaData = new HashMap<>();
+        asistenciaData.put("email", email);
+        asistenciaData.put("nombre", nombre);
+        asistenciaData.put("apellido", apellido);
+        asistenciaData.put("fecha", fechaActual);
+        asistenciaData.put("hora", horaActual);
+
+        // Guardar los datos en un nodo único generado por push()
+        asistenciasRef.push().setValue(asistenciaData)
+                .addOnSuccessListener(aVoid -> Toast.makeText(this,
+                        "Datos subidos a Firebase Realtime Database",
+                        Toast.LENGTH_SHORT).show())
+                .addOnFailureListener(e ->
+                {
+                    e.printStackTrace();
+                    Toast.makeText(this, "Error al subir datos a Firebase",
+                            Toast.LENGTH_SHORT).show();
+                });
     }
 
 
