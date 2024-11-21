@@ -174,19 +174,20 @@ public class home extends AppCompatActivity {
                 String qrContent = result.getContents(); // Contenido escaneado del QR
                 String[] dataArray = qrContent.split(";"); // Divide los datos por ";"
 
-                if (dataArray.length >= 3) {
+                if (dataArray.length >= 4) {
                     try {
                         // Extrae los valores individuales
-                        String email = dataArray[0].split(":")[1];
+                        String carnet = dataArray[0].split(":")[1];
                         String nombre = dataArray[1].split(":")[1];
                         String apellido = dataArray[2].split(":")[1];
+                        String email = dataArray[3].split(":")[1];
 
                         // Genera la fecha y hora actuales
                         String fechaActual = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                         String horaActual = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
                         // Llama al método para guardar en Firebase, pasando los datos escaneados
-                        mostrarSelectorDeMateria(email, nombre, apellido, fechaActual, horaActual);
+                        mostrarSelectorDeMateria(carnet, nombre, apellido, email, fechaActual, horaActual);
 
                     } catch (Exception e) {
                         Toast.makeText(this, "Formato de QR inválido", Toast.LENGTH_SHORT).show();
@@ -207,7 +208,7 @@ public class home extends AppCompatActivity {
 
 
 
-    private void mostrarSelectorDeMateria(final String email, final String nombre, final String apellido, final String fechaActual, final String horaActual) {
+    private void mostrarSelectorDeMateria(final String carnet, final String nombre, final String apellido, final String email, final String fechaActual, final String horaActual) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference materiasRef = database.getReference("users").child(userId).child("lista");
 
@@ -236,7 +237,7 @@ public class home extends AppCompatActivity {
                             String selectedKey = keysMaterias.get(which);
 
                             // Llamar al método para guardar los datos en la materia seleccionada, pasando los datos escaneados
-                            guardarDatosEnMateria(selectedKey, email, nombre, apellido, fechaActual, horaActual);
+                            guardarDatosEnMateria(selectedKey, carnet, nombre, apellido, email, fechaActual, horaActual);
                         })
                         .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss())
                         .show();
@@ -251,16 +252,17 @@ public class home extends AppCompatActivity {
 
 
 
-    private void guardarDatosEnMateria(String selectedKey, String email, String nombre, String apellido, String fecha, String hora) {
+    private void guardarDatosEnMateria(String selectedKey, String carnet, String nombre, String apellido, String email, String fecha, String hora) {
         // Guardar los datos de asistencia en el nodo correspondiente de Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference asistenciaRef = database.getReference("users").child(userId).child("lista").child(selectedKey).child("asistencias");
 
         // Crear el objeto con los datos de la asistencia
         Map<String, String> asistenciaData = new HashMap<>();
-        asistenciaData.put("email", email);
+        asistenciaData.put("carnet", carnet);
         asistenciaData.put("nombre", nombre);
         asistenciaData.put("apellido", apellido);
+        asistenciaData.put("email", email);
         asistenciaData.put("fecha", fecha);
         asistenciaData.put("hora", hora);
 

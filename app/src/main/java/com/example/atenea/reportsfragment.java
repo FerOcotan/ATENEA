@@ -110,21 +110,23 @@ public class reportsfragment extends BaseFragment {
 
                     try (FileWriter fileWriter = new FileWriter(archivoTemporal)) {
                         // Escribir encabezados
-                        fileWriter.append("Correo,Nombre,Apellido,Fecha,Hora\n");
+                        fileWriter.append("Carnet,Nombre,Apellido,Correo,Fecha,Hora\n");
 
                         // Iterar sobre los datos y escribirlos en el archivo
                         for (DataSnapshot asistenciaSnapshot : dataSnapshot.getChildren()) {
                             Map<String, String> asistencia = (Map<String, String>) asistenciaSnapshot.getValue();
-                            String email = asistencia.get("email");
+                            String carnet = asistencia.get("carnet");
                             String nombre = asistencia.get("nombre");
                             String apellido = asistencia.get("apellido");
+                            String email = asistencia.get("email");
                             String fecha = asistencia.get("fecha");
                             String hora = asistencia.get("hora");
 
                             // Escribir una línea en el archivo CSV
-                            fileWriter.append(email).append(",")
+                            fileWriter.append(carnet).append(",")
                                     .append(nombre).append(",")
                                     .append(apellido).append(",")
+                                    .append(email).append(",")
                                     .append(fecha).append(",")
                                     .append(hora).append("\n");
                         }
