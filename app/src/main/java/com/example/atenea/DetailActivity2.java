@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DetailActivity2 extends AppCompatActivity {
 
+    private ImageView backButton;
+
     TextView uni, materia;
     ImageView detailImage;
     String key = "";
@@ -46,6 +48,8 @@ public class DetailActivity2 extends AppCompatActivity {
         detailImage = findViewById(R.id.detailImage);
         deleteButton = findViewById(R.id.deletebutton);
 
+        backButton = findViewById(R.id.backButton);
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
             uni.setText(bundle.getString("uni"));
@@ -53,8 +57,17 @@ public class DetailActivity2 extends AppCompatActivity {
 
             key = bundle.getString("Key");
 
-            Glide.with(this).load(R.drawable.baseline_auto_delete_24).into(detailImage);
+            Glide.with(this).load(R.drawable.listrash).into(detailImage);
         }
+
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Regresa a la actividad anterior
+                onBackPressed();
+            }
+        });
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +75,7 @@ public class DetailActivity2 extends AppCompatActivity {
                 // Crear un diálogo de confirmación
                 new androidx.appcompat.app.AlertDialog.Builder(DetailActivity2.this)
                         .setTitle("Confirmación")
-                        .setMessage("¿Estás seguro de que deseas eliminar esta lista?")
+                        .setMessage("¿Estás seguro de que deseas eliminar esta lista? Esta acción no se puede deshacer, eliminar esta lista podria causarte problemas.")
                         .setPositiveButton("Sí", (dialog, which) -> {
                             // Referencia a la base de datos
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
