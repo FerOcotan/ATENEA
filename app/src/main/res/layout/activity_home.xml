@@ -28,7 +28,7 @@
         app:fabAnchorMode="cradle"
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="10dp"
-        app:fabCradleVerticalOffset="10dp">
+        app:fabCradleVerticalOffset="8dp">
 
 
 
@@ -48,7 +48,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        style="@style/CustomBottomNavStyle"
+
         android:layout_width="wrap_content"
         android:layout_height="66dp"
         android:layout_gravity="bottom"

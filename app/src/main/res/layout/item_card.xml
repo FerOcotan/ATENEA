@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@android:color/white"
+    android:background="@drawable/border_red"
     android:padding="16dp"
     android:layout_marginBottom="8dp"
-    android:elevation="2dp">
+
+ >
 
     <ImageView
         android:layout_width="wrap_content"
@@ -26,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title"
+            android:textColor="@color/Verdeoscuromenu"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -33,6 +35,7 @@
             android:id="@+id/timeDateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/Verdeoscuromenu"
             android:text="Time and Date" />
     </LinearLayout>
 </LinearLayout>
