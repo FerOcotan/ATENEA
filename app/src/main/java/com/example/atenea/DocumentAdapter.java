@@ -8,41 +8,40 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 
 import java.util.List;
 
-public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.DocumentViewHolder> {
+public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.ViewHolder> {
 
-    private List<Document> documentList;
-    private Context context;
-    private OnDownloadClickListener listener;
+    private final Context context;
+    private final List<Document> documentList;
+    private final OnItemClickListener listener;
 
-    public DocumentAdapter(Context context, List<Document> documentList, OnDownloadClickListener listener) {
+    public interface OnItemClickListener {
+        void onItemClick(String keyLista);
+    }
+
+    public DocumentAdapter(Context context, List<Document> documentList, OnItemClickListener listener) {
         this.context = context;
         this.documentList = documentList;
         this.listener = listener;
     }
 
-
+    @NonNull
     @Override
-    public DocumentViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_document, parent, false);
-        return new DocumentViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder( DocumentViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Document document = documentList.get(position);
-        holder.documentName.setText(document.getUni());
-        holder.documentuniver.setText(document.getMateria());
-
-        holder.downloadButton.setOnClickListener(v -> {
-            // Llamar al listener definido en el fragmento
-            listener.onDownloadClick(document.getMateria(), document.getUni());
-        });
+        holder.bind(document, listener);
     }
 
     @Override
@@ -50,20 +49,24 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docume
         return documentList.size();
     }
 
-    public static class DocumentViewHolder extends RecyclerView.ViewHolder {
-        TextView documentName;
-        TextView documentuniver;
-        Button downloadButton;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public DocumentViewHolder( View itemView) {
+        private final TextView textViewMateria;
+        private final TextView textViewUni;
+        private final Button btnDescargar;
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            documentName = itemView.findViewById(R.id.documentName);
-            documentuniver = itemView.findViewById(R.id.documentuniver);
-            downloadButton = itemView.findViewById(R.id.downloadButton);
+            textViewMateria = itemView.findViewById(R.id.documentName);
+            textViewUni = itemView.findViewById(R.id.documentuniver);
+            btnDescargar = itemView.findViewById(R.id.downloadButton);
         }
-    }
 
-    public interface OnDownloadClickListener {
-        void onDownloadClick(String filePath, String fileName);
+        public void bind(Document document, OnItemClickListener listener) {
+            textViewMateria.setText(document.getMateria());
+            textViewUni.setText(document.getUni());
+
+            btnDescargar.setOnClickListener(v -> listener.onItemClick(document.getKeyLista()));
+        }
     }
 }

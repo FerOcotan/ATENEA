@@ -40,111 +40,114 @@ public class reportsfragment extends BaseFragment {
     String userId = auth.getCurrentUser().getUid(); // Obtener UID del usuario actual
     //obtener datos de user para escribir//
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.fragment_reportsfragment, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_reportsfragment, container, false);
 
-            // Configuración del menú en el ImageView del fragmento
-            ImageView menuprofile2 = view.findViewById(R.id.buttonprofile);
-            setupProfileMenu(menuprofile2);
+        // Configuración del menú
+        ImageView menuprofile2 = view.findViewById(R.id.buttonprofile);
+        setupProfileMenu(menuprofile2);
 
-            // Encontrar el botón en el diseño
-            Button btnDescargarCSV = view.findViewById(R.id.btnDescargarCSV);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-            // Asignar funcionalidad al botón
-            btnDescargarCSV.setOnClickListener(v -> descargarYGuardarCSVEnDescargas());
+        List<Document> documentList = new ArrayList<>();
+        DocumentAdapter adapter = new DocumentAdapter(getContext(), documentList, (keyLista) -> {
+            // Lógica para descargar las asistencias específicas de esta lista
+            descargarAsistenciasDeLista(keyLista);
+        });
 
+        recyclerView.setAdapter(adapter);
 
-            RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference documentsRef = database.getReference("users").child(userId).child("lista");
 
-            List<Document> documentList = new ArrayList<>();
-            DocumentAdapter adapter = new DocumentAdapter(getContext(), documentList, (filePath, fileName) -> {
-                // Reutilizar la lógica para descargar
-                descargarYGuardarCSVEnDescargas();
-            });
-            recyclerView.setAdapter(adapter);
+        documentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot listaSnapshot : snapshot.getChildren()) {
+                    // Obtener datos de cada lista
+                    String keyLista = listaSnapshot.getKey();
+                    String materia = listaSnapshot.child("materia").getValue(String.class);
+                    String uni = listaSnapshot.child("uni").getValue(String.class);
 
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference documentsRef = database.getReference("users").child(userId).child("lista");
-
-            documentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot snapshot) {
-                    for (DataSnapshot docSnapshot : snapshot.getChildren()) {
-                        String name = docSnapshot.child("materia").getValue(String.class);
-                        String filePath = docSnapshot.child("uni").getValue(String.class);
-                        documentList.add(new Document(name, filePath));
-                    }
-                    adapter.notifyDataSetChanged();
+                    // Añadir a la lista con su key
+                    documentList.add(new Document(keyLista, materia, uni));
                 }
+                adapter.notifyDataSetChanged();
+            }
 
-                @Override
-                public void onCancelled(DatabaseError error) {
-                    Toast.makeText(getContext(), "Error al cargar documentos: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-            return view;
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(getContext(), "Error al cargar listas: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        }
+        return view;
+    }
 
-        private void descargarYGuardarCSVEnDescargas() {
-            // Referencia al nodo 'asistencias' en Firebase Realtime Database
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference asistenciasRef = database.getReference("users").child(userId).child("asistencias");
+    private void descargarAsistenciasDeLista(String keyLista) {
 
-            // Escuchar los datos
-            asistenciasRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        // Crear el archivo CSV en almacenamiento interno privado
-                        File archivoTemporal = new File(requireContext().getExternalFilesDir(null), "asistencias_descargadas.csv");
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference asistenciasRef = database.getReference("users")
+                .child(userId)
+                .child("lista")
+                .child(keyLista)
+                .child("asistencias");
 
-                        try (FileWriter fileWriter = new FileWriter(archivoTemporal)) {
-                            // Escribir encabezados
-                            fileWriter.append("Correo,Nombre,Apellido,Fecha,Hora\n");
+        asistenciasRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    // Crear el archivo CSV en almacenamiento interno privado
 
-                            // Iterar sobre los datos y escribirlos en el archivo
-                            for (DataSnapshot asistenciaSnapshot : dataSnapshot.getChildren()) {
-                                Map<String, String> asistencia = (Map<String, String>) asistenciaSnapshot.getValue();
-                                String email = asistencia.get("email");
-                                String nombre = asistencia.get("nombre");
-                                String apellido = asistencia.get("apellido");
-                                String fecha = asistencia.get("fecha");
-                                String hora = asistencia.get("hora");
+                    File archivoTemporal = new File(requireContext().getExternalFilesDir(null), "asistencias_descargadas.csv");
 
-                                // Escribir una línea en el archivo CSV
-                                fileWriter.append(email).append(",")
-                                        .append(nombre).append(",")
-                                        .append(apellido).append(",")
-                                        .append(fecha).append(",")
-                                        .append(hora).append("\n");
-                            }
+                    try (FileWriter fileWriter = new FileWriter(archivoTemporal)) {
+                        // Escribir encabezados
+                        fileWriter.append("Correo,Nombre,Apellido,Fecha,Hora\n");
 
-                            fileWriter.flush();
+                        // Iterar sobre los datos y escribirlos en el archivo
+                        for (DataSnapshot asistenciaSnapshot : dataSnapshot.getChildren()) {
+                            Map<String, String> asistencia = (Map<String, String>) asistenciaSnapshot.getValue();
+                            String email = asistencia.get("email");
+                            String nombre = asistencia.get("nombre");
+                            String apellido = asistencia.get("apellido");
+                            String fecha = asistencia.get("fecha");
+                            String hora = asistencia.get("hora");
 
-                            // Mover archivo a la carpeta Descargas
-                            moverArchivoADescargas(archivoTemporal);
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                            Toast.makeText(requireContext(), "Error al guardar archivo CSV", Toast.LENGTH_SHORT).show();
+                            // Escribir una línea en el archivo CSV
+                            fileWriter.append(email).append(",")
+                                    .append(nombre).append(",")
+                                    .append(apellido).append(",")
+                                    .append(fecha).append(",")
+                                    .append(hora).append("\n");
                         }
-                    } else {
-                        Toast.makeText(requireContext(), "No se encontraron datos en Firebase", Toast.LENGTH_SHORT).show();
+
+                        fileWriter.flush();
+
+                        // Mover a Descargas
+                        moverArchivoADescargas(archivoTemporal);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(requireContext(), "Error al guardar archivo CSV", Toast.LENGTH_SHORT).show();
                     }
+                } else {
+                    Toast.makeText(requireContext(), "No se encontraron asistencias", Toast.LENGTH_SHORT).show();
                 }
+            }
 
-                @Override
-                public void onCancelled( DatabaseError databaseError) {
-                    Toast.makeText(requireContext(), "Error al descargar datos: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(requireContext(), "Error al acceder a Firebase: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
-        private void moverArchivoADescargas(File archivoTemporal)
+
+    private void moverArchivoADescargas(File archivoTemporal)
         {
             // Ruta de destino en la carpeta de Descargas
             File destino = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
