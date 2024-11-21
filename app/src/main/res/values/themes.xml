@@ -3,7 +3,7 @@
     <style name="Base.Theme.Atenea" parent="Theme.Material3.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/Primary</item>
+        <item name="colorPrimary">@color/Verdemenuprimary</item>
         <item name="colorPrimaryVariant">@color/Verdeoscuromenu</item>
         <item name="colorOnPrimary">@color/Verdeoscuromenu</item>
         <!-- Secondary brand color. -->

@@ -32,20 +32,30 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="731dp"
-        android:paddingTop="200dp" />
+        android:layout_height="645dp"
+        android:orientation="vertical"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="120dp">
 
-    <Button
-        android:textColor="@color/verde"
-        android:id="@+id/btnDescargarCSV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descargar CSV"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="30dp"
+            android:text="List ready to export"
+            android:textColor="@color/Verdemenuprimary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="731dp" />
+
+    </LinearLayout>
 
 
 

@@ -105,7 +105,7 @@ public class reportsfragment extends BaseFragment {
 
 
                     // se obtiene la variable del nombre gracias al adpter
-                    String nombreArchivo = materia.replace(" ", "_") + "asistencias.csv"; //
+                    String nombreArchivo = materia.replace(" ", "_") + "_asistencia.csv"; //
                     File archivoTemporal = new File(requireContext().getExternalFilesDir(null), nombreArchivo);
 
                     try (FileWriter fileWriter = new FileWriter(archivoTemporal)) {
