@@ -130,6 +130,8 @@ public class reportsfragment extends BaseFragment {
                             // Escribir una línea en el archivo CSV
                         }
 
+
+
                         for (Map.Entry<String, Integer> entrada : asistenciasPorCarnet.entrySet()) {
                             String[] datosEstudiante = entrada.getKey().split(",");
                             String carnet = datosEstudiante[0];
