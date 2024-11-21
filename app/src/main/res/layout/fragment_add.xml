@@ -39,10 +39,10 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="666dp"
+        android:layout_height="match_parent"
 
         android:orientation="vertical"
-
+        android:layout_marginBottom="?attr/actionBarSize"
         android:paddingLeft="30dp"
         android:paddingTop="90dp"
         android:paddingRight="30dp">
@@ -326,13 +326,13 @@
                     <Button
 
                         android:id="@+id/btnagregarmateria"
-                        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+
                         android:layout_width="163dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
                         android:backgroundTint="@color/Verdemenuprimary"
-                        android:padding="12dp"
+
                         android:text="Save"
                         android:textColor="@color/BlancoHueso"
                         app:icon="@drawable/baseline_save_24" />
@@ -344,9 +344,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/Verdeoscuromenu"
+                        android:backgroundTint="@color/BlancoHueso"
                         android:text="View Subjects"
-                        android:textColor="@color/BlancoHueso"
+                        android:textColor="@color/Primary"
                         app:icon="@drawable/baseline_edit_document_24" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -370,7 +370,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="List of Subjects"
-                    android:textColor="@color/Verdeoscuromenu"
+
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -399,13 +399,13 @@
                     <Button
                         android:id="@+id/button_create_subject"
                         android:text="Create subject"
-                        android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@color/Verdesemiclaromenu"
-                        app:icon="@drawable/baseline_add_24" />
+                        android:backgroundTint="@color/Verdemenuprimary"
+
+                        android:textColor="@color/BlancoHueso"
+                        app:icon="@drawable/baseline_add_24"/>
 
                 </LinearLayout>
 

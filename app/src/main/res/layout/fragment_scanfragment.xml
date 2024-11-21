@@ -95,20 +95,6 @@
             android:src="@drawable/outline_camera_alt_24" />
     </FrameLayout>
 
-    <Spinner
-        android:id="@+id/class_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:background="#D7D7D7"
-        android:backgroundTint="#D7D7D7"
-        android:entries="@array/class_options"
-        android:gravity="center"
-        android:spinnerMode="dropdown"
-        android:textColor="#55000000"
-        android:textSize="20sp" />
-
 
     <!-- Botones de confirmación y cancelación -->
     <LinearLayout
@@ -117,26 +103,7 @@
         android:layout_marginTop="24dp"
         android:gravity="center"
 
-        android:orientation="horizontal">
-
-        <!-- Botón de Cancelar -->
-        <ImageView
-            android:id="@+id/cancel_butto"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="80dp"
-            android:contentDescription="Botón de cancelar"
-            android:src="@drawable/baseline_clear_2" />
-
-        <!-- Botón de Confirmar -->
-        <ImageView
-            android:id="@+id/confirm_button"
-            android:layout_width="50dp"
-
-            android:layout_height="40dp"
-            android:contentDescription="Botón de confirmar"
-            android:src="@drawable/round_check_circle_24" />
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
 
 </LinearLayout>
