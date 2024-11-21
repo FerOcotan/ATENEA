@@ -7,40 +7,63 @@
     android:layout_margin="8dp"
     android:elevation="4dp"
     android:radius="8dp"
-    android:padding="30dp"
+    android:padding="16dp"
     android:backgroundTint="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/roundbuttonmenu"
+        android:layout_height="75dp"
+        android:background="@drawable/carddocument"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="20dp">
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
 
-        <TextView
-            android:id="@+id/documentName"
+        <!-- Icon CSV -->
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            app:srcCompat="@drawable/csvxs" />
+
+        <!-- Texts -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Documento"
-            android:textColor="@color/Primary"
-            android:textSize="16sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/documentuniver"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Documento"
-            android:textColor="@color/Primary"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/documentName"
+                android:layout_width="208dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Documento"
+                android:textColor="@color/Primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/documentuniver"
+                android:layout_width="213dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Universidad"
+                android:textColor="@color/Primary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Download Button -->
         <Button
             android:id="@+id/downloadButton"
-            android:layout_width="77dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/baseline_file_download_24"
+            android:drawablePadding="4dp"
+
             android:textColor="@color/verde" />
     </LinearLayout>
 
