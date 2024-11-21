@@ -28,6 +28,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -110,7 +111,9 @@ public class reportsfragment extends BaseFragment {
 
                     try (FileWriter fileWriter = new FileWriter(archivoTemporal)) {
                         // Escribir encabezados
-                        fileWriter.append("Carnet,Nombre,Apellido,Correo,Fecha,Hora\n");
+                        fileWriter.append("Carnet,Nombre,Apellido,Correo,Asistencias\n");
+
+                        Map<String, Integer> asistenciasPorCarnet = new HashMap<>();
 
                         // Iterar sobre los datos y escribirlos en el archivo
                         for (DataSnapshot asistenciaSnapshot : dataSnapshot.getChildren()) {
@@ -119,16 +122,28 @@ public class reportsfragment extends BaseFragment {
                             String nombre = asistencia.get("nombre");
                             String apellido = asistencia.get("apellido");
                             String email = asistencia.get("email");
-                            String fecha = asistencia.get("fecha");
-                            String hora = asistencia.get("hora");
+                            
+
+                            asistenciasPorCarnet.put(carnet + "," + nombre + "," + apellido + "," + email,
+                                    asistenciasPorCarnet.getOrDefault(carnet + "," + nombre + "," + apellido + "," + email, 0) + 1);
 
                             // Escribir una línea en el archivo CSV
+                        }
+
+                        for (Map.Entry<String, Integer> entrada : asistenciasPorCarnet.entrySet()) {
+                            String[] datosEstudiante = entrada.getKey().split(",");
+                            String carnet = datosEstudiante[0];
+                            String nombre = datosEstudiante[1];
+                            String apellido = datosEstudiante[2];
+                            String email = datosEstudiante[3];
+                            int totalAsistencias = entrada.getValue();
+
+                            // Escribir la línea en el archivo CSV
                             fileWriter.append(carnet).append(",")
                                     .append(nombre).append(",")
                                     .append(apellido).append(",")
                                     .append(email).append(",")
-                                    .append(fecha).append(",")
-                                    .append(hora).append("\n");
+                                    .append(String.valueOf(totalAsistencias)).append("\n");
                         }
 
                         fileWriter.flush();
