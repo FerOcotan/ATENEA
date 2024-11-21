@@ -22,7 +22,7 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.ViewHo
     private final OnItemClickListener listener;
 
     public interface OnItemClickListener {
-        void onItemClick(String keyLista);
+        void onItemClick(String keyLista,String materia);
     }
 
     public DocumentAdapter(Context context, List<Document> documentList, OnItemClickListener listener) {
@@ -66,7 +66,7 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.ViewHo
             textViewMateria.setText(document.getMateria());
             textViewUni.setText(document.getUni());
 
-            btnDescargar.setOnClickListener(v -> listener.onItemClick(document.getKeyLista()));
+            btnDescargar.setOnClickListener(v -> listener.onItemClick(document.getKeyLista(), document.getMateria()));
         }
     }
 }

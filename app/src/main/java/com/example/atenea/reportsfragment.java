@@ -34,6 +34,7 @@ import java.util.Map;
 
 public class reportsfragment extends BaseFragment {
 
+    public String  nombreArchivo;
 
     //obtener datos de user para escribir//
     FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -53,9 +54,9 @@ public class reportsfragment extends BaseFragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         List<Document> documentList = new ArrayList<>();
-        DocumentAdapter adapter = new DocumentAdapter(getContext(), documentList, (keyLista) -> {
+        DocumentAdapter adapter = new DocumentAdapter(getContext(), documentList, (keyLista,materia) -> {
             // Lógica para descargar las asistencias específicas de esta lista
-            descargarAsistenciasDeLista(keyLista);
+            descargarAsistenciasDeLista(keyLista,materia);
         });
 
         recyclerView.setAdapter(adapter);
@@ -87,7 +88,7 @@ public class reportsfragment extends BaseFragment {
         return view;
     }
 
-    private void descargarAsistenciasDeLista(String keyLista) {
+    private void descargarAsistenciasDeLista(String keyLista,String materia) {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference asistenciasRef = database.getReference("users")
@@ -102,7 +103,10 @@ public class reportsfragment extends BaseFragment {
                 if (dataSnapshot.exists()) {
                     // Crear el archivo CSV en almacenamiento interno privado
 
-                    File archivoTemporal = new File(requireContext().getExternalFilesDir(null), "asistencias_descargadas.csv");
+
+                    // se obtiene la variable del nombre gracias al adpter
+                    String nombreArchivo = materia.replace(" ", "_") + "asistencias.csv"; //
+                    File archivoTemporal = new File(requireContext().getExternalFilesDir(null), nombreArchivo);
 
                     try (FileWriter fileWriter = new FileWriter(archivoTemporal)) {
                         // Escribir encabezados
@@ -128,7 +132,7 @@ public class reportsfragment extends BaseFragment {
                         fileWriter.flush();
 
                         // Mover a Descargas
-                        moverArchivoADescargas(archivoTemporal);
+                        moverArchivoADescargas(archivoTemporal,nombreArchivo);
 
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -147,11 +151,11 @@ public class reportsfragment extends BaseFragment {
     }
 
 
-    private void moverArchivoADescargas(File archivoTemporal)
+    private void moverArchivoADescargas(File archivoTemporal, String nombreArchivo)
         {
-            // Ruta de destino en la carpeta de Descargas
-            File destino = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-                    "asistencias_descargadas.csv");
+            // Ruta de destino en la carpeta de Descargas,/ pasa el nombre del archivo como variable obtenida antes
+            File destino = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), nombreArchivo);
+
 
             try (FileInputStream fis = new FileInputStream(archivoTemporal);
                  FileOutputStream fos = new FileOutputStream(destino)) {
