@@ -91,16 +91,16 @@
 
                     <ImageView
                         android:id="@+id/imageView3"
-                        android:layout_width="62dp"
-                        android:layout_height="63dp"
+                        android:layout_width="79dp"
+                        android:layout_height="83dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/baseline_add_circle_outline_24" />
+                        android:src="@drawable/classimage" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Professor"
-                        android:paddingTop="10dp"
+
                         app:boxBackgroundMode="outline"
                         app:boxCornerRadiusBottomEnd="15dp"
                         app:boxCornerRadiusTopStart="15dp"
@@ -402,9 +402,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:backgroundTint="@color/Verdemenuprimary"
-
-                        android:textColor="@color/BlancoHueso"
+                        android:backgroundTint="@color/Primary"
+                        android:background="@drawable/border_verde"
+                        android:textColor="@color/black"
                         app:icon="@drawable/baseline_add_24"/>
 
                 </LinearLayout>

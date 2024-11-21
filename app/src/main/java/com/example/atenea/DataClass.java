@@ -83,7 +83,7 @@ public class DataClass {
         this.carnet_creador = carnet_creador;
     }
     public int getDataImage() {
-        return R.drawable.phonebook;
+        return R.drawable.classs2;
     }
 
     public DataClass(){
