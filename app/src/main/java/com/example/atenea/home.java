@@ -43,6 +43,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -253,27 +254,76 @@ public class home extends AppCompatActivity {
 
 
     private void guardarDatosEnMateria(String selectedKey, String carnet, String nombre, String apellido, String email, String fecha, String hora) {
-        // Guardar los datos de asistencia en el nodo correspondiente de Firebase
+        // Referencia a la base de datos de Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference asistenciaRef = database.getReference("users").child(userId).child("lista").child(selectedKey).child("asistencias");
+        DatabaseReference asistenciaRef = database.getReference("users")
+                .child(userId)
+                .child("lista")
+                .child(selectedKey)
+                .child("asistencias");
 
-        // Crear el objeto con los datos de la asistencia
-        Map<String, String> asistenciaData = new HashMap<>();
-        asistenciaData.put("carnet", carnet);
-        asistenciaData.put("nombre", nombre);
-        asistenciaData.put("apellido", apellido);
-        asistenciaData.put("email", email);
-        asistenciaData.put("fecha", fecha);
-        asistenciaData.put("hora", hora);
+        // Consultar asistencias existentes del mismo carnet
+        asistenciaRef.orderByChild("carnet").equalTo(carnet).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean asistenciaReciente = false;
 
-        // Usamos push() para crear un nuevo nodo único para cada entrada de asistencia
-        asistenciaRef.push().setValue(asistenciaData)
-                .addOnSuccessListener(aVoid -> Toast.makeText(home.this, "Asistencia registrada exitosamente", Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(e -> {
-                    e.printStackTrace();
-                    Toast.makeText(home.this, "Error al registrar asistencia", Toast.LENGTH_SHORT).show();
-                });
+                // Iterar sobre las asistencias existentes
+                for (DataSnapshot asistenciaSnapshot : dataSnapshot.getChildren()) {
+                    String fechaRegistrada = asistenciaSnapshot.child("fecha").getValue(String.class);
+                    String horaRegistrada = asistenciaSnapshot.child("hora").getValue(String.class);
+
+                    if (fecha.equals(fechaRegistrada) && horaRegistrada != null) {
+                        // Comparar la hora actual con la hora registrada
+                        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+                        try {
+                            Date horaActual = sdf.parse(hora);
+                            Date horaPrev = sdf.parse(horaRegistrada);
+
+                            // Calcular la diferencia en milisegundos
+                            long diferencia = Math.abs(horaActual.getTime() - horaPrev.getTime());
+                            long unaHoraEnMs = 60 * 60 * 1000;
+
+                            if (diferencia < unaHoraEnMs) {
+                                asistenciaReciente = true;
+                                break;
+                            }
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+                // Decidir si registrar la asistencia o no
+                if (!asistenciaReciente) {
+                    // Crear el objeto con los datos de la asistencia
+                    Map<String, String> asistenciaData = new HashMap<>();
+                    asistenciaData.put("carnet", carnet);
+                    asistenciaData.put("nombre", nombre);
+                    asistenciaData.put("apellido", apellido);
+                    asistenciaData.put("email", email);
+                    asistenciaData.put("fecha", fecha);
+                    asistenciaData.put("hora", hora);
+
+                    // Usamos push() para crear un nuevo nodo único para cada entrada de asistencia
+                    asistenciaRef.push().setValue(asistenciaData)
+                            .addOnSuccessListener(aVoid -> Toast.makeText(home.this, "Asistencia registrada exitosamente", Toast.LENGTH_SHORT).show())
+                            .addOnFailureListener(e -> {
+                                e.printStackTrace();
+                                Toast.makeText(home.this, "Error al registrar asistencia", Toast.LENGTH_SHORT).show();
+                            });
+                } else {
+                    Toast.makeText(home.this, "Ya se registró asistencia para este carnet hace menos de una hora", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(home.this, "Error al verificar asistencias", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 
 
 }
