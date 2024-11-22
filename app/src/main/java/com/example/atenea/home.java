@@ -313,7 +313,7 @@ public class home extends AppCompatActivity {
                                 Toast.makeText(home.this, "Error al registrar asistencia", Toast.LENGTH_SHORT).show();
                             });
                 } else {
-                    Toast.makeText(home.this, "Ya se registró asistencia para este carnet hace menos de una hora", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(home.this, "Se registró este carnet hace menos de 1 hora, no guardada", Toast.LENGTH_SHORT).show();
                 }
             }
 

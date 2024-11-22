@@ -110,7 +110,7 @@
         <!-- Código -->
         <TextView
             android:id="@+id/tcodigo"
-            android:layout_width="26dp"
+            android:layout_width="29dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"

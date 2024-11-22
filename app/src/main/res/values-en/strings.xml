@@ -176,4 +176,7 @@
     <string name="error_lista_duplicada">The list already exists with this university and subject.</string>
     <string name="error_agregar_lista">The list could not be added.</string>
     <string name="error_validacion_lista">Error validating the list:</string>
+    <string name="materia_existe_toast">A subject with this name already exists.</string>
+    <string name="error_guardar_materia">Error saving the material. Please try again.</string>
+    <string name="error_validacion">Error in validating the existence of matter.</string>
 </resources>

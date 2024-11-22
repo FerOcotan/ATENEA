@@ -286,41 +286,57 @@ public class AddFragment extends BaseFragment {
     }
 
     private void AgregandoMateria(String codigo, String nombremate, String participante, String seccionn, String horaini, String horasali, String creator) {
-
-        HashMap<String, Object> quoteHashmap = new HashMap<>();
-        quoteHashmap.put("codigo",codigo);
-        quoteHashmap.put("nombre_materia",nombremate);
-        quoteHashmap.put("participantes",participante);
-        quoteHashmap.put("seccion",seccionn);
-        quoteHashmap.put("hora_inicio",horaini);
-        quoteHashmap.put("hora_salida",horasali);
-        quoteHashmap.put("carnet_creador",creator);
-
-
-        //se modifica para que segun el usuario pueda escribir//
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference materiasRef = database.getReference("users").child(userId).child("materias");
-        //se modifica para que segun el usuario pueda escribir//
 
-        String key = materiasRef.push().getKey();
-        quoteHashmap.put("key",key);
+        // Crear una clave compuesta para validar la unicidad
+        String uniqueKey = nombremate + "_" + seccionn + "_" + creator;
 
-        materiasRef.child(key).setValue(quoteHashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        // Validar si ya existe una materia con la misma clave compuesta
+        materiasRef.orderByChild("unique_key").equalTo(uniqueKey).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onComplete(Task<Void> task) {
-                Toast.makeText(requireContext(), R.string.materia_agregada_toast, Toast.LENGTH_SHORT).show();
-                codigomateria.getText().clear();
-                nombremateria.getText().clear();
-                participantes.getText().clear();
-                seccion.getText().clear();
-                horainicio.getText().clear();
-                horasalida.getText().clear();
-                creador.getText().clear();
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    // Ya existe una materia con el mismo nombre, sección y profesor
+                    Toast.makeText(requireContext(), R.string.materia_existe_toast, Toast.LENGTH_SHORT).show();
+                } else {
+                    // Proceder a agregar la materia
+                    String key = materiasRef.push().getKey();
 
+                    HashMap<String, Object> quoteHashmap = new HashMap<>();
+                    quoteHashmap.put("codigo", codigo);
+                    quoteHashmap.put("nombre_materia", nombremate);
+                    quoteHashmap.put("participantes", participante);
+                    quoteHashmap.put("seccion", seccionn);
+                    quoteHashmap.put("hora_inicio", horaini);
+                    quoteHashmap.put("hora_salida", horasali);
+                    quoteHashmap.put("carnet_creador", creator);
+                    quoteHashmap.put("unique_key", uniqueKey); // Guardar la clave compuesta
+                    quoteHashmap.put("key", key);
 
+                    materiasRef.child(key).setValue(quoteHashmap).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(requireContext(), R.string.materia_agregada_toast, Toast.LENGTH_SHORT).show();
+                            codigomateria.getText().clear();
+                            nombremateria.getText().clear();
+                            participantes.getText().clear();
+                            seccion.getText().clear();
+                            horainicio.getText().clear();
+                            horasalida.getText().clear();
+                            creador.getText().clear();
+                        } else {
+                            Toast.makeText(requireContext(), R.string.error_guardar_materia, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(requireContext(), R.string.error_validacion, Toast.LENGTH_SHORT).show();
             }
         });
-        }
+    }
 
 }
 

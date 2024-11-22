@@ -102,7 +102,7 @@
     <string name="list_of_subjects_add">Lista de Materias</string>
     <string name="create_subject_add">Crear Materia</string>
     <string name="buscar_button">Buscar...</string>
-    <string name="hi_homefragment">EY,</string>
+    <string name="hi_homefragment">HEY,</string>
     <string name="name__homefragment" translatable="false">POUL</string>
     <string name="welcome_back_have_a_pleasure_day">¡Bienvenido que tengas un buen día!</string>
     <string name="activity__homefragment">Actividad</string>
@@ -168,9 +168,9 @@
     <string name="invitado">Invitado</string>
     <string name="no_email_provided">Email no encontrado</string>
     <string name="guest">Invitado</string>
-    <string name="professor_adpter">Professor</string>
+    <string name="professor_adpter">Docente:</string>
     <string name="seccion_adapter">"Seccion: "</string>
-    <string name="students_adapter">Universidad</string>
+    <string name="students_adapter">Universidad:</string>
     <string name="start_adapter">"Inicio: "</string>
     <string name="end_adapter">Fin:</string>
     <string name="email_esta_vacio">"Email esta vacio "</string>
@@ -228,6 +228,10 @@
     <string name="error_lista_duplicada">La lista ya existe con esta universidad y materia.</string>
     <string name="error_agregar_lista">No se pudo agregar la lista.</string>
     <string name="error_validacion_lista">Error al validar la lista: </string>
+
+    <string name="materia_existe_toast">Ya existe una materia con este nombre.</string>
+    <string name="error_guardar_materia">Error al guardar la materia. Intente nuevamente.</string>
+    <string name="error_validacion">Error al validar la existencia de la materia.</string>
 
 
 </resources>
