@@ -25,12 +25,315 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Who is does work the app?"
+            android:text="Como funciona la app?"
             android:layout_centerInParent="true"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
 
             android:textSize="18sp" />
     </RelativeLayout>
+
+    <!-- Contenido de la guía -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Paso 1-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="8dp"
+                android:text="1. Primer Paso"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="A travez del menu inferior dirígete a la pestaña añadir tarea."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/firstep" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Luego rellena los campos, que te solicitan para crear una materia, estos datos seran mas util adelante para validaciones."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Paso 1 -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/firstep1_1" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/firstsetp1_3" />
+            <!-- Paso 2 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="8dp"
+                android:text="2. Segundo Paso"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Ahora a travez del menu inferior dirígete a la pestaña lista."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/secondstep" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Selecciona los campos, que se solicitan para crear una lista, en el primero deberas escoger la universidad en la que impartes la materia y en el segundo se muestran  tus materias creadas anteriormente."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Paso 2 -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/secondstep1_1" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/secondstep2" />
+
+            <!-- Paso 2 -->
+
+
+            <!-- Paso 2 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="8dp"
+                android:text="3. Tercer Paso"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="En ambas pestañas, bajo el boton de guardar esta otro boton este nos sirve para verificar las listas creadas o materias creadas y corroborar que todo esta bien."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/terceruno" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/tece" />
+
+
+            <!-- Paso 4 -->
+
+            <!-- Paso 4 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="8dp"
+                android:text="4. Cuarto Paso"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Ahora a travez del menu inferior dirígete al boton flotante que se encuentra en medio de la pantalla"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cuartostep1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Para registrar la asistencia presiona sobre el icono blanco de la camara, esto abrira tu camara y te permitira capturar la asistencia."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Paso 4 -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cuartopaso" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Una vez que abras tu camara acerca a la camara el codigo QR, posteriormente te saldra un cuadro de dialogo solicitando que selecciones la lista donde quieres almacenar la asistencia."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Paso 5 -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cuartopaso" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="¡Nota! Existen varias validaciones sobre capturar la asistencia, primero no se puede registrar la misma asistencia en la misma lista, en un plazo de 1 hora. "
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Segunda validacion: la lista sumara 1 cada vez que el estudiante este presente "
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Paso 5 -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cuarto3" />
+
+
+            <!-- Paso 5 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="8dp"
+                android:text="5. Ultimo Paso"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Utilizando el menu inferior clic en la pestaña reportes, aqui veras que se despliega la lista de asistencias creadas una vez scaneado algun codigo QR dentro de la lista podras descargarla presionanando el boton descargar."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/quinto1" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Image for step 1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/quinto2" />
+
+
+            <!-- Paso 5 -->
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
