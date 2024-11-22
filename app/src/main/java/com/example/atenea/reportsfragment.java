@@ -82,7 +82,7 @@ public class reportsfragment extends BaseFragment {
 
             @Override
             public void onCancelled(DatabaseError error) {
-                Toast.makeText(getContext(), "Error al cargar listas: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getString(R.string.error_al_cargar_listas) + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -155,16 +155,16 @@ public class reportsfragment extends BaseFragment {
 
                     } catch (IOException e) {
                         e.printStackTrace();
-                        Toast.makeText(requireContext(), "Error al guardar archivo CSV", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireContext(), R.string.error_al_guardar_archivo_csv, Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(requireContext(), "No se encontraron asistencias", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), R.string.no_se_encontraron_asistencias, Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(requireContext(), "Error al acceder a Firebase: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), getString(R.string.error_al_acceder_a_firebase) + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -185,10 +185,10 @@ public class reportsfragment extends BaseFragment {
                     fos.write(buffer, 0, length);
                 }
 
-                Toast.makeText(requireContext(), "Archivo guardado en Descargas", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.archivo_guardado_en_descargas, Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
-                Toast.makeText(requireContext(), "Error al mover archivo a Descargas", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.error_al_mover_archivo_a_descargas, Toast.LENGTH_SHORT).show();
             }
         }
 

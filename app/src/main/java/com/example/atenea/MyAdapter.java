@@ -39,11 +39,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder>{
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
         holder.codigomateria.setText(dataList.get(position).getCodigo());
         holder.nombremateria.setText(dataList.get(position).getNombre_materia());
-        holder.creador.setText("Professor: " +dataList.get(position).getCarnet_creador());
-        holder.seccion.setText("Seccion: " + dataList.get(position).getSeccion());
-        holder.participantes.setText("Students: " +dataList.get(position).getParticipantes());
-        holder.horainicio.setText("Start: " +dataList.get(position).getHora_inicio());
-        holder.horasalida.setText("End: " +dataList.get(position).getHora_salida());
+        holder.creador.setText(context.getString(R.string.professor_adpter) +dataList.get(position).getCarnet_creador());
+        holder.seccion.setText(context.getString(R.string.seccion_adapter) + dataList.get(position).getSeccion());
+        holder.participantes.setText(context.getString(R.string.students_adapter) +dataList.get(position).getParticipantes());
+        holder.horainicio.setText(context.getString(R.string.start_adapter) +dataList.get(position).getHora_inicio());
+        holder.horasalida.setText(context.getString(R.string.end_adapter) +dataList.get(position).getHora_salida());
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override

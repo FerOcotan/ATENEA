@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Atenea</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
     <string name="client_id" translatable="false">243010325269-r6bcaulkam1ae6bjhau8l4tmv4g3g4tr.apps.googleusercontent.com</string>
-    <string name="title_detail">¡This is your subject information!</string>
-    <string name="info_materia">Info Subject</string>
+    <string name="title_detail">¡Esta es la informacion de tu materia!</string>
+    <string name="info_materia">Info Materia</string>
     <string name="materia_detail">Materia</string>
     <string name="docente_detail">Docente</string>
     <string name="codigo_detail">Codigo</string>
@@ -13,15 +13,15 @@
     <string name="participantes_detail">Participantes</string>
     <string name="hora_inicio_8_00_am">Hora Inicio: 8:00 AM</string>
     <string name="hora_salida_10_00_am">Hora Salida: 10:00 AM</string>
-    <string name="delete_button">Delete</string>
-    <string name="button_back">button_back</string>
-    <string name="class_image">class_image</string>
-    <string name="info_list_detail2">Info List</string>
-    <string name="this_is_your_list_information_detail2">¡This is your list information!</string>
-    <string name="universidad_detail2">Universidad</string>
-    <string name="nombre_lista_detail2">Nombre Lista</string>
-    <string name="delete_detail2">Delete</string>
-    <string name="image_list_detail2">image_list</string>
+    <string name="delete_button">Borrar</string>
+    <string name="button_back" translatable="false">button_back</string>
+    <string name="class_image" translatable="false">class_image</string>
+    <string name="info_list_detail2">Info Lista</string>
+    <string name="this_is_your_list_information_detail2">¡Esta es la información de tu lista!</string>
+    <string name="universidad_detail2" translatable="false">Universidad</string>
+    <string name="nombre_lista_detail2" translatable="false">Nombre Lista</string>
+    <string name="delete_detail2">Borrar</string>
+    <string name="image_list_detail2" translatable="false">image_list</string>
     <string name="faqs">FAQs</string>
     <string name="pregunta1">¿Qué es Atenea y para qué sirve?</string>
     <string name="repuesta1">Atenea es una aplicación diseñada para gestionar la asistencia en instituciones educativas de manera eficiente y segura, utilizando tecnología QR.</string>
@@ -43,81 +43,81 @@
     <string name="respuesta8">Para iniciar sesión, debes utilizar las credenciales proporcionadas por la institución. Si no tienes una cuenta, puedes registrarte con tu correo electrónico y una contraseña segura.</string>
     <string name="pregunta10">¿Cómo Obtengo mi codigo QR?</string>
     <string name="respuesta10">El codigo QR debe ser brindando por cada institucion en tu carnet, si por alguna razon falla por favor contacta con tu profesor o administrador de la comunidad educativa encargada del area.</string>
-    <string name="ateneablack">logoatenea</string>
-    <string name="button_flotante_scan_qr">button flotante</string>
-    <string name="logo_play_negro">Logo</string>
-    <string name="welcome_back">Welcome back</string>
-    <string name="sign_in_to">Sign in to access your account</string>
-    <string name="placeholder_email">Enter your email</string>
-    <string name="placeholder_password">Password</string>
-    <string name="remember_me">Remember me</string>
-    <string name="forget_password">Forget password?</string>
-    <string name="continue_with_google">Continue with Google</string>
-    <string name="next_button_login">Next</string>
-    <string name="new_member_login">New Member? Register now</string>
-    <string name="about_us_title">About Us</string>
-    <string name="atenewhite">Atenea Logo</string>
-    <string name="atendance_title_about">Atendance</string>
-    <string name="foredu_title_about">For Edu Activities</string>
+    <string name="ateneablack" translatable="false">logoatenea</string>
+    <string name="button_flotante_scan_qr" translatable="false">button flotante</string>
+    <string name="logo_play_negro" translatable="false">Logo</string>
+    <string name="welcome_back">Bienvenido de nuevo</string>
+    <string name="sign_in_to">Inicie sesión para acceder a su cuenta</string>
+    <string name="placeholder_email">Introduzca su email</string>
+    <string name="placeholder_password">Contraseña</string>
+    <string name="remember_me">Recuerdame</string>
+    <string name="forget_password">Olvidaste tu contraseña?</string>
+    <string name="continue_with_google">Continuar con Google</string>
+    <string name="next_button_login">Continuar</string>
+    <string name="new_member_login">¿Es nuevo? Regístrese ahora</string>
+    <string name="about_us_title">Sobre Nosotros</string>
+    <string name="atenewhite" translatable="false">Atenea Logo</string>
+    <string name="atendance_title_about" translatable="false">Atendance</string>
+    <string name="foredu_title_about" translatable="false">For Edu Activities</string>
     <string name="primerparafo">En Atenea, nuestra misión es revolucionar la gestión de la asistencia en las instituciones educativas mediante el uso de tecnología innovadora.</string>
     <string name="segundoparrafo">Estamos comprometidos con ofrecer una solución eficiente y segura para las instituciones educativas, con la visión de expandirnos y adaptar nuestra tecnología a más centros en el futuro.</string>
     <string name="tercerparrafo">Atenea fue creada por un grupo de tres estudiantes apasionados por la tecnología y la innovación en el ámbito educativo.</string>
-    <string name="asp">Imagen 1</string>
-    <string name="larahel">Imagen 2</string>
-    <string name="harmoni">Imagen 3</string>
+    <string name="asp" translatable="false">Imagen 1</string>
+    <string name="larahel" translatable="false">Imagen 2</string>
+    <string name="harmoni" translatable="false">Imagen 3</string>
     <string name="quintoparrafo">Como grupo de desarrolladores, hemos tenido la oportunidad de trabajar en varios proyectos emocionantes y desafiantes, tanto en el ámbito académico como en el profesional.</string>
     <string name="derechos_reservados">© 2024 Atenea. Todos los derechos reservados.</string>
     <string name="settings_title">Settings</string>
-    <string name="name_example">Poul Moahdib</string>
-    <string name="correo_ejemplo">poulmodb@gmail.com</string>
-    <string name="lenguage_settings">Lenguage</string>
-    <string name="about_us_settings">About Us</string>
-    <string name="faqs_settings">FAQs</string>
-    <string name="help">¿Help?</string>
-    <string name="next_butt">next</string>
-    <string name="log_out_settings">Log Out</string>
-    <string name="lenguajeicon">lenguaje</string>
-    <string name="helpicon">helpicon</string>
-    <string name="faqsicon">faqsicon</string>
-    <string name="exiticon">exiticon</string>
-    <string name="abouticon">abouticon</string>
-    <string name="get_started_register">Get Started</string>
-    <string name="free_account_register">by creating a free account.</string>
-    <string name="valid_email_register">Valid email</string>
-    <string name="strong_password_register">Strong Password</string>
-    <string name="terms_and_conditions_register">By checking the box you agree to our Terms and Conditions.</string>
-    <string name="next_register">Next</string>
-    <string name="already_a_member_log_in_register">Already a member? Log In</string>
-    <string name="splascreen">splascreen</string>
-    <string name="create_subject_title_add">Create Subject</string>
-    <string name="professor_add">Professor</string>
-    <string name="subject_code_add">Subject Code</string>
-    <string name="subject_name_add">Subject Name</string>
-    <string name="students_add">Students</string>
-    <string name="section_add">Section</string>
-    <string name="start_add">Start</string>
-    <string name="end_add">End</string>
-    <string name="save_button">Save</string>
-    <string name="view_subjects_add">View Subjects</string>
-    <string name="list_of_subjects_add">List of Subjects</string>
-    <string name="create_subject_add">Create subject</string>
+    <string name="name_example" translatable="false">Poul Moahdib</string>
+    <string name="correo_ejemplo" translatable="false">poulmodb@gmail.com</string>
+    <string name="lenguage_settings">Lenguaje</string>
+    <string name="about_us_settings">Sobre Nosotros</string>
+    <string name="faqs_settings" translatable="false">FAQs</string>
+    <string name="help">¿Ayuda?</string>
+    <string name="next_butt">Continuar</string>
+    <string name="log_out_settings">Cerrar sesión</string>
+    <string name="lenguajeicon" translatable="false">lenguaje</string>
+    <string name="helpicon" translatable="false">helpicon</string>
+    <string name="faqsicon" translatable="false">faqsicon</string>
+    <string name="exiticon" translatable="false">exiticon</string>
+    <string name="abouticon" translatable="false">abouticon</string>
+    <string name="get_started_register">Comenzemos</string>
+    <string name="free_account_register">creando una cuenta gratuita.</string>
+    <string name="valid_email_register">Email</string>
+    <string name="strong_password_register">Contraseña fuerte</string>
+    <string name="terms_and_conditions_register">Al marcar la casilla, acepta nuestras Condiciones generales.</string>
+    <string name="next_register">Continuar</string>
+    <string name="already_a_member_log_in_register">¿Ya estas registrado? Aqui</string>
+    <string name="splascreen" translatable="false">splascreen</string>
+    <string name="create_subject_title_add">Crear Materia</string>
+    <string name="professor_add">Docente</string>
+    <string name="subject_code_add">Codigo Materia</string>
+    <string name="subject_name_add">Nombre Materia</string>
+    <string name="students_add">Estudiantes</string>
+    <string name="section_add">Sección</string>
+    <string name="start_add">Inicio</string>
+    <string name="end_add">Fin</string>
+    <string name="save_button">Guardar</string>
+    <string name="view_subjects_add">Ver Materias</string>
+    <string name="list_of_subjects_add">Lista de Materias</string>
+    <string name="create_subject_add">Crear Materia</string>
     <string name="buscar_button">Buscar...</string>
-    <string name="hi_homefragment">HI ,</string>
-    <string name="name__homefragment">POUL</string>
-    <string name="welcome_back_have_a_pleasure_day">¡Welcome back, have a pleasure day!</string>
-    <string name="activity__homefragment">Activity</string>
-    <string name="create_list_tittle">Create List</string>
+    <string name="hi_homefragment">HOLA,</string>
+    <string name="name__homefragment" translatable="false">POUL</string>
+    <string name="welcome_back_have_a_pleasure_day">¡Bienvenido que tengas un buen día!</string>
+    <string name="activity__homefragment">Actividad</string>
+    <string name="create_list_tittle">Crear Lista</string>
     <string name="seleccione_la_materia_list">Seleccione la Materia</string>
-    <string name="view_lists_button">View Lists</string>
-    <string name="list_of_subjects_list">List of Subjects</string>
-    <string name="create_list_2view">Create List</string>
-    <string name="iconlists">iconlists</string>
-    <string name="list_ready_to_export_tittle">List ready to export</string>
-    <string name="scann_activity_title">Scann Activity</string>
-    <string name="icono_de_c_mara">Icono de cámara</string>
-    <string name="iconmenos">iconmenos</string>
-    <string name="carneticon">carneticon</string>
-    <string name="cancelbutton">cancelbutton</string>
+    <string name="view_lists_button">Ver Listas</string>
+    <string name="list_of_subjects_list">Lista Asistencia</string>
+    <string name="create_list_2view">Crear Lista</string>
+    <string name="iconlists" translatable="false">iconlists</string>
+    <string name="list_ready_to_export_tittle">Lista lista para exportar</string>
+    <string name="scann_activity_title">¡Escanea!</string>
+    <string name="icono_de_c_mara" translatable="false">Icono de cámara</string>
+    <string name="iconmenos" translatable="false">iconmenos</string>
+    <string name="carneticon" translatable="false">carneticon</string>
+    <string name="cancelbutton" translatable="false">cancelbutton</string>
     <string name="cargando_progres">Cargando...</string>
     <string name="por_favor_codigo">Por favor ingrese el codigo de materia</string>
     <string name="por_favor_ingrese_el_nombre">Por favor ingrese el nombre de la materia</string>
@@ -127,19 +127,19 @@
     <string name="por_favor_ingrese_la_hora_de_salida">Por favor ingrese la hora de salida</string>
     <string name="por_favor_ingrese_su_carnet">Por favor ingrese su carnet</string>
     <string name="materia_agregada_toast">Materia agregada</string>
-    <string name="students_detail1">"Students: "</string>
-    <string name="seccion_detail1">"Seccion: "</string>
-    <string name="start_time_detail1">"Start time: "</string>
-    <string name="end_time_detail1">"End time: "</string>
-    <string name="professor_detail1">"Professor: "</string>
-    <string name="attention_you_are_about_to_delete_a_subject">"¡Attention, you are about to delete a list! "</string>
-    <string name="confirmacion">Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.</string>
-    <string name="yes_alertdialog">Yes</string>
-    <string name="subject_deleted_alertdi">Subject deleted</string>
+    <string name="students_detail1">"Estudiantes: "</string>
+    <string name="seccion_detail1">"Sección: "</string>
+    <string name="start_time_detail1">Hora de inicio:</string>
+    <string name="end_time_detail1">"Hora fin: "</string>
+    <string name="professor_detail1">"Docente "</string>
+    <string name="attention_you_are_about_to_delete_a_subject">"Atención, ¡está a punto de borrar una materia! "</string>
+    <string name="confirmacion">¿Estás seguro de que quieres borrar esta lista? Esta acción no se puede deshacer, eliminar esta lista podría causarle problemas.</string>
+    <string name="yes_alertdialog">SI</string>
+    <string name="subject_deleted_alertdi">Materia Borrada</string>
     <string name="no_alertdia">No</string>
-    <string name="attention_you_are_about_to_delete_a_list">"¡Attention, you are about to delete a list! "</string>
-    <string name="confirmacion_detail2">Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.</string>
-    <string name="list_deleted">List Deleted</string>
+    <string name="attention_you_are_about_to_delete_a_list">"Atención, ¡está a punto de borrar una lista! "</string>
+    <string name="confirmacion_detail2">¿Estás seguro de que quieres borrar esta lista? Esta acción no se puede deshacer, eliminar esta lista podría causarle problemas.</string>
+    <string name="list_deleted">Lista Borrada</string>
     <string name="escanea_el_c_digo_qr">Escanea el código QR</string>
     <string name="escaneo_cancelado">Escaneo cancelado</string>
     <string name="formato_de_qr_inv_lido">Formato de QR inválido</string>
@@ -149,7 +149,6 @@
     <string name="error_al_cargar_materias">"Error al cargar materias: "</string>
     <string name="asistencia_registrada_exitosamente">Asistencia registrada exitosamente</string>
     <string name="error_al_registrar_asistencia">Error al registrar asistencia</string>
-    <string name="friend_home">FRIEND</string>
     <string name="invitado_home">Invitado</string>
     <string name="error_leyendo_lista">"Error leyendo lista: "</string>
     <string name="selecciona_una_materia">Selecciona una materia</string>
@@ -165,6 +164,25 @@
     <string name="contrase_a_no_puede_estar_vac_a">Contraseña no puede estar vacía</string>
     <string name="email_no_puede_estar_vac_o">Email no puede estar vacío</string>
     <string name="por_favor_introduzca_un_email_v_lido">Por favor introduzca un email válido</string>
+    <string name="usuario">Usuario</string>
+    <string name="invitado">Invitado</string>
+    <string name="no_email_provided">Email no encontrado</string>
+    <string name="guest">Invitado</string>
+    <string name="professor_adpter">Professor</string>
+    <string name="seccion_adapter">"Seccion: "</string>
+    <string name="students_adapter">Universidad</string>
+    <string name="start_adapter">"Inicio: "</string>
+    <string name="end_adapter">Fin:</string>
+    <string name="email_esta_vacio">"Email esta vacio "</string>
+    <string name="contrase_a_esta_vacio">"Contraseña esta vacio "</string>
+    <string name="registro_existoso">Registro Existoso</string>
+    <string name="registro_fallido">Ajustes</string>
+    <string name="error_al_cargar_listas">"Error al cargar listas: "</string>
+    <string name="error_al_guardar_archivo_csv">Error al guardar archivo CSV</string>
+    <string name="no_se_encontraron_asistencias">No se encontraron asistencias</string>
+    <string name="error_al_acceder_a_firebase">"Error al acceder a Firebase: "</string>
+    <string name="archivo_guardado_en_descargas">Archivo guardado en Descargas</string>
+    <string name="error_al_mover_archivo_a_descargas">Error al mover archivo a Descargas</string>
 
 
     <string-array name="class_options">class_options
@@ -180,4 +198,6 @@
         <item>UNASA</item>
         <item>UES</item>
     </string-array>
+    <string name="pregunta2">¿Qué hago si mi dispositivo no puede escanear el código QR?</string>
+    <string name="friend_home">AMIGO</string>
 </resources>

@@ -61,20 +61,20 @@ public class register extends AppCompatActivity {
                 String pass = PasswordInput.getText().toString().trim();
 
                 if (user.isEmpty()){
-                    Emailvalid.setError("Email esta vacio ");
+                    Emailvalid.setError(getString(R.string.email_esta_vacio));
                 }
 
                 if (pass.isEmpty()){
-                    PasswordInput.setError("Contraseña esta vacio ");
+                    PasswordInput.setError(getString(R.string.contrase_a_esta_vacio));
 
                 }else {
                     auth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(register.this, "Registro Existoso", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(register.this, R.string.registro_existoso, Toast.LENGTH_SHORT).show();
                             }else {
-                                Toast.makeText(register.this, "Registro fallido" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(register.this, getString(R.string.registro_fallido) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

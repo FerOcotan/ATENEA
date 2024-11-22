@@ -130,12 +130,12 @@ public class menu_settings extends AppCompatActivity {
                     TextViewUserName.setText(firstName);
                 } else {
                     // Si no hay correo, establece un texto por defecto
-                    TextViewUserName.setText("Usuario");
+                    TextViewUserName.setText(R.string.usuario);
                 }
             }
         } else {
             // Si no hay usuario logueado, un texto por defecto
-            TextViewUserName.setText("Invitado");
+            TextViewUserName.setText(R.string.invitado);
         }
 
         // Obtén y muestra el correo del usuario
@@ -144,10 +144,10 @@ public class menu_settings extends AppCompatActivity {
             if (email != null && !email.isEmpty()) {
                 TextViewUserEmail.setText(email);
             } else {
-                TextViewUserEmail.setText("No email provided");
+                TextViewUserEmail.setText(R.string.no_email_provided);
             }
         } else {
-            TextViewUserEmail.setText("Guest");
+            TextViewUserEmail.setText(R.string.guest);
         }
 
 
