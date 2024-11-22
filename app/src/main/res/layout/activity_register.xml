@@ -9,7 +9,6 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="5dp"
-    android:paddingRight="7dp"
     tools:context=".register">
 
 
@@ -17,7 +16,7 @@
         android:id="@+id/logoImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:contentDescription="Logo"
+        android:contentDescription="@string/logo_play_negro"
         android:src="@drawable/ateneablack" />
 
     <Space
@@ -28,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Get Started"
+        android:text="@string/get_started_register"
         android:textSize="34sp"
         android:textStyle="bold" />
 
@@ -36,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="by creating a free account."
+        android:text="@string/free_account_register"
         android:textColor="#D37A7575"
         android:textSize="14sp" />
 
@@ -53,7 +52,7 @@
         android:background="#1DB3ADAD"
         android:backgroundTint="@android:color/darker_gray"
         android:drawableEnd="@drawable/baseline_attach_email_24"
-        android:hint="Valid email"
+        android:hint="@string/valid_email_register"
         android:inputType="textEmailAddress"
         android:paddingStart="7dp"
         android:paddingRight="7dp" />
@@ -68,10 +67,10 @@
         android:backgroundTint="@android:color/darker_gray"
         android:drawableEnd="@drawable/baseline_password_24"
 
-        android:hint="Strong Password"
+        android:hint="@string/strong_password_register"
         android:inputType="textPassword"
         android:paddingStart="7dp"
-        android:paddingRight="7dp" />
+         />
 
 
     <Space
@@ -91,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:backgroundTint="#BEBEBE"
-            android:text="By checking the box you agree to our Terms and Conditions."
+            android:text="@string/terms_and_conditions_register"
             android:textColor="#000000"
             android:textSize="10sp" />
 
@@ -107,7 +106,7 @@
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#4A8758"
-        android:text="Next"
+        android:text="@string/next_register"
         android:textColor="@color/white"
         app:strokeColor="#000000" />
 
@@ -118,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="Already a member? Log In"
+        android:text="@string/already_a_member_log_in_register"
         android:textColor="@color/black" />
 
 

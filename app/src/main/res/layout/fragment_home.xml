@@ -19,7 +19,7 @@
 
         <!-- Sección de texto -->
         <LinearLayout
-            android:layout_width="289dp"
+            android:layout_width="0dp"
             android:layout_height="158dp"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -34,7 +34,7 @@
                     android:layout_width="65dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="HI ,"
+                    android:text="@string/hi_homefragment"
                     android:textSize="34sp" />
 
                 <TextView
@@ -42,7 +42,7 @@
                     android:layout_width="233dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="POUL"
+                    android:text="@string/name__homefragment"
                     android:textSize="34sp" />
 
 
@@ -54,7 +54,7 @@
                 android:layout_width="163dp"
                 android:layout_height="53dp"
 
-                android:text="¡Welcome back, have a pleasure day!"
+                android:text="@string/welcome_back_have_a_pleasure_day"
                 android:textColor="#AD000000"
                 android:textSize="16sp" />
 
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="12dp"
                 android:paddingBottom="8dp"
-                android:text="Activity"
+                android:text="@string/activity__homefragment"
                 android:textColor="#90000000"
                 android:textSize="16sp"
                 android:textStyle="normal" />
@@ -105,7 +105,7 @@
                 android:id="@+id/order"
                 android:layout_width="257dp"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_more_horiz_24" />
+                app:drawableEndCompat="@drawable/baseline_more_horiz_24" />
 
         </LinearLayout>
 

@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Create Subject"
+                        android:text="@string/create_subject_title_add"
                         android:textColor="@color/Verdemenuprimary"
                         android:textSize="24sp"
 
@@ -95,12 +95,13 @@
                         android:layout_width="79dp"
                         android:layout_height="83dp"
                         android:layout_gravity="center"
+                        android:contentDescription="@string/class_image"
                         android:src="@drawable/classimage" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Professor"
+                        android:hint="@string/professor_add"
 
                         app:boxBackgroundMode="outline"
                         app:boxCornerRadiusBottomEnd="15dp"
@@ -132,7 +133,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Subject Code"
+                        android:hint="@string/subject_code_add"
 
                         app:boxBackgroundMode="outline"
                         app:boxCornerRadiusBottomEnd="15dp"
@@ -163,7 +164,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Subject Name"
+                        android:hint="@string/subject_name_add"
 
                         app:boxBackgroundMode="outline"
                         app:boxCornerRadiusBottomEnd="15dp"
@@ -202,7 +203,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.5"
-                            android:hint="Students"
+                            android:hint="@string/students_add"
                             app:boxBackgroundMode="outline"
                             app:boxCornerRadiusBottomEnd="15dp"
                             app:boxCornerRadiusTopStart="15dp"
@@ -229,7 +230,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="0.5"
-                            android:hint="Section"
+                            android:hint="@string/section_add"
                             app:boxBackgroundMode="outline"
                             app:boxCornerRadiusBottomEnd="15dp"
                             app:boxCornerRadiusTopStart="15dp"
@@ -266,7 +267,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.5"
                             android:focusable="false"
-                            android:hint="Start"
+                            android:hint="@string/start_add"
                             app:boxBackgroundMode="outline"
                             app:boxCornerRadiusBottomEnd="15dp"
                             app:boxCornerRadiusTopStart="15dp"
@@ -295,7 +296,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_weight="0.5"
                             android:focusable="false"
-                            android:hint="End"
+                            android:hint="@string/end_add"
                             app:boxBackgroundMode="outline"
                             app:boxCornerRadiusBottomEnd="15dp"
                             app:boxCornerRadiusTopStart="15dp"
@@ -334,7 +335,7 @@
                         android:layout_marginTop="10dp"
                         android:backgroundTint="@color/Verdemenuprimary"
 
-                        android:text="Save"
+                        android:text="@string/save_button"
                         android:textColor="@color/BlancoHueso"
                         app:icon="@drawable/baseline_save_24" />
 
@@ -346,7 +347,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:backgroundTint="@color/BlancoHueso"
-                        android:text="View Subjects"
+                        android:text="@string/view_subjects_add"
                         android:textColor="@color/Primary"
                         app:icon="@drawable/baseline_edit_document_24" />
                 </LinearLayout>
@@ -370,7 +371,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="List of Subjects"
+                    android:text="@string/list_of_subjects_add"
 
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -392,14 +393,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/lavender_border"
-                        android:queryHint="Buscar..."
+                        android:queryHint="@string/buscar_button"
                         app:iconifiedByDefault="false"
                         app:searchHintIcon="@null" />
 
                     <!-- Botón para crear materia -->
                     <Button
                         android:id="@+id/button_create_subject"
-                        android:text="Create subject"
+                        android:text="@string/create_subject_add"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"

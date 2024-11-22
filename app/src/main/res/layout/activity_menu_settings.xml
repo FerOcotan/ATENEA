@@ -21,6 +21,7 @@
         android:id="@+id/backButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/button_back"
         android:src="@drawable/back_btn"
         android:padding="14dp"
         />
@@ -28,7 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/settings_title"
             android:layout_centerInParent="true"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -63,9 +64,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Poul Moahdib"
+                android:text="@string/name_example"
                 android:textColor="@color/white"
-                android:textSize="22dp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 />
 
@@ -73,7 +74,7 @@
                 android:id="@+id/TextViewUserEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="poulmodb@gmail.com"
+                android:text="@string/correo_ejemplo"
                 android:textSize="12sp"
                 android:layout_gravity="center"
                 android:textColor="#ccffffff"
@@ -100,6 +101,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/circulomenu"
+                        android:contentDescription="@string/lenguajeicon"
                         android:padding="12dp"
                         android:src="@drawable/baseline_flag_24"
                         android:textColor="@color/black" />
@@ -111,7 +113,7 @@
                         android:layout_marginStart="20dp"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@+id/lenguage"
-                        android:text="Lenguage"
+                        android:text="@string/lenguage_settings"
                         android:textStyle="bold"
 
                         />
@@ -150,6 +152,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/circulomenu"
+                        android:contentDescription="@string/abouticon"
                         android:padding="12dp"
                         android:src="@drawable/baseline_info_24"
                         android:textColor="@color/black" />
@@ -161,7 +164,7 @@
                         android:layout_marginStart="20dp"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@+id/about"
-                        android:text="About Us"
+                        android:text="@string/about_us_settings"
                         android:textStyle="bold"
 
                         />
@@ -169,6 +172,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/next_butt"
                         android:src="@drawable/baseline_chevron_right_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
@@ -188,6 +192,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/circulomenu"
+                        android:contentDescription="@string/faqsicon"
                         android:padding="12dp"
                         android:src="@drawable/baseline_question_answer_24"
                         android:textColor="@color/black" />
@@ -199,7 +204,7 @@
                         android:layout_marginStart="20dp"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@+id/faqs"
-                        android:text="FAQs"
+                        android:text="@string/faqs_settings"
                         android:textStyle="bold"
 
                         />
@@ -207,6 +212,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/next_butt"
                         android:src="@drawable/baseline_chevron_right_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
@@ -243,6 +249,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/circulomenu"
+                        android:contentDescription="@string/helpicon"
                         android:padding="12dp"
                         android:src="@drawable/baseline_help_24"
                         android:textColor="@color/black" />
@@ -254,7 +261,7 @@
                         android:layout_marginStart="20dp"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@+id/help"
-                        android:text="¿Help?"
+                        android:text="@string/help"
                         android:textStyle="bold"
 
                         />
@@ -262,6 +269,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/next_butt"
                         android:src="@drawable/baseline_chevron_right_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
@@ -294,6 +302,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/circulolog"
+                        android:contentDescription="@string/exiticon"
                         android:padding="12dp"
                         android:src="@drawable/baseline_exit_to_app_24"
                         android:textColor="@color/black" />
@@ -306,7 +315,7 @@
                         android:layout_marginStart="20dp"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@+id/exit"
-                        android:text="Log Out"
+                        android:text="@string/log_out_settings"
                         android:textStyle="bold"
 
                         />

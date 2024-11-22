@@ -17,7 +17,7 @@
         android:id="@+id/logoImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:contentDescription="Logo"
+        android:contentDescription="@string/logo_play_negro"
         android:src="@drawable/ateneablack" />
 
     <Space
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Welcome back"
+        android:text="@string/welcome_back"
         android:textSize="24sp"
         android:textStyle="normal" />
 
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Sign in to access your account"
+        android:text="@string/sign_in_to"
         android:textColor="#D37A7575"
         android:textSize="14sp" />
 
@@ -53,7 +53,7 @@
         android:background="#1DB3ADAD"
         android:backgroundTint="@android:color/darker_gray"
         android:drawableEnd="@drawable/baseline_alternate_email_24"
-        android:hint="Enter your email"
+        android:hint="@string/placeholder_email"
         android:inputType="textEmailAddress"
         android:paddingStart="7dp" />
 
@@ -67,7 +67,7 @@
         android:backgroundTint="@android:color/darker_gray"
         android:drawableEnd="@drawable/baseline_lock_outline_24"
 
-        android:hint="Password"
+        android:hint="@string/placeholder_password"
         android:inputType="textPassword"
         android:paddingStart="7dp" />
 
@@ -84,18 +84,18 @@
             android:layout_height="38dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="#BEBEBE"
-            android:text="Remember me"
+            android:text="@string/remember_me"
             android:textColor="#B3ACB0"
             android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:foregroundGravity="left"
             android:gravity="left"
-            android:text="Forget password?"
+            android:text="@string/forget_password"
             android:textColor="#6BA478"
             android:textSize="12sp" />
 
@@ -108,14 +108,16 @@
 
     <TextView
         android:id="@+id/googleSignInButton"
-        android:layout_width="319dp"
-        android:layout_height="wrap_content"
+        android:layout_width="336dp"
+        android:layout_height="57dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/white"
-        android:drawableEnd="@drawable/mapq"
-        android:text="Continue with Google"
-
-        android:textColor="@color/black" />
+        android:gravity="center"
+        android:drawableStart="@drawable/mapq"
+        android:drawablePadding="8dp"
+        android:paddingHorizontal="16dp"
+        android:text="@string/continue_with_google"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
 
     <Space
@@ -128,7 +130,7 @@
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#6CA579"
-        android:text="Next"
+        android:text="@string/next_button_login"
         android:textColor="@color/white"
         app:strokeColor="#000000" />
 
@@ -139,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="New Member? Register now"
+        android:text="@string/new_member_login"
         android:textColor="@color/black" />
 
 

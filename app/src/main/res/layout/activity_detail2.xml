@@ -32,6 +32,7 @@
                 android:id="@+id/backButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:contentDescription="@string/button_back"
                 android:src="@drawable/back_btn"
                 android:padding="14dp"
                 />
@@ -39,7 +40,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Info List"
+                android:text="@string/info_list_detail2"
                 android:layout_centerInParent="true"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
@@ -70,7 +71,7 @@
                 android:layout_marginBottom="12dp"
                 android:gravity="center"
 
-                android:text="¡This is your list information!"
+                android:text="@string/this_is_your_list_information_detail2"
                 android:textColor="@color/lavender"
                 android:textSize="16sp" />
 
@@ -82,7 +83,7 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="sans-serif-medium"
-                android:text="Universidad"
+                android:text="@string/universidad_detail2"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="24sp" />
 
@@ -91,10 +92,12 @@
             <!-- Nombre de Materia -->
 
             <ImageView
+
                 android:id="@+id/detailImage"
                 android:layout_width="330dp"
                 android:layout_height="193dp"
                 android:layout_gravity="center"
+                android:contentDescription="@string/image_list_detail2"
                 android:src="@drawable/listrash" />
 
             <!-- Botón de Eliminar -->
@@ -106,7 +109,7 @@
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:padding="20dp"
-                android:text="Nombre Lista"
+                android:text="@string/nombre_lista_detail2"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="18sp" />
 
@@ -117,7 +120,7 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/BlancoHueso"
                 android:fontFamily="sans-serif-medium"
-                android:text="Delete"
+                android:text="@string/delete_detail2"
                 android:textColor="@color/Primary"
                 android:textSize="18sp"
                 app:cornerRadius="16dp" />

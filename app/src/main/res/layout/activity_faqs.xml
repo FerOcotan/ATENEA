@@ -17,13 +17,14 @@
             android:id="@+id/backButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/button_back"
             android:src="@drawable/back_btn"
             android:padding="14dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FAQs"
+            android:text="@string/faqs"
             android:layout_centerInParent="true"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -36,7 +37,8 @@
         android:layout_width="327dp"
         android:layout_height="132dp"
         android:background="@drawable/roundbuttonmenu"
-       android:src="@drawable/atesplash" />
+        android:contentDescription="@string/ateneablack"
+        android:src="@drawable/atesplash" />
 
     <!-- Envolvemos el contenido en un ScrollView -->
     <ScrollView
@@ -55,7 +57,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Qué es Atenea y para qué sirve?"
+                android:text="@string/pregunta1"
                 android:textStyle="bold"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="16sp"
@@ -65,7 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Atenea es una aplicación diseñada para gestionar la asistencia en instituciones educativas de manera eficiente y segura, utilizando tecnología QR."
+                android:text="@string/repuesta1"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
@@ -74,7 +76,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Qué hago si mi dispositivo no puede escanear el código QR?"
+                android:text="@string/pregunta2"
                 android:textStyle="bold"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="16sp"
@@ -83,7 +85,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Revisa los permisos de tu cámara en la configuración del dispositivo. Si el problema persiste, consulta con tu profesor o administrador para registrar la asistencia de forma manual."
+                android:text="@string/respuesta2"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
@@ -92,7 +94,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Puedo usar ATENEA sin conexión a Internet?"
+                android:text="@string/pregunta3"
                 android:textStyle="bold"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="16sp"
@@ -101,7 +103,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No, la aplicación requiere conexión a Internet para validar los escaneos y sincronizar los datos con la base central."
+                android:text="@string/respuesta3"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
@@ -110,7 +112,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Qué dispositivos son compatibles con ATENEA?"
+                android:text="@string/pregunta4"
                 android:textStyle="bold"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="16sp"
@@ -119,7 +121,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="La aplicación es compatible con dispositivos Android que tengan la versión 7.0 (Nougat) o superior."
+                android:text="@string/respuesta4"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
@@ -128,7 +130,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Qué permisos necesita la aplicación?"
+                android:text="@string/pregunta5"
                 android:textStyle="bold"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="16sp"
@@ -137,14 +139,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ATENEA requiere permisos para:"
+                android:text="@string/repuesta5_1"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" -Acceso a Internet, para la conexión a la base de datos central."
+                android:text="@string/repuesta5_2"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
 
@@ -153,7 +155,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" -Uso de la cámara para escanear los códigos QR."
+                android:text="@string/repuesta5_3"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
@@ -162,7 +164,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Cómo se asegura la privacidad de mis datos?"
+                android:text="@string/pregunta6"
                 android:textStyle="bold"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="16sp"
@@ -171,35 +173,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Los datos se almacenan en servidores seguros utilizando servicios de Firebase, que cuentan con medidas avanzadas de protección."
+                android:text="@string/respuesta6"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
-
-            <!-- Pregunta 6 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Puedo usar Atenea en varios dispositivos?"
-                android:textStyle="bold"
-                android:textColor="@color/BlancoHueso"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sí, siempre y cuando inicies sesión con tu cuenta  en cada dispositivo."
-                android:textColor="@color/BlancoHueso"
-                android:textSize="14sp"
-                android:layout_marginBottom="16dp" />
-
 
             <!-- Pregunta 7 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Cómo inicio sesión en ATENEA?"
+                android:text="@string/pregunta7"
                 android:textStyle="bold"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="16sp"
@@ -208,16 +191,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Para iniciar sesión, debes utilizar las credenciales proporcionadas por la institución. Si no tienes una cuenta, puedes registrarte con tu correo electrónico y una contraseña segura."
+                android:text="@string/respuesta7"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Pregunta 8 -->
+
+            <!-- Pregunta 8-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Cómo Obtengo mi codigo QR?"
+                android:text="@string/pregunta9"
                 android:textStyle="bold"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="16sp"
@@ -226,7 +210,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="El codigo QR debe ser brindando por cada institucion en tu carnet, si por alguna razon falla por favor contacta con tu profesor o administrador de la comunidad educativa encargada del area."
+                android:text="@string/respuesta8"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Pregunta 9-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pregunta10"
+                android:textStyle="bold"
+                android:textColor="@color/BlancoHueso"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/respuesta10"
                 android:textColor="@color/BlancoHueso"
                 android:textSize="14sp"
                 android:layout_marginBottom="16dp" />
