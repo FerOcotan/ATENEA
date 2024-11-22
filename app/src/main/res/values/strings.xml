@@ -106,6 +106,19 @@
     <string name="name__homefragment">POUL</string>
     <string name="welcome_back_have_a_pleasure_day">¡Welcome back, have a pleasure day!</string>
     <string name="activity__homefragment">Activity</string>
+    <string name="create_list_tittle">Create List</string>
+    <string name="seleccione_la_materia_list">Seleccione la Materia</string>
+    <string name="view_lists_button">View Lists</string>
+    <string name="list_of_subjects_list">List of Subjects</string>
+    <string name="create_list_2view">Create List</string>
+    <string name="iconlists">iconlists</string>
+    <string name="list_ready_to_export_tittle">List ready to export</string>
+    <string name="scann_activity_title">Scann Activity</string>
+    <string name="icono_de_c_mara">Icono de cámara</string>
+    <string name="iconmenos">iconmenos</string>
+    <string name="carneticon">carneticon</string>
+    <string name="cancelbutton">cancelbutton</string>
+    <string name="cargando_progres">Cargando...</string>
 
 
     <string-array name="class_options">class_options

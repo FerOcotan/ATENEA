@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingBottom="30dp"
-            android:text="List ready to export"
+            android:text="@string/list_ready_to_export_tittle"
             android:textColor="@color/Verdemenuprimary"
             android:textSize="24sp"
             android:textStyle="bold" />
