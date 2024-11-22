@@ -245,26 +245,50 @@ public class listfragment extends BaseFragment {
 
 
     private void AgregandoLista(String unii, String materiaa) {
-
-        HashMap<String, Object> quoteHashmap = new HashMap<>();
-        quoteHashmap.put("uni", unii);
-        quoteHashmap.put("materia", materiaa);
-
-
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference listasref = database.getReference("users").child(userId).child("lista");
 
-        String key = listasref.push().getKey();
-
-        quoteHashmap.put("key", key);
-
-        listasref.child(key).setValue(quoteHashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        // Validar si ya existe una lista con la misma universidad y materia
+        listasref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onComplete(Task<Void> task) {
-                Toast.makeText(requireContext(), R.string.lista_agregada, Toast.LENGTH_SHORT).show();
+            public void onDataChange(DataSnapshot snapshot) {
+                boolean exists = false;
+                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+                    String existingUni = itemSnapshot.child("uni").getValue(String.class);
+                    String existingMateria = itemSnapshot.child("materia").getValue(String.class);
 
+                    if (unii.equals(existingUni) && materiaa.equals(existingMateria)) {
+                        exists = true;
+                        break;
+                    }
+                }
 
+                if (exists) {
+                    Toast.makeText(requireContext(), R.string.error_lista_duplicada, Toast.LENGTH_SHORT).show();
+                } else {
+                    // Agregar la lista si no está duplicada
+                    String key = listasref.push().getKey();
+                    HashMap<String, Object> quoteHashmap = new HashMap<>();
+                    quoteHashmap.put("uni", unii);
+                    quoteHashmap.put("materia", materiaa);
+                    quoteHashmap.put("key", key);
+
+                    listasref.child(key).setValue(quoteHashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(requireContext(), R.string.lista_agregada, Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(requireContext(), R.string.error_agregar_lista, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(requireContext(), R.string.error_validacion_lista + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

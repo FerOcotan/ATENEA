@@ -173,4 +173,7 @@
     <string name="presente">Second validation: the list will add 1 each time the student is present.</string>
     <string name="_5_ultimo_paso">5. Last Step</string>
     <string name="_boton_descargar">Using the bottom menu click on the reports tab, here you will see that the list of created assistances is displayed, once you have scanned any QR code in the list you can download it by pressing the download button.</string>
+    <string name="error_lista_duplicada">The list already exists with this university and subject.</string>
+    <string name="error_agregar_lista">The list could not be added.</string>
+    <string name="error_validacion_lista">Error validating the list:</string>
 </resources>

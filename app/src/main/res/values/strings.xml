@@ -225,4 +225,9 @@
     <string name="presente">Segunda validacion: la lista sumara 1 cada vez que el estudiante este presente</string>
     <string name="_5_ultimo_paso">5. Ultimo Paso</string>
     <string name="_boton_descargar">Utilizando el menu inferior clic en la pestaña reportes, aqui veras que se despliega la lista de asistencias creadas una vez scaneado algun codigo QR dentro de la lista podras descargarla presionanando el boton descargar.</string>
+    <string name="error_lista_duplicada">La lista ya existe con esta universidad y materia.</string>
+    <string name="error_agregar_lista">No se pudo agregar la lista.</string>
+    <string name="error_validacion_lista">Error al validar la lista: </string>
+
+
 </resources>
