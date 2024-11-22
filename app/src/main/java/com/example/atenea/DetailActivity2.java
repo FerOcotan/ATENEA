@@ -74,16 +74,16 @@ public class DetailActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 // Crear un diálogo de confirmación
                 new androidx.appcompat.app.AlertDialog.Builder(DetailActivity2.this)
-                        .setTitle("Confirmación")
-                        .setMessage("¿Estás seguro de que deseas eliminar esta lista? Esta acción no se puede deshacer, eliminar esta lista podria causarte problemas.")
-                        .setPositiveButton("Sí", (dialog, which) -> {
+                        .setTitle("¡Attention, you are about to delete a list! ")
+                        .setMessage("Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.")
+                        .setPositiveButton("Yes", (dialog, which) -> {
                             // Referencia a la base de datos
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference reference = database.getReference("users").child(userId).child("lista");
 
                             // Eliminar el objeto de la base de datos directamente
                             reference.child(key).removeValue();
-                            Toast.makeText(DetailActivity2.this, "Lista eliminada", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DetailActivity2.this, "List Deleted", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), home.class));
                             finish();
                         })

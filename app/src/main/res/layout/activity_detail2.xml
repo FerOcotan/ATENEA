@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delete"
+                android:text="Info List"
                 android:layout_centerInParent="true"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
@@ -70,7 +70,7 @@
                 android:layout_marginBottom="12dp"
                 android:gravity="center"
 
-                android:text="¡Estas a punto de eliminar una lista!"
+                android:text="¡This is your list information!"
                 android:textColor="@color/lavender"
                 android:textSize="16sp" />
 
@@ -117,7 +117,7 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/BlancoHueso"
                 android:fontFamily="sans-serif-medium"
-                android:text="Eliminar"
+                android:text="Delete"
                 android:textColor="@color/Primary"
                 android:textSize="18sp"
                 app:cornerRadius="16dp" />
