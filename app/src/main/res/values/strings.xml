@@ -207,4 +207,22 @@
     <string name="add">Materia</string>
     <string name="sign_up">Registrarse</string>
     <string name="login" translatable="false">Login</string>
+    <string name="como_funciona_la_app">Como funciona la app?</string>
+    <string name="_1_primer_paso">1. Primer Paso</string>
+    <string name="pesta_a_a_adir_tarea">A travez del menu inferior dirígete a la pestaña añadir tarea.</string>
+    <string name="image_for_step_1" translatable="false">Image for step 1</string>
+    <string name="util_adelante_para_validaciones">Luego rellena los campos, que te solicitan para crear una materia, estos datos seran mas util adelante para validaciones.</string>
+    <string name="_2_segundo_paso">2. Segundo Paso</string>
+    <string name="dir_gete_a_la_pesta_a_lista">Ahora a travez del menu inferior dirígete a la pestaña lista.</string>
+    <string name="materias_creadas_anteriormente">Selecciona los campos, que se solicitan para crear una lista, en el primero deberas escoger la universidad en la que impartes la materia y en el segundo se muestran tus materias creadas anteriormente.</string>
+    <string name="_3_tercer_paso">3. Tercer Paso</string>
+    <string name="todo_esta_bien">En ambas pestañas, bajo el boton de guardar esta otro boton este nos sirve para verificar las listas creadas o materias creadas y corroborar que todo esta bien.</string>
+    <string name="_4_cuarto_paso">4. Cuarto Paso</string>
+    <string name="boton_flotante_que_se_encuentra_en_medio_de_la_pantalla">Ahora a travez del menu inferior dirígete al boton flotante que se encuentra en medio de la pantalla</string>
+    <string name="capturar_la_asistencia">Para registrar la asistencia presiona sobre el icono blanco de la camara, esto abrira tu camara y te permitira capturar la asistencia.</string>
+    <string name="una_vez_que_abra_almacenar_la_asistencia">Una vez que abras tu camara acerca a la camara el codigo QR, posteriormente te saldra un cuadro de dialogo solicitando que selecciones la lista donde quieres almacenar la asistencia.</string>
+    <string name="de_1_hora">¡Nota! Existen varias validaciones sobre capturar la asistencia, primero no se puede registrar la misma asistencia en la misma lista, en un plazo de 1 hora.</string>
+    <string name="presente">Segunda validacion: la lista sumara 1 cada vez que el estudiante este presente</string>
+    <string name="_5_ultimo_paso">5. Ultimo Paso</string>
+    <string name="_boton_descargar">Utilizando el menu inferior clic en la pestaña reportes, aqui veras que se despliega la lista de asistencias creadas una vez scaneado algun codigo QR dentro de la lista podras descargarla presionanando el boton descargar.</string>
 </resources>

@@ -156,4 +156,21 @@
     <string name="reports">Reports</string>
     <string name="add">Subject</string>
     <string name="sign_up">Sign in</string>
+    <string name="como_funciona_la_app">How does the app work?</string>
+    <string name="_1_primer_paso">1. First Step</string>
+    <string name="pesta_a_a_adir_tarea">Through the bottom menu go to the add task tab.</string>
+    <string name="util_adelante_para_validaciones">Then fill in the fields, which you are asked to create a subject, this data will be more useful later for validations.</string>
+    <string name="_2_segundo_paso">2. Second Step</string>
+    <string name="dir_gete_a_la_pesta_a_lista">Now through the bottom menu go to the list tab.</string>
+    <string name="materias_creadas_anteriormente">Select the fields, which are requested to create a list, in the first one you must choose the university where you teach the subject and in the second one your previously created subjects are shown.</string>
+    <string name="_3_tercer_paso">3. Third Step</string>
+    <string name="todo_esta_bien">In both tabs, under the save button there is another button to check the lists created or subjects created and verify that everything is OK.</string>
+    <string name="_4_cuarto_paso">4. Fourth Step</string>
+    <string name="boton_flotante_que_se_encuentra_en_medio_de_la_pantalla">Now through the lower menu go to the floating button in the middle of the screen.</string>
+    <string name="capturar_la_asistencia">To record attendance click on the white camera icon, this will open your camera and allow you to capture attendance.</string>
+    <string name="una_vez_que_abra_almacenar_la_asistencia">Once you open your camera, bring the QR code close to the camera, then you will get a dialog box asking you to select the list where you want to store the attendance.</string>
+    <string name="de_1_hora">Note! There are several validations about capturing attendance, first you cannot record the same attendance in the same list, within 1 hour.</string>
+    <string name="presente">Second validation: the list will add 1 each time the student is present.</string>
+    <string name="_5_ultimo_paso">5. Last Step</string>
+    <string name="_boton_descargar">Using the bottom menu click on the reports tab, here you will see that the list of created assistances is displayed, once you have scanned any QR code in the list you can download it by pressing the download button.</string>
 </resources>
