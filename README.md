@@ -60,11 +60,11 @@ Para registrar la asistencia presiona sobre el icono blanco de la camara, esto a
 Una vez que abras tu camara acerca a la camara el codigo QR, posteriormente te saldra un cuadro de dialogo solicitando que selecciones la lista donde quieres almacenar la asistencia.
 ¡Nota! Existen varias validaciones sobre capturar la asistencia, primero no se puede registrar la misma asistencia en la misma lista, en un plazo de 1 hora.
 Segunda validacion: la lista sumara 1 cada vez que el estudiante este presente
-
+![cuarto2](https://github.com/user-attachments/assets/cb9f5ebf-e041-4f1e-a72b-7e3ab8333515)
 ![cuarto3](https://github.com/user-attachments/assets/aa8f8ac9-02c3-40f6-a697-68ac4a326fb4)
 
 
-![cuarto2](https://github.com/user-attachments/assets/cb9f5ebf-e041-4f1e-a72b-7e3ab8333515)
+
 
 
 Utilizando el menu inferior clic en la pestaña reportes, aqui veras que se despliega la lista de asistencias creadas una vez scaneado algun codigo QR dentro de la lista podras descargarla presionanando el boton descargar
