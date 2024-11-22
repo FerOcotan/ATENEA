@@ -78,30 +78,7 @@
         android:layout_width="306dp"
         android:layout_height="61dp"
         android:layout_gravity="center|center_vertical"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/rememberMeCheck"
-            android:layout_width="184dp"
-            android:layout_height="38dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="#BEBEBE"
-            android:text="@string/remember_me"
-            android:textColor="#B3ACB0"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="188dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:foregroundGravity="left"
-            android:gravity="left"
-            android:text="@string/forget_password"
-            android:textColor="#6BA478"
-            android:textSize="12sp" />
-
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
 
     <Space

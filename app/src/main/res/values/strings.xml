@@ -131,7 +131,7 @@
     <string name="seccion_detail1">"Sección: "</string>
     <string name="start_time_detail1">Hora de inicio:</string>
     <string name="end_time_detail1">"Hora fin: "</string>
-    <string name="professor_detail1">"Docente "</string>
+    <string name="professor_detail1">"Docente: "</string>
     <string name="attention_you_are_about_to_delete_a_subject">"Atención, ¡está a punto de borrar una materia! "</string>
     <string name="confirmacion">¿Estás seguro de que quieres borrar esta materia? Esta acción no se puede deshacer, eliminar esta materia podría causarle problemas.</string>
     <string name="yes_alertdialog">SI</string>
