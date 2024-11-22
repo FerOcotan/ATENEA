@@ -31,19 +31,19 @@
 
                 <TextView
                     android:id="@+id/textView9"
-                    android:layout_width="65dp"
+                    android:layout_width="98dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/hi_homefragment"
-                    android:textSize="34sp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/textView10"
-                    android:layout_width="233dp"
+                    android:layout_width="189dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/name__homefragment"
-                    android:textSize="34sp" />
+                    android:textSize="30sp" />
 
 
             </LinearLayout>
@@ -51,8 +51,8 @@
             <TextView
 
                 android:id="@+id/textView11"
-                android:layout_width="163dp"
-                android:layout_height="53dp"
+                android:layout_width="193dp"
+                android:layout_height="66dp"
 
                 android:text="@string/welcome_back_have_a_pleasure_day"
                 android:textColor="#AD000000"

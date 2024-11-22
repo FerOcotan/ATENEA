@@ -47,7 +47,7 @@
                 android:backgroundTint="@color/Verdemenuprimary"
                 android:textColor="@color/white"
                 android:gravity="center"
-                android:text="Login" />
+                android:text="@string/login" />
 
             <Space
                 android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                 android:layout_marginHorizontal="60dp"
                 android:backgroundTint="#FDFDFD"
                 android:gravity="center"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:textColor="#000000" />
 
             <Space

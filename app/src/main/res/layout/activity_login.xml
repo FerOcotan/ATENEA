@@ -54,6 +54,7 @@
         android:backgroundTint="@android:color/darker_gray"
         android:drawableEnd="@drawable/baseline_alternate_email_24"
         android:hint="@string/placeholder_email"
+        android:paddingEnd="10dp"
         android:inputType="textEmailAddress"
         android:paddingStart="7dp" />
 
@@ -68,13 +69,14 @@
         android:drawableEnd="@drawable/baseline_lock_outline_24"
 
         android:hint="@string/placeholder_password"
+        android:paddingEnd="10dp"
         android:inputType="textPassword"
         android:paddingStart="7dp" />
 
 
     <LinearLayout
         android:layout_width="306dp"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:layout_gravity="center|center_vertical"
         android:orientation="horizontal">
 
@@ -90,7 +92,7 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="0dp"
+            android:layout_width="188dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:foregroundGravity="left"
@@ -104,16 +106,16 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="59dp" />
+        android:layout_height="11dp" />
 
     <TextView
         android:id="@+id/googleSignInButton"
-        android:layout_width="336dp"
+        android:layout_width="307dp"
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
-        android:gravity="center"
         android:drawableStart="@drawable/mapq"
         android:drawablePadding="8dp"
+        android:gravity="center"
         android:paddingHorizontal="16dp"
         android:text="@string/continue_with_google"
         android:textColor="@color/black"
@@ -122,7 +124,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="36dp" />
+        android:layout_height="16dp" />
 
     <Button
         android:id="@+id/signInButton"

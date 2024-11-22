@@ -67,7 +67,7 @@
     <string name="harmoni" translatable="false">Imagen 3</string>
     <string name="quintoparrafo">Como grupo de desarrolladores, hemos tenido la oportunidad de trabajar en varios proyectos emocionantes y desafiantes, tanto en el ámbito académico como en el profesional.</string>
     <string name="derechos_reservados">© 2024 Atenea. Todos los derechos reservados.</string>
-    <string name="settings_title">Settings</string>
+    <string name="settings_title">Ajustes</string>
     <string name="name_example" translatable="false">Poul Moahdib</string>
     <string name="correo_ejemplo" translatable="false">poulmodb@gmail.com</string>
     <string name="lenguage_settings">Lenguaje</string>
@@ -112,7 +112,7 @@
     <string name="list_of_subjects_list">Lista Asistencia</string>
     <string name="create_list_2view">Crear Lista</string>
     <string name="iconlists" translatable="false">iconlists</string>
-    <string name="list_ready_to_export_tittle">Lista lista para exportar</string>
+    <string name="list_ready_to_export_tittle">Listas para exportar</string>
     <string name="scann_activity_title">¡Escanea!</string>
     <string name="icono_de_c_mara" translatable="false">Icono de cámara</string>
     <string name="iconmenos" translatable="false">iconmenos</string>
@@ -133,7 +133,7 @@
     <string name="end_time_detail1">"Hora fin: "</string>
     <string name="professor_detail1">"Docente "</string>
     <string name="attention_you_are_about_to_delete_a_subject">"Atención, ¡está a punto de borrar una materia! "</string>
-    <string name="confirmacion">¿Estás seguro de que quieres borrar esta lista? Esta acción no se puede deshacer, eliminar esta lista podría causarle problemas.</string>
+    <string name="confirmacion">¿Estás seguro de que quieres borrar esta materia? Esta acción no se puede deshacer, eliminar esta materia podría causarle problemas.</string>
     <string name="yes_alertdialog">SI</string>
     <string name="subject_deleted_alertdi">Materia Borrada</string>
     <string name="no_alertdia">No</string>
@@ -200,4 +200,11 @@
     </string-array>
 
     <string name="friend_home">AMIGO</string>
+    <string name="settings">Ajustes</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="list">Lista</string>
+    <string name="reports">Reportes</string>
+    <string name="add">Materia</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="login" translatable="false">Login</string>
 </resources>

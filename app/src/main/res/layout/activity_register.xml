@@ -17,6 +17,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:contentDescription="@string/logo_play_negro"
+
         android:src="@drawable/ateneablack" />
 
     <Space
@@ -55,6 +56,8 @@
         android:hint="@string/valid_email_register"
         android:inputType="textEmailAddress"
         android:paddingStart="7dp"
+        android:paddingEnd="10dp"
+
         android:paddingRight="7dp" />
 
 
@@ -66,7 +69,7 @@
         android:background="#1DB3ADAD"
         android:backgroundTint="@android:color/darker_gray"
         android:drawableEnd="@drawable/baseline_password_24"
-
+        android:paddingEnd="10dp"
         android:hint="@string/strong_password_register"
         android:inputType="textPassword"
         android:paddingStart="7dp"

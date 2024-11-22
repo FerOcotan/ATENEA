@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">Atenea</string>
     <string name="title_detail">¡This is your subject information!</string>
-    <string name="google_storage_bucket">Info Subject</string>
     <string name="info_materia">Info Subject</string>
     <string name="materia_detail">Subject</string>
     <string name="docente_detail">Professor</string>
@@ -152,4 +151,9 @@
     <string name="error_al_acceder_a_firebase">"Error accessing Firebase: "</string>
     <string name="archivo_guardado_en_descargas">File saved in Downloads</string>
     <string name="error_al_mover_archivo_a_descargas">Error when moving file to Downloads</string>
+    <string name="settings">Settings</string>
+    <string name="list">List</string>
+    <string name="reports">Reports</string>
+    <string name="add">Subject</string>
+    <string name="sign_up">Sign in</string>
 </resources>
