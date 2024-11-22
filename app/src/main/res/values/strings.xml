@@ -22,7 +22,7 @@
     <string name="nombre_lista_detail2" translatable="false">Nombre Lista</string>
     <string name="delete_detail2">Borrar</string>
     <string name="image_list_detail2" translatable="false">image_list</string>
-    <string name="faqs">FAQs</string>
+    <string name="faqs" translatable="false">FAQs</string>
     <string name="pregunta1">¿Qué es Atenea y para qué sirve?</string>
     <string name="repuesta1">Atenea es una aplicación diseñada para gestionar la asistencia en instituciones educativas de manera eficiente y segura, utilizando tecnología QR.</string>
     <string name="pregunta2">¿Qué hago si mi dispositivo no puede escanear el código QR?</string>
@@ -198,6 +198,6 @@
         <item>UNASA</item>
         <item>UES</item>
     </string-array>
-    <string name="pregunta2">¿Qué hago si mi dispositivo no puede escanear el código QR?</string>
+
     <string name="friend_home">AMIGO</string>
 </resources>

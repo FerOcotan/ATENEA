@@ -105,6 +105,7 @@
     <string name="yes_alertdialog">Yes</string>
     <string name="subject_deleted_alertdi">Subject deleted</string>
     <string name="no_alertdia">No</string>
+    <string name="attention_you_are_about_to_delete_a_list">"Attention, you are about to delete a list! "</string>
     <string name="confirmacion_detail2">Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.</string>
     <string name="list_deleted">List Deleted</string>
     <string name="escanea_el_c_digo_qr">Scan the QR code</string>
@@ -150,4 +151,5 @@
     <string name="no_se_encontraron_asistencias">No assistance found</string>
     <string name="error_al_acceder_a_firebase">"Error accessing Firebase: "</string>
     <string name="archivo_guardado_en_descargas">File saved in Downloads</string>
+    <string name="error_al_mover_archivo_a_descargas">Error when moving file to Downloads</string>
 </resources>
