@@ -119,6 +119,27 @@
     <string name="carneticon">carneticon</string>
     <string name="cancelbutton">cancelbutton</string>
     <string name="cargando_progres">Cargando...</string>
+    <string name="por_favor_codigo">Por favor ingrese el codigo de materia</string>
+    <string name="por_favor_ingrese_el_nombre">Por favor ingrese el nombre de la materia</string>
+    <string name="ngrese_el_numero_de_participantes">Por favor ingrese el numero de participantes</string>
+    <string name="por_favor_ingrese_la_secci">Por favor ingrese la sección</string>
+    <string name="por_favor_ingrese_la_hora_de_inicio">Por favor ingrese la hora de inicio</string>
+    <string name="por_favor_ingrese_la_hora_de_salida">Por favor ingrese la hora de salida</string>
+    <string name="por_favor_ingrese_su_carnet">Por favor ingrese su carnet</string>
+    <string name="materia_agregada_toast">Materia agregada</string>
+    <string name="students_detail1">"Students: "</string>
+    <string name="seccion_detail1">"Seccion: "</string>
+    <string name="start_time_detail1">"Start time: "</string>
+    <string name="end_time_detail1">"End time: "</string>
+    <string name="professor_detail1">"Professor: "</string>
+    <string name="attention_you_are_about_to_delete_a_subject">"¡Attention, you are about to delete a list! "</string>
+    <string name="confirmacion">Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.</string>
+    <string name="yes_alertdialog">Yes</string>
+    <string name="subject_deleted_alertdi">Subject deleted</string>
+    <string name="no_alertdia">No</string>
+    <string name="attention_you_are_about_to_delete_a_list">"¡Attention, you are about to delete a list! "</string>
+    <string name="confirmacion_detail2">Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.</string>
+    <string name="list_deleted">List Deleted</string>
 
 
     <string-array name="class_options">class_options

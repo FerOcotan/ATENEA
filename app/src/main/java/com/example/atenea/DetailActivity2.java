@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -73,21 +74,21 @@ public class DetailActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Crear un diálogo de confirmación
-                new androidx.appcompat.app.AlertDialog.Builder(DetailActivity2.this)
-                        .setTitle("¡Attention, you are about to delete a list! ")
-                        .setMessage("Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.")
-                        .setPositiveButton("Yes", (dialog, which) -> {
+                new AlertDialog.Builder(DetailActivity2.this)
+                        .setTitle(R.string.attention_you_are_about_to_delete_a_list)
+                        .setMessage(R.string.confirmacion_detail2)
+                        .setPositiveButton(R.string.yes_alertdialog, (dialog, which) -> {
                             // Referencia a la base de datos
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference reference = database.getReference("users").child(userId).child("lista");
 
                             // Eliminar el objeto de la base de datos directamente
                             reference.child(key).removeValue();
-                            Toast.makeText(DetailActivity2.this, "List Deleted", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DetailActivity2.this, R.string.list_deleted, Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), home.class));
                             finish();
                         })
-                        .setNegativeButton("No", (dialog, which) -> {
+                        .setNegativeButton(R.string.no_alertdia, (dialog, which) -> {
                             // Cerrar el diálogo sin realizar ninguna acción
                             dialog.dismiss();
                         })

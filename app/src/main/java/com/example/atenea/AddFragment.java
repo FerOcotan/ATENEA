@@ -193,31 +193,31 @@ public class AddFragment extends BaseFragment {
                 String creator = creador.getText().toString();
 
                 if (codigo.isEmpty()){
-                    codigomateria.setError("Por favor ingrese el codigo de materia");
+                    codigomateria.setError(getString(R.string.por_favor_codigo));
                     return;
                 }
                 if (nombremate.isEmpty()){
-                    nombremateria.setError("Por favor ingrese el nombre de la materia");
+                    nombremateria.setError(getString(R.string.por_favor_ingrese_el_nombre));
                     return;
                 }
                 if (participante.isEmpty()){
-                    participantes.setError("Por favor ingrese el numero de participantes");
+                    participantes.setError(getString(R.string.ngrese_el_numero_de_participantes));
                     return;
                 }
                 if (seccionn.isEmpty()){
-                    seccion.setError("Por favor ingrese la sección");
+                    seccion.setError(getString(R.string.por_favor_ingrese_la_secci));
                     return;
                 }
                 if (horaini.isEmpty()){
-                    horainicio.setError("Por favor ingrese la hora de inicio");
+                    horainicio.setError(getString(R.string.por_favor_ingrese_la_hora_de_inicio));
                     return;
                 }
                 if (horasali.isEmpty()){
-                    horasalida.setError("Por favor ingrese la hora de salida");
+                    horasalida.setError(getString(R.string.por_favor_ingrese_la_hora_de_salida));
                     return;
                 }
                 if (creator.isEmpty()){
-                    creador.setError("Por favor ingrese su carnet");
+                    creador.setError(getString(R.string.por_favor_ingrese_su_carnet));
                     return;
                 }
 
@@ -308,7 +308,7 @@ public class AddFragment extends BaseFragment {
         materiasRef.child(key).setValue(quoteHashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(Task<Void> task) {
-                Toast.makeText(requireContext(), "Materia agregada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.materia_agregada_toast, Toast.LENGTH_SHORT).show();
                 codigomateria.getText().clear();
                 nombremateria.getText().clear();
                 participantes.getText().clear();

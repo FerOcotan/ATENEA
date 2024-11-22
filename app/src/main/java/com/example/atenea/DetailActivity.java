@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -59,11 +60,11 @@ public class DetailActivity extends AppCompatActivity {
 
             codigomateria.setText(bundle.getString("codigo"));
             nombremateria.setText(bundle.getString("nombre_materia"));
-            participantes.setText("Students: " + bundle.getString("participantes"));
-            seccion.setText("Seccion: " + bundle.getString("seccion"));
-            horainicio.setText("Start time: " + bundle.getString("hora_inicio"));
-            horasalida.setText("End time: " + bundle.getString("hora_salida"));
-            creador.setText("Professor: " + bundle.getString("carnet_creador"));
+            participantes.setText(getString(R.string.students_detail1) + bundle.getString("participantes"));
+            seccion.setText(getString(R.string.seccion_detail1) + bundle.getString("seccion"));
+            horainicio.setText(getString(R.string.start_time_detail1) + bundle.getString("hora_inicio"));
+            horasalida.setText(getString(R.string.end_time_detail1) + bundle.getString("hora_salida"));
+            creador.setText(getString(R.string.professor_detail1) + bundle.getString("carnet_creador"));
             key = bundle.getString("Key");
 
             Glide.with(this).load(R.drawable.clastrash).into(detailImage);
@@ -81,21 +82,21 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Crear un diálogo de confirmación
-                new androidx.appcompat.app.AlertDialog.Builder(DetailActivity.this)
-                        .setTitle("¡Attention, you are about to delete a list! ")
-                        .setMessage("Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.")
-                        .setPositiveButton("Yes", (dialog, which) -> {
+                new AlertDialog.Builder(DetailActivity.this)
+                        .setTitle(R.string.attention_you_are_about_to_delete_a_subject)
+                        .setMessage(R.string.confirmacion)
+                        .setPositiveButton(R.string.yes_alertdialog, (dialog, which) -> {
                             // Referencia a la base de datos
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference reference = database.getReference("users").child(userId).child("materias");
 
                             // Eliminar el objeto de la base de datos directamente
                             reference.child(key).removeValue();
-                            Toast.makeText(DetailActivity.this, "Subject deleted", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DetailActivity.this, R.string.subject_deleted_alertdi, Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), home.class));
                             finish();
                         })
-                        .setNegativeButton("No", (dialog, which) -> {
+                        .setNegativeButton(R.string.no_alertdia, (dialog, which) -> {
                             // Cerrar el diálogo sin hacer nada
                             dialog.dismiss();
                         })
