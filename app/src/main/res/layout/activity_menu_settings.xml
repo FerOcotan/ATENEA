@@ -39,14 +39,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            >
+            android:paddingBottom="80dp">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/buttonprofile"
@@ -67,27 +68,25 @@
                 android:text="@string/name_example"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TextViewUserEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/correo_ejemplo"
-                android:textSize="12sp"
                 android:layout_gravity="center"
+                android:text="@string/correo_ejemplo"
                 android:textColor="#ccffffff"
-                />
+                android:textSize="12sp" />
 
 
             <LinearLayout
-                android:background="@drawable/roundbuttonmenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/roundbuttonmenu"
                 android:orientation="vertical"
                 android:padding="15dp">
 
@@ -111,9 +110,9 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
-                        android:textColor="@color/black"
                         android:layout_toEndOf="@+id/about"
                         android:text="@string/about_us_settings"
+                        android:textColor="@color/black"
                         android:textStyle="bold"
 
                         />
@@ -121,19 +120,18 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:contentDescription="@string/next_butt"
-                        android:src="@drawable/baseline_chevron_right_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        />
+                        android:contentDescription="@string/next_butt"
+                        android:src="@drawable/baseline_chevron_right_24" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/faqss"
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
 
                     <ImageView
@@ -151,9 +149,9 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
-                        android:textColor="@color/black"
                         android:layout_toEndOf="@+id/faqs"
                         android:text="@string/faqs_settings"
+                        android:textColor="@color/black"
                         android:textStyle="bold"
 
                         />
@@ -161,27 +159,24 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:contentDescription="@string/next_butt"
-                        android:src="@drawable/baseline_chevron_right_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        />
+                        android:contentDescription="@string/next_butt"
+                        android:src="@drawable/baseline_chevron_right_24" />
 
                 </RelativeLayout>
-
-
 
 
             </LinearLayout>
 
 
             <LinearLayout
-                android:background="@drawable/roundbuttonmenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/roundbuttonmenu"
                 android:orientation="vertical"
                 android:padding="15dp">
 
@@ -229,12 +224,12 @@
 
 
             <LinearLayout
-                android:background="@drawable/roundbuttonlogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/roundbuttonlogout"
                 android:orientation="vertical"
                 android:padding="15dp">
 
@@ -260,27 +255,36 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
-                        android:textColor="@color/black"
                         android:layout_toEndOf="@+id/exit"
                         android:text="@string/log_out_settings"
+                        android:textColor="@color/black"
                         android:textStyle="bold"
 
                         />
-
 
 
                 </RelativeLayout>
 
 
 
-
-
             </LinearLayout>
-
 
         </LinearLayout>
 
 
-
     </ScrollView>
+
+    <!-- Copyright siempre abajo -->
+    <TextView
+        android:id="@+id/copyrightText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/derechos_reservados"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+       />
+
+
 </LinearLayout>
