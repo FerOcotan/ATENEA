@@ -124,7 +124,7 @@ public class login extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                         @Override
                                         public void onSuccess(AuthResult authResult) {
-                                            Toast.makeText(login.this, "Login exitoso", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(login.this, R.string.login_exitoso, Toast.LENGTH_SHORT).show();
                                             Intent ventana2 = new Intent(login.this, home.class);
                                             startActivity(ventana2);
                                             finish();
@@ -132,17 +132,17 @@ public class login extends AppCompatActivity {
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure( Exception e) {
-                                            Toast.makeText(login.this, "Fallo en el inicio de sesión", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(login.this, R.string.fallo_en_el_inicio_de_sesi_n, Toast.LENGTH_SHORT).show();
                                         }
                                     });
                         } else {
-                            passwordInput.setError("Contraseña no puede estar vacía");
+                            passwordInput.setError(getString(R.string.contrase_a_no_puede_estar_vac_a));
                         }
 
                     } else if (email.isEmpty()) {
-                        emailInput.setError("Email no puede estar vacío");
+                        emailInput.setError(getString(R.string.email_no_puede_estar_vac_o));
                     } else {
-                        emailInput.setError("Por favor introduzca un email válido");
+                        emailInput.setError(getString(R.string.por_favor_introduzca_un_email_v_lido));
                     }
 
                 }

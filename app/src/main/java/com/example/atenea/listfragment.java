@@ -80,7 +80,7 @@ public class listfragment extends BaseFragment {
 
 // Inicializar la lista y adaptador
         List<String> materiasList = new ArrayList<>();
-        materiasList.add("Selecciona una materia"); // Opción por defecto
+        materiasList.add(getString(R.string.selecciona_una_materia)); // Opción por defecto
 
         ArrayAdapter<String> materiasAdapter = new ArrayAdapter<>(
                 requireContext(), android.R.layout.simple_spinner_item, materiasList);
@@ -93,7 +93,7 @@ public class listfragment extends BaseFragment {
             public void onDataChange(DataSnapshot snapshot) {
                 // Utiliza una lista temporal para evitar conflictos
                 List<String> tempList = new ArrayList<>();
-                tempList.add("Selecciona una materia"); // Mantener opción por defecto
+                tempList.add(getString(R.string.selecciona_una_materia_spinner)); // Mantener opción por defecto
 
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
                     String mater = itemSnapshot.child("nombre_materia").getValue(String.class);
@@ -112,7 +112,7 @@ public class listfragment extends BaseFragment {
 
             @Override
             public void onCancelled(DatabaseError error) {
-                Toast.makeText(requireContext(), "Error al cargar materias: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), getString(R.string.error_al_cargar_materiaslist) + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -129,13 +129,13 @@ public class listfragment extends BaseFragment {
 
 
                 // Validar que ambos Spinners tengan valores seleccionados
-                if ("Selecciona una universidad".equals(unii)) {
-                    Toast.makeText(requireContext(), "Por favor selecciona una universidad", Toast.LENGTH_SHORT).show();
+                if (getString(R.string.selecciona_una_universidad).equals(unii)) {
+                    Toast.makeText(requireContext(), R.string.por_favor_selecciona_una_universidad, Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if ("Selecciona una materia".equals(materiaa)) {
-                    Toast.makeText(requireContext(), "Por favor selecciona una materia", Toast.LENGTH_SHORT).show();
+                if (getString(R.string.selecciona_una_materia2).equals(materiaa)) {
+                    Toast.makeText(requireContext(), R.string.por_favor_selecciona_una_materia, Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -262,7 +262,7 @@ public class listfragment extends BaseFragment {
         listasref.child(key).setValue(quoteHashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(Task<Void> task) {
-                Toast.makeText(requireContext(), "Lista agregada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.lista_agregada, Toast.LENGTH_SHORT).show();
 
 
             }

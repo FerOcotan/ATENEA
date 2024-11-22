@@ -61,11 +61,11 @@ public class HomeFragment extends BaseFragment {
                 TextViewUserName.setText(firstName);
             } else {
                 // Si el nombre está vacío, un texto por defecto
-                TextViewUserName.setText("FRIEND");
+                TextViewUserName.setText(R.string.friend_home);
             }
         } else {
             // Si no hay usuario logueado, un texto por defecto
-            TextViewUserName.setText("Invitado");
+            TextViewUserName.setText(R.string.invitado_home);
         }
 
         // Configuración del menú en el ImageView del fragmento Home
@@ -135,7 +135,7 @@ public class HomeFragment extends BaseFragment {
 
             @Override
             public void onCancelled( DatabaseError databaseError) {
-                Log.e("FirebaseError", "Error leyendo lista: " + databaseError.getMessage());
+                Log.e("FirebaseError", getString(R.string.error_leyendo_lista) + databaseError.getMessage());
 
             }
         });

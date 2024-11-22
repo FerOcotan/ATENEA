@@ -153,7 +153,7 @@ public class home extends AppCompatActivity {
     {
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-        integrator.setPrompt("Escanea el código QR");
+        integrator.setPrompt(getString(R.string.escanea_el_c_digo_qr));
         integrator.setCameraId(0); // Cámara trasera
         integrator.setOrientationLocked(false); // Forzar la orientacion vertical
         integrator.setBeepEnabled(true); // Sonido al escanear
@@ -168,7 +168,7 @@ public class home extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() == null) {
-                Toast.makeText(this, "Escaneo cancelado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.escaneo_cancelado, Toast.LENGTH_SHORT).show();
             } else {
                 // Procesa el contenido del QR escaneado
                 String qrContent = result.getContents(); // Contenido escaneado del QR
@@ -190,10 +190,10 @@ public class home extends AppCompatActivity {
                         mostrarSelectorDeMateria(carnet, nombre, apellido, email, fechaActual, horaActual);
 
                     } catch (Exception e) {
-                        Toast.makeText(this, "Formato de QR inválido", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, R.string.formato_de_qr_inv_lido, Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(this, "Datos insuficientes en el QR", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.datos_insuficientes_en_el_qr, Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -231,7 +231,7 @@ public class home extends AppCompatActivity {
 
                 // Mostrar el cuadro de diálogo
                 AlertDialog.Builder builder = new AlertDialog.Builder(home.this);
-                builder.setTitle("Selecciona una Materia")
+                builder.setTitle(R.string.selecciona_una_lista_scanqr)
                         .setItems(opciones, (dialog, which) -> {
                             // Obtener la clave de la materia seleccionada
                             String selectedKey = keysMaterias.get(which);
@@ -239,13 +239,13 @@ public class home extends AppCompatActivity {
                             // Llamar al método para guardar los datos en la materia seleccionada, pasando los datos escaneados
                             guardarDatosEnMateria(selectedKey, carnet, nombre, apellido, email, fechaActual, horaActual);
                         })
-                        .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss())
+                        .setNegativeButton(R.string.cancelar, (dialog, which) -> dialog.dismiss())
                         .show();
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
-                Toast.makeText(home.this, "Error al cargar materias: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(home.this, getString(R.string.error_al_cargar_materias) + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -268,10 +268,10 @@ public class home extends AppCompatActivity {
 
         // Usamos push() para crear un nuevo nodo único para cada entrada de asistencia
         asistenciaRef.push().setValue(asistenciaData)
-                .addOnSuccessListener(aVoid -> Toast.makeText(home.this, "Asistencia registrada exitosamente", Toast.LENGTH_SHORT).show())
+                .addOnSuccessListener(aVoid -> Toast.makeText(home.this, R.string.asistencia_registrada_exitosamente, Toast.LENGTH_SHORT).show())
                 .addOnFailureListener(e -> {
                     e.printStackTrace();
-                    Toast.makeText(home.this, "Error al registrar asistencia", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(home.this, R.string.error_al_registrar_asistencia, Toast.LENGTH_SHORT).show();
                 });
     }
 

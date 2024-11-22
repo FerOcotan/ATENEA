@@ -140,6 +140,31 @@
     <string name="attention_you_are_about_to_delete_a_list">"¡Attention, you are about to delete a list! "</string>
     <string name="confirmacion_detail2">Are you sure you want to delete this list? This action cannot be undone, deleting this list could cause you problems.</string>
     <string name="list_deleted">List Deleted</string>
+    <string name="escanea_el_c_digo_qr">Escanea el código QR</string>
+    <string name="escaneo_cancelado">Escaneo cancelado</string>
+    <string name="formato_de_qr_inv_lido">Formato de QR inválido</string>
+    <string name="datos_insuficientes_en_el_qr">Datos insuficientes en el QR</string>
+    <string name="selecciona_una_lista_scanqr">Selecciona una Lista</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="error_al_cargar_materias">"Error al cargar materias: "</string>
+    <string name="asistencia_registrada_exitosamente">Asistencia registrada exitosamente</string>
+    <string name="error_al_registrar_asistencia">Error al registrar asistencia</string>
+    <string name="friend_home">FRIEND</string>
+    <string name="invitado_home">Invitado</string>
+    <string name="error_leyendo_lista">"Error leyendo lista: "</string>
+    <string name="selecciona_una_materia">Selecciona una materia</string>
+    <string name="selecciona_una_materia_spinner">Selecciona una materia</string>
+    <string name="error_al_cargar_materiaslist">"Error al cargar materias: "</string>
+    <string name="selecciona_una_universidad">Selecciona una universidad</string>
+    <string name="por_favor_selecciona_una_universidad">Por favor selecciona una universidad</string>
+    <string name="por_favor_selecciona_una_materia">Por favor selecciona una materia</string>
+    <string name="selecciona_una_materia2">Selecciona una materia</string>
+    <string name="lista_agregada">Lista agregada</string>
+    <string name="login_exitoso">Login exitoso</string>
+    <string name="fallo_en_el_inicio_de_sesi_n">Fallo en el inicio de sesión</string>
+    <string name="contrase_a_no_puede_estar_vac_a">Contraseña no puede estar vacía</string>
+    <string name="email_no_puede_estar_vac_o">Email no puede estar vacío</string>
+    <string name="por_favor_introduzca_un_email_v_lido">Por favor introduzca un email válido</string>
 
 
     <string-array name="class_options">class_options
