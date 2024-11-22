@@ -80,64 +80,6 @@
                 />
 
             <LinearLayout
-            android:background="@drawable/roundbuttonmenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="40dp"
-            android:orientation="vertical"
-            android:padding="15dp"
-            >
-
-            <!-- Dark  Night -->
-
-
-            <!-- Camera   -->
-
-            <RelativeLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:id="@+id/camera_icon"
-                    android:layout_width="40dp"
-                    android:background="@drawable/circulomenu"
-                    android:layout_height="40dp"
-                    android:src="@drawable/baseline_photo_camera_24"
-                    android:padding="12dp"
-                    />
-
-                <TextView
-                    android:layout_marginStart="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Camera"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_toEndOf="@+id/camera_icon"
-
-                    />
-
-                <androidx.appcompat.widget.SwitchCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:switchMinWidth="50dp"
-                    android:theme="@style/nightModeSwitch" />
-
-            </RelativeLayout>
-
-
-
-
-        </LinearLayout>
-
-            <LinearLayout
                 android:background="@drawable/roundbuttonmenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

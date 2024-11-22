@@ -49,7 +49,7 @@
         <FrameLayout
             android:id="@+id/container_views"
             android:layout_width="match_parent"
-            android:layout_height="713dp">
+            android:layout_height="628dp">
 
             <!-- Vista de Crear Lista -->
             <androidx.cardview.widget.CardView
@@ -160,7 +160,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="gone"
+                >
 
                 <!-- Título centrado arriba -->
                 <TextView
