@@ -32,7 +32,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         // Vincular los datos con las vistas
         CardItem currentItem = cardItemList.get(position);
         holder.titleTextView.setText(currentItem.getTitle());
-        holder.timeDateTextView.setText(currentItem.getTime() + "    " + currentItem.getDate());
+        holder.timeDateTextView.setText(currentItem.getTime() );
     }
 
     @Override

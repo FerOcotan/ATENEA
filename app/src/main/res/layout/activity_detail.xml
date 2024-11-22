@@ -70,7 +70,7 @@
                 android:layout_marginBottom="12dp"
                 android:gravity="center"
 
-                android:text="¡This is your subject information!"
+                android:text="@string/title_detail"
                 android:textColor="@color/lavender"
                 android:textSize="16sp" />
 

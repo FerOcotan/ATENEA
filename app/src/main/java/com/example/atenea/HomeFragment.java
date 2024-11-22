@@ -103,8 +103,8 @@ public class HomeFragment extends BaseFragment {
                         // Convertir a CardItem y agregar a la lista
                         cardItems.add(new CardItem(
                                 materia.getNombre_materia(),
-                                materia.getHora_inicio(),
-                                materia.getCodigo()
+                                materia.getHora_inicio()
+
                         ));
                     }
                 }
@@ -127,7 +127,6 @@ public class HomeFragment extends BaseFragment {
                     if (lista != null) {
                         cardItems.add(new CardItem(
                                 lista.getMateria(),
-                                "N/A", // Hora no está en DataClass2
                                 lista.getUni()
                         ));
                     }
